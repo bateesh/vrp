@@ -25,8 +25,8 @@ int main(int argc, char * argv[]) {
   vector < int > depotLocation = input.getDepotCord();
   int p1 = depotLocation[0];
   int p2 = depotLocation[1];
-  //cout<<" Depot Location is "<<px<< " "<<py;
-  auto itr = demand.begin();
+  cout<<" Depot Location is "<<p1<< " "<<p2;
+  auto itr = demand.begin()+1;
   int flag = 0;
   while (itr != demand.end()) {
     vector < int > truck;
@@ -40,7 +40,7 @@ int main(int argc, char * argv[]) {
         currentCapacity = currentCapacity + ( * itr);
 
         truck.push_back(distance(start, itr));
-        vector < int > customerCord = data[distance(start, itr) + 1];
+        vector < int > customerCord = data[distance(start, itr) +1];
         int dx = customerCord[0];
         int dy = customerCord[1];
 

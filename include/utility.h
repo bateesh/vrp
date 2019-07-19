@@ -21,9 +21,18 @@ vector < vector < int > > readFile(const char * );
 
 //getDistanceTable to preprocess all distance between any two customers
 
-vector < vector < double > > getDistanceTable(vector < vector < int > > );
+void getDistanceTable(vector < vector < int > > d,double distanceTable[300][300]);
 //getDistance between two points (px,py) and (dx,dy)
 double getDistance(int px, int py, int dx, int dy);
+
+double getDistanceByCustomerNumber(int c1,int c2);
+
+int getRouteCapacity(vector < int> demand,vector<int> route);
+double getRouteCost(vector<int> route);
+
+void printRoute(vector<int> cr);
+
+double calculateRouteCost(vector<int> route, double distance[300][300]);
 
 // generic functions
 template < typename T >

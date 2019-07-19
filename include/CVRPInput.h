@@ -17,9 +17,14 @@ class CVRPInput {
   vector < int > depotCord;
   vector < vector < int >> customerCordinates;
   vector < int > demandList;
+  map<vector<int>, int> cordinateToCutomerMapping; 
+  map<int, vector<int>> customerToCordinateMapping; 
+  void populatemap  (vector<vector<int>> data); 
+
   public:
     //constructor
-    CVRPInput(vector < vector < int >> data);
+
+  CVRPInput(vector < vector < int >> data);
 
   //get the dimension
   int getDimension();
@@ -35,6 +40,10 @@ class CVRPInput {
 
   //get customer demand list
   vector < int > getDemandList();
+
+  vector<vector<int>> convertRouteToCordinateList(vector<int> route);
+
+  vector<int> convertCordinateListToRoute(vector<vector<int>> customerCordinates);
 
 };
 #endif

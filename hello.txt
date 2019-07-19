@@ -1,0 +1,3245 @@
+ Now readinf file in Total number of data is :47 capacity is  :45 DIMENSION 45
+ CAPCCITY 100
+ cusotmer or  31 73 11 67 52 96 81 29 97 62 71 5 6 56 48 50 91 17 49 68 85 29 11 16 74 98 56 37 13 81 66 80 96 55 36 17 32 23 6 13 64 30 87 5 75 61 40 72 1 44 60 95 27 49 15 33 46 53 28 43 3 9 1 100 53 46 98 8 6 25 7 81 96 88 2 35 32 94 95 94 9 11 96 16 90 68 33 31 6 59 ehck demand 0
+ 0
+ 19
+ 2
+ 12
+ 20
+ 6
+ 17
+ 8
+ 14
+ 2
+ 8
+ 5
+ 7
+ 22
+ 14
+ 17
+ 23
+ 15
+ 21
+ 2
+ 24
+ 10
+ 20
+ 6
+ 21
+ 10
+ 6
+ 13
+ 21
+ 24
+ 11
+ 16
+ 8
+ 11
+ 11
+ 22
+ 17
+ 22
+ 17
+ 8
+ 23
+ 5
+ 3
+ 18
+ 12
+ab depot is 1 -1 
+Processing Saving node 
+ :37 :40 :257.739
+ Both are not in any route so add in enw route 
+ capacity constraint satisfied
+ 0 37 40 0
+ Route Codes 
+ -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 0 -1 -1 0 -1 -1 -1 -1 -1 
+Processing Saving node 
+ :13 :40 :235.272
+ At least one of them is laready there and other is not  hello 1 -1 is not there  hello 2 -1 is not there  
+ and 0 is extreme  
+ current route of j is 
+ 0 37 40 0 
+ new route of merge with j 
+ 0 37 40 13 0
+ Route Codes 
+ -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 0 -1 -1 0 -1 -1 -1 -1 -1 
+Processing Saving node 
+ :13 :37 :229.015 
+Processing Saving node 
+ :37 :43 :221.911
+ At least one of them is laready there and other is not  hello 3 -1 is not there  hello 4 -1 is not there  
+ and 0 is extreme  
+ current route of i is 
+ 0 37 40 13 0 
+ new route of merge with i 
+ 0 43 37 40 13 0
+ Route Codes 
+ -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 0 -1 -1 0 -1 -1 0 -1 -1 
+Processing Saving node 
+ :13 :26 :221.367
+ At least one of them is laready there and other is not  hello 3 -1 is not there  hello 5 -1 is not there  
+ and 0 is extreme  
+ current route of i is 
+ 0 43 37 40 13 0 
+ new route of merge with i 
+ 0 43 37 40 13 26 0
+ Route Codes 
+ -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 0 -1 -1 0 -1 -1 0 -1 -1 
+Processing Saving node 
+ :40 :43 :219.783 
+Processing Saving node 
+ :5 :37 :218.984
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :5 :43 :218.221
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+ and 0 is extreme  
+ current route of j is 
+ 0 43 37 40 13 26 0 
+ new route of merge with j 
+ 0 5 43 37 40 13 26 0
+ Route Codes 
+ -1 -1 -1 -1 0 -1 -1 -1 -1 -1 -1 -1 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 0 -1 -1 0 -1 -1 0 -1 -1 
+Processing Saving node 
+ :5 :17 :218.032
+ At least one of them is laready there and other is not  hello 3 -1 is not there  hello 4 -1 is not there  
+ and 0 is extreme  
+ current route of i is 
+ 0 5 43 37 40 13 26 0 
+ new route of merge with i 
+ 0 17 5 43 37 40 13 26 0
+ Route Codes 
+ -1 -1 -1 -1 0 -1 -1 -1 -1 -1 -1 -1 0 -1 -1 -1 0 -1 -1 -1 -1 -1 -1 -1 -1 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 0 -1 -1 0 -1 -1 0 -1 -1 
+Processing Saving node 
+ :5 :40 :216.409 
+Processing Saving node 
+ :3 :26 :214.209
+ At least one of them is laready there and other is not  hello 1 -1 is not there  hello 2 -1 is not there  
+ and 0 is extreme  
+ current route of j is 
+ 0 17 5 43 37 40 13 26 0 
+ new route of merge with j 
+ 0 17 5 43 37 40 13 26 3 0
+ Route Codes 
+ -1 -1 0 -1 0 -1 -1 -1 -1 -1 -1 -1 0 -1 -1 -1 0 -1 -1 -1 -1 -1 -1 -1 -1 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 0 -1 -1 0 -1 -1 0 -1 -1 
+Processing Saving node 
+ :26 :40 :211.312 
+Processing Saving node 
+ :3 :13 :210.503 
+Processing Saving node 
+ :17 :43 :208.573 
+Processing Saving node 
+ :17 :37 :207.454 
+Processing Saving node 
+ :13 :16 :207.162
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :26 :37 :206.184 
+Processing Saving node 
+ :16 :40 :205.298
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :17 :40 :204.909 
+Processing Saving node 
+ :16 :37 :202.984
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :13 :43 :201.618 
+Processing Saving node 
+ :16 :26 :200.381
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :3 :40 :200.189 
+Processing Saving node 
+ :5 :13 :195.11 
+Processing Saving node 
+ :3 :37 :195.046 
+Processing Saving node 
+ :23 :43 :192.602
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :23 :37 :192.512
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :3 :16 :192.186
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :23 :40 :191.598
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :16 :43 :189.637
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :3 :39 :189.42
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :5 :23 :189.343
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :34 :42 :185.679
+ Both are not in any route so add in enw route 
+ capacity constraint satisfied
+ 0 34 42 0
+ Route Codes 
+ -1 -1 0 -1 0 -1 -1 -1 -1 -1 -1 -1 0 -1 -1 -1 0 -1 -1 -1 -1 -1 -1 -1 -1 0 -1 -1 -1 -1 -1 -1 -1 1 -1 -1 0 -1 -1 0 -1 1 0 -1 -1 
+Processing Saving node 
+ :13 :17 :184.98 
+Processing Saving node 
+ :17 :23 :184.977
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :26 :43 :184.934 
+Processing Saving node 
+ :26 :39 :184.593
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :9 :42 :183.192
+ At least one of them is laready there and other is not  hello 1 -1 is not there  hello 2 -1 is not there  
+ and 1 is extreme  
+ current route of j is 
+ 0 34 42 0 
+ new route of merge with j 
+ 0 34 42 9 0
+ Route Codes 
+ -1 -1 0 -1 0 -1 -1 -1 1 -1 -1 -1 0 -1 -1 -1 0 -1 -1 -1 -1 -1 -1 -1 -1 0 -1 -1 -1 -1 -1 -1 -1 1 -1 -1 0 -1 -1 0 -1 1 0 -1 -1 
+Processing Saving node 
+ :5 :16 :182.835
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :13 :23 :182.531
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :13 :39 :180.744
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :16 :23 :179.372
+ Both are not in any route so add in enw route 
+ capacity constraint satisfied
+ 0 16 23 0
+ Route Codes 
+ -1 -1 0 -1 0 -1 -1 -1 1 -1 -1 -1 0 -1 -1 2 0 -1 -1 -1 -1 -1 2 -1 -1 0 -1 -1 -1 -1 -1 -1 -1 1 -1 -1 0 -1 -1 0 -1 1 0 -1 -1 
+Processing Saving node 
+ :5 :26 :177.929 
+Processing Saving node 
+ :9 :34 :177.797 
+Processing Saving node 
+ :16 :17 :175.081 hello 6 
+Processing Saving node 
+ :3 :43 :175.003 
+Processing Saving node 
+ :22 :34 :172.224
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+ and 1 is extreme  
+ current route of j is 
+ 0 34 42 9 0 
+ new route of merge with j 
+ 0 22 34 42 9 0
+ Route Codes 
+ -1 -1 0 -1 0 -1 -1 -1 1 -1 -1 -1 0 -1 -1 2 0 -1 -1 -1 -1 1 2 -1 -1 0 -1 -1 -1 -1 -1 -1 -1 1 -1 -1 0 -1 -1 0 -1 1 0 -1 -1 
+Processing Saving node 
+ :23 :26 :172.059 hello 6 
+Processing Saving node 
+ :11 :17 :171.242
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+ and 0 is extreme  
+ current route of j is 
+ 0 17 5 43 37 40 13 26 3 0 
+ new route of merge with j 
+ 0 11 17 5 43 37 40 13 26 3 0
+ Route Codes 
+ -1 -1 0 -1 0 -1 -1 -1 1 -1 0 -1 0 -1 -1 2 0 -1 -1 -1 -1 1 2 -1 -1 0 -1 -1 -1 -1 -1 -1 -1 1 -1 -1 0 -1 -1 0 -1 1 0 -1 -1 
+Processing Saving node 
+ :4 :11 :170.636
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :39 :40 :170.575
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :32 :39 :169.355
+ Both are not in any route so add in enw route 
+ capacity constraint satisfied
+ 0 32 39 0
+ Route Codes 
+ -1 -1 0 -1 0 -1 -1 -1 1 -1 0 -1 0 -1 -1 2 0 -1 -1 -1 -1 1 2 -1 -1 0 -1 -1 -1 -1 -1 3 -1 1 -1 -1 0 -1 3 0 -1 1 0 -1 -1 
+Processing Saving node 
+ :17 :26 :169.143 
+Processing Saving node 
+ :5 :11 :168.908 
+Processing Saving node 
+ :11 :42 :168.676 hello 6 
+Processing Saving node 
+ :22 :42 :168.505 
+Processing Saving node 
+ :3 :5 :168.016 
+Processing Saving node 
+ :10 :13 :168.006
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :17 :42 :167.786 hello 6 
+Processing Saving node 
+ :10 :26 :167.58
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :9 :11 :167.562 hello 6 hello 7 
+yes 1 caught
+ before merge 
+ 0 22 34 42 9 0
+ 0 11 17 5 43 37 40 13 26 3 0 
+ after merge in i
+ 0 22 34 42 9 11 17 5 43 37 40 13 26 3 0
+ Route Codes 
+ -1 -1 1 -1 1 -1 -1 -1 1 -1 1 -1 1 -1 -1 2 1 -1 -1 -1 -1 1 2 -1 -1 1 -1 -1 -1 -1 -1 3 -1 1 -1 -1 1 -1 3 1 -1 1 1 -1 -1 
+Processing Saving node 
+ :10 :16 :167.101
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+ and 2 is extreme  
+ current route of j is 
+ 0 16 23 0 
+ new route of merge with j 
+ 0 10 16 23 0
+ Route Codes 
+ -1 -1 1 -1 1 -1 -1 -1 1 2 1 -1 1 -1 -1 2 1 -1 -1 -1 -1 1 2 -1 -1 1 -1 -1 -1 -1 -1 3 -1 1 -1 -1 1 -1 3 1 -1 1 1 -1 -1 
+Processing Saving node 
+ :16 :39 :167.016 hello 6 
+Processing Saving node 
+ :37 :39 :165.826 hello 6 
+Processing Saving node 
+ :4 :17 :165.7
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :3 :24 :165.522
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :3 :10 :165.483 hello 6 
+Processing Saving node 
+ :9 :22 :165.342 
+Processing Saving node 
+ :5 :42 :165.324 
+Processing Saving node 
+ :24 :26 :164.966
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :10 :40 :164.859 hello 6 
+Processing Saving node 
+ :3 :23 :164.25 hello 6 
+Processing Saving node 
+ :9 :17 :163.732 
+Processing Saving node 
+ :4 :5 :163.592
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :32 :36 :163.294
+ At least one of them is laready there and other is not  hello 3 -1 is not there  hello 4 -1 is not there  
+ and 3 is extreme  
+ current route of i is 
+ 0 32 39 0 
+ new route of merge with i 
+ 0 36 32 39 0
+ Route Codes 
+ -1 -1 1 -1 1 -1 -1 -1 1 2 1 -1 1 -1 -1 2 1 -1 -1 -1 -1 1 2 -1 -1 1 -1 -1 -1 -1 -1 3 -1 1 -1 3 1 -1 3 1 -1 1 1 -1 -1 
+Processing Saving node 
+ :10 :37 :163.152 hello 6 
+Processing Saving node 
+ :13 :24 :162.967
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :11 :43 :162.492 
+Processing Saving node 
+ :4 :42 :162.1
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :11 :34 :161.915 
+Processing Saving node 
+ :4 :9 :161.602
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :15 :32 :161.401
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :5 :9 :161.21 
+Processing Saving node 
+ :17 :34 :160.651 
+Processing Saving node 
+ :15 :39 :159.782
+ At least one of them is laready there and other is not  hello 1 -1 is not there  hello 2 -1 is not there  
+ and 3 is extreme  
+ current route of j is 
+ 0 36 32 39 0 
+ new route of merge with j 
+ 0 36 32 39 15 0
+ Route Codes 
+ -1 -1 1 -1 1 -1 -1 -1 1 2 1 -1 1 -1 3 2 1 -1 -1 -1 -1 1 2 -1 -1 1 -1 -1 -1 -1 -1 3 -1 1 -1 3 1 -1 3 1 -1 1 1 -1 -1 
+Processing Saving node 
+ :3 :17 :159.726 
+Processing Saving node 
+ :3 :32 :159.434 hello 6 
+Processing Saving node 
+ :16 :24 :159.417
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :11 :37 :159.357 
+Processing Saving node 
+ :24 :39 :159.285
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :15 :36 :159.093 
+Processing Saving node 
+ :1 :39 :158.756
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :1 :3 :158.295
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :5 :34 :158.233 
+Processing Saving node 
+ :4 :43 :158.029
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :24 :40 :157.173
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :11 :40 :157.077 
+Processing Saving node 
+ :10 :24 :156.969
+ At least one of them is laready there and other is not  hello 3 -1 is not there  hello 4 -1 is not there  
+ and 2 is extreme  
+ current route of i is 
+ 0 10 16 23 0 
+ new route of merge with i 
+ 0 24 10 16 23 0
+ Route Codes 
+ -1 -1 1 -1 1 -1 -1 -1 1 2 1 -1 1 -1 3 2 1 -1 -1 -1 -1 1 2 2 -1 1 -1 -1 -1 -1 -1 3 -1 1 -1 3 1 -1 3 1 -1 1 1 -1 -1 
+Processing Saving node 
+ :42 :43 :156.778 
+Processing Saving node 
+ :1 :26 :156.13
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :4 :34 :155.838
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :10 :43 :155.668 hello 6 
+Processing Saving node 
+ :4 :37 :154.74
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :24 :37 :154.701 hello 6 
+Processing Saving node 
+ :37 :42 :154.686 
+Processing Saving node 
+ :26 :32 :154.469 hello 6 
+Processing Saving node 
+ :36 :39 :153.971 
+Processing Saving node 
+ :10 :23 :153.668 
+Processing Saving node 
+ :1 :24 :153.559
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+ and 2 is extreme  
+ current route of j is 
+ 0 24 10 16 23 0 
+ new route of merge with j 
+ 0 1 24 10 16 23 0
+ Route Codes 
+ 2 -1 1 -1 1 -1 -1 -1 1 2 1 -1 1 -1 3 2 1 -1 -1 -1 -1 1 2 2 -1 1 -1 -1 -1 -1 -1 3 -1 1 -1 3 1 -1 3 1 -1 1 1 -1 -1 
+Processing Saving node 
+ :9 :43 :153.387 
+Processing Saving node 
+ :1 :13 :153.115 hello 6 
+Processing Saving node 
+ :10 :39 :152.919 hello 6 
+Processing Saving node 
+ :4 :40 :152.594
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :11 :23 :152.21 hello 6 
+Processing Saving node 
+ :40 :42 :152.148 
+Processing Saving node 
+ :11 :22 :151.322 
+Processing Saving node 
+ :13 :32 :150.977 hello 6 
+Processing Saving node 
+ :9 :37 :150.783 
+Processing Saving node 
+ :3 :15 :150.678 hello 6 
+Processing Saving node 
+ :5 :10 :150.506 hello 6 
+Processing Saving node 
+ :34 :43 :149.5 
+Processing Saving node 
+ :4 :23 :149.423
+ At least one of them is laready there and other is not  hello 1 -1 is not there  hello 2 -1 is not there  
+ and 2 is extreme  
+ current route of j is 
+ 0 1 24 10 16 23 0 
+ new route of merge with j 
+ 0 1 24 10 16 23 4 0
+ Route Codes 
+ 2 -1 1 2 1 -1 -1 -1 1 2 1 -1 1 -1 3 2 1 -1 -1 -1 -1 1 2 2 -1 1 -1 -1 -1 -1 -1 3 -1 1 -1 3 1 -1 3 1 -1 1 1 -1 -1 
+Processing Saving node 
+ :39 :43 :148.983 hello 6 
+Processing Saving node 
+ :9 :40 :148.324 
+Processing Saving node 
+ :1 :16 :148.012 
+Processing Saving node 
+ :34 :37 :147.568 
+Processing Saving node 
+ :4 :22 :146.91 hello 6 
+Processing Saving node 
+ :15 :26 :146.514 hello 6 
+Processing Saving node 
+ :1 :40 :146.138 hello 6 
+Processing Saving node 
+ :17 :22 :145.682 
+Processing Saving node 
+ :10 :17 :145.566 hello 6 
+Processing Saving node 
+ :1 :10 :145.222 
+Processing Saving node 
+ :24 :43 :145.219 hello 6 
+Processing Saving node 
+ :34 :40 :145.009 
+Processing Saving node 
+ :3 :36 :144.375 hello 6 
+Processing Saving node 
+ :23 :42 :143.39 hello 6 
+Processing Saving node 
+ :1 :37 :143.318 hello 6 
+Processing Saving node 
+ :5 :22 :143.164 
+Processing Saving node 
+ :1 :15 :143.026 hello 6 
+Processing Saving node 
+ :23 :24 :142.617 
+Processing Saving node 
+ :13 :15 :142.553 hello 6 
+Processing Saving node 
+ :11 :13 :142.329 
+Processing Saving node 
+ :5 :39 :142.306 hello 6 
+Processing Saving node 
+ :23 :39 :142.267 hello 6 
+Processing Saving node 
+ :9 :23 :141.504 hello 6 
+Processing Saving node 
+ :16 :29 :140.547
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :6 :34 :140.507
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :1 :32 :140.489 hello 6 
+Processing Saving node 
+ :6 :22 :140.466
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :32 :40 :140.454 hello 6 
+Processing Saving node 
+ :13 :29 :140.296
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :33 :37 :140.161
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :26 :36 :140.082 hello 6 
+Processing Saving node 
+ :29 :40 :140.047
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :23 :33 :140.006
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :33 :40 :139.957
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :17 :21 :139.883
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :5 :24 :139.72 hello 6 
+Processing Saving node 
+ :33 :43 :139.661
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :6 :42 :139.453
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :29 :37 :139.436
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :4 :13 :139.09 hello 6 
+Processing Saving node 
+ :5 :21 :139.073
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :10 :29 :139.049
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :6 :9 :138.715
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :26 :29 :138.701
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :11 :16 :138.628 hello 6 
+Processing Saving node 
+ :4 :21 :138.625
+ At least one of them is laready there and other is not  hello 3 -1 is not there  hello 5 -1 is not there  
+ and 2 is extreme  
+ current route of i is 
+ 0 1 24 10 16 23 4 0 
+ new route of merge with i 
+ 0 1 24 10 16 23 4 21 0
+ Route Codes 
+ 2 -1 1 2 1 -1 -1 -1 1 2 1 -1 1 -1 3 2 1 -1 -1 -1 2 1 2 2 -1 1 -1 -1 -1 -1 -1 3 -1 1 -1 3 1 -1 3 1 -1 1 1 -1 -1 
+Processing Saving node 
+ :8 :40 :138.618
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :11 :21 :138.387 hello 6 
+Processing Saving node 
+ :8 :37 :138.31
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :8 :16 :138.224
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :5 :33 :138.1
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :8 :13 :137.769
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :16 :33 :137.548
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :2 :15 :137.463
+ At least one of them is laready there and other is not  hello 1 -1 is not there  hello 2 -1 is not there  
+ and 3 is extreme  
+ current route of j is 
+ 0 36 32 39 15 0 
+ new route of merge with j 
+ 0 36 32 39 15 2 0
+ Route Codes 
+ 2 3 1 2 1 -1 -1 -1 1 2 1 -1 1 -1 3 2 1 -1 -1 -1 2 1 2 2 -1 1 -1 -1 -1 -1 -1 3 -1 1 -1 3 1 -1 3 1 -1 1 1 -1 -1 
+Processing Saving node 
+ :15 :24 :137.178 hello 6 
+Processing Saving node 
+ :13 :33 :137.017
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :16 :32 :136.848 hello 6 
+Processing Saving node 
+ :21 :43 :136.785 hello 6 
+Processing Saving node 
+ :1 :36 :136.771 hello 6 
+Processing Saving node 
+ :23 :29 :136.749
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :8 :23 :136.74
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :3 :29 :136.466
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :17 :33 :136.438
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :29 :43 :136.42
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :2 :36 :136.39 
+Processing Saving node 
+ :8 :43 :136.274
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :23 :34 :136.181 hello 6 
+Processing Saving node 
+ :4 :16 :136.136 
+Processing Saving node 
+ :13 :36 :136.1 hello 6 
+Processing Saving node 
+ :8 :29 :136.041
+ Both are not in any route so add in enw route 
+ capacity constraint satisfied
+ 0 8 29 0
+ Route Codes 
+ 2 3 1 2 1 -1 -1 4 1 2 1 -1 1 -1 3 2 1 -1 -1 -1 2 1 2 2 -1 1 -1 -1 4 -1 -1 3 -1 1 -1 3 1 -1 3 1 -1 1 1 -1 -1 
+Processing Saving node 
+ :24 :32 :135.754 hello 6 
+Processing Saving node 
+ :22 :43 :135.752 
+Processing Saving node 
+ :8 :26 :135.463 hello 6 
+Processing Saving node 
+ :32 :37 :135.422 hello 6 
+Processing Saving node 
+ :8 :10 :135.38 hello 6 
+Processing Saving node 
+ :17 :39 :135.26 hello 6 
+Processing Saving node 
+ :2 :32 :135.249 
+Processing Saving node 
+ :13 :42 :134.613 
+Processing Saving node 
+ :17 :24 :134.518 hello 6 
+Processing Saving node 
+ :2 :39 :134.456 
+Processing Saving node 
+ :21 :37 :134.149 hello 6 
+Processing Saving node 
+ :21 :23 :133.86 
+Processing Saving node 
+ :5 :8 :133.732 hello 6 
+Processing Saving node 
+ :15 :16 :133.72 hello 6 
+Processing Saving node 
+ :5 :14 :133.656
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :15 :40 :133.494 hello 6 
+Processing Saving node 
+ :14 :43 :133.454
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :5 :29 :133.33 hello 6 
+Processing Saving node 
+ :26 :33 :133.276
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :14 :17 :133.264
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :1 :43 :133.253 hello 6 
+Processing Saving node 
+ :24 :29 :133.132 hello 6 
+Processing Saving node 
+ :8 :33 :133.044
+ At least one of them is laready there and other is not  hello 3 -1 is not there  hello 4 -1 is not there  
+ and 4 is extreme  
+ current route of i is 
+ 0 8 29 0 
+ new route of merge with i 
+ 0 33 8 29 0
+ Route Codes 
+ 2 3 1 2 1 -1 -1 4 1 2 1 -1 1 -1 3 2 1 -1 -1 -1 2 1 2 2 -1 1 -1 -1 4 -1 -1 3 4 1 -1 3 1 -1 3 1 -1 1 1 -1 -1 
+Processing Saving node 
+ :22 :37 :132.899 
+Processing Saving node 
+ :14 :23 :132.78
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :3 :8 :132.771 hello 6 
+Processing Saving node 
+ :21 :40 :132.746 hello 6 
+Processing Saving node 
+ :14 :37 :132.212
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :9 :21 :132.03 hello 6 
+Processing Saving node 
+ :9 :13 :132.022 
+Processing Saving node 
+ :21 :42 :131.795 hello 6 
+Processing Saving node 
+ :10 :33 :131.786 hello 6 
+Processing Saving node 
+ :6 :11 :131.668
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :14 :40 :131.43
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :8 :17 :131.371 hello 6 
+Processing Saving node 
+ :11 :26 :131.301 
+Processing Saving node 
+ :1 :23 :130.783 
+Processing Saving node 
+ :24 :36 :130.779 hello 6 
+Processing Saving node 
+ :17 :29 :130.529 hello 6 
+Processing Saving node 
+ :22 :40 :130.495 
+Processing Saving node 
+ :29 :33 :130.486 
+Processing Saving node 
+ :15 :37 :129.756 hello 6 
+Processing Saving node 
+ :4 :6 :129.697
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :16 :42 :129.682 hello 6 
+Processing Saving node 
+ :3 :33 :129.673 hello 6 
+Processing Saving node 
+ :4 :26 :128.861 hello 6 
+Processing Saving node 
+ :8 :24 :128.709 hello 6 
+Processing Saving node 
+ :10 :15 :128.652 hello 6 
+Processing Saving node 
+ :2 :3 :128.102 hello 6 
+Processing Saving node 
+ :9 :16 :127.859 hello 6 
+Processing Saving node 
+ :1 :5 :127.765 hello 6 
+Processing Saving node 
+ :1 :2 :127.701 hello 6 
+Processing Saving node 
+ :14 :33 :127.457
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+ and 4 is extreme  
+ current route of j is 
+ 0 33 8 29 0 
+ new route of merge with j 
+ 0 14 33 8 29 0
+ Route Codes 
+ 2 3 1 2 1 -1 -1 4 1 2 1 -1 1 4 3 2 1 -1 -1 -1 2 1 2 2 -1 1 -1 -1 4 -1 -1 3 4 1 -1 3 1 -1 3 1 -1 1 1 -1 -1 
+Processing Saving node 
+ :10 :32 :127.365 hello 6 
+Processing Saving node 
+ :13 :34 :127.276 
+Processing Saving node 
+ :21 :34 :127.134 hello 6 
+Processing Saving node 
+ :16 :36 :127.066 hello 6 
+Processing Saving node 
+ :36 :40 :126.909 hello 6 
+Processing Saving node 
+ :29 :39 :126.898 hello 6 
+Processing Saving node 
+ :14 :16 :126.559 hello 6 
+Processing Saving node 
+ :14 :21 :126.434 hello 6 
+Processing Saving node 
+ :13 :14 :126.254 hello 6 
+Processing Saving node 
+ :4 :14 :126.042 hello 6 
+Processing Saving node 
+ :11 :14 :125.964 hello 6 
+Processing Saving node 
+ :22 :23 :125.478 hello 6 
+Processing Saving node 
+ :1 :29 :125.142 hello 6 
+Processing Saving node 
+ :2 :26 :124.977 hello 6 
+Processing Saving node 
+ :6 :17 :124.632
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :13 :21 :124.487 hello 6 
+Processing Saving node 
+ :3 :11 :124.101 
+Processing Saving node 
+ :16 :21 :124.03 
+Processing Saving node 
+ :24 :33 :123.789 hello 6 
+Processing Saving node 
+ :36 :37 :123.121 hello 6 
+Processing Saving node 
+ :11 :33 :123.054 hello 6 
+Processing Saving node 
+ :4 :33 :122.776 hello 6 
+Processing Saving node 
+ :1 :17 :122.681 hello 6 
+Processing Saving node 
+ :16 :34 :122.481 hello 6 
+Processing Saving node 
+ :8 :39 :122.465 hello 6 
+Processing Saving node 
+ :21 :22 :122.452 hello 6 
+Processing Saving node 
+ :5 :6 :122.433
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :26 :42 :122.374 
+Processing Saving node 
+ :10 :36 :122.307 hello 6 
+Processing Saving node 
+ :2 :24 :122.068 hello 6 
+Processing Saving node 
+ :3 :4 :122.023 hello 6 
+Processing Saving node 
+ :2 :13 :121.521 hello 6 
+Processing Saving node 
+ :14 :26 :121.394 hello 6 
+Processing Saving node 
+ :8 :14 :120.94 
+Processing Saving node 
+ :21 :33 :120.89 hello 6 
+Processing Saving node 
+ :1 :8 :120.603 hello 6 
+Processing Saving node 
+ :9 :26 :120.529 
+Processing Saving node 
+ :36 :45 :120.404
+ At least one of them is laready there and other is not  hello 3 -1 is not there  hello 4 -1 is not there  
+ and 3 is extreme  
+ current route of i is 
+ 0 36 32 39 15 2 0 
+ new route of merge with i 
+ 0 45 36 32 39 15 2 0
+ Route Codes 
+ 2 3 1 2 1 -1 -1 4 1 2 1 -1 1 4 3 2 1 -1 -1 -1 2 1 2 2 -1 1 -1 -1 4 -1 -1 3 4 1 -1 3 1 -1 3 1 -1 1 1 -1 3 
+Processing Saving node 
+ :10 :11 :120.175 hello 6 
+Processing Saving node 
+ :15 :45 :119.995 
+Processing Saving node 
+ :32 :45 :119.904 
+Processing Saving node 
+ :2 :45 :119.505 
+Processing Saving node 
+ :10 :14 :119.124 hello 6 
+Processing Saving node 
+ :4 :10 :119.046 
+Processing Saving node 
+ :32 :43 :119.036 hello 6 
+Processing Saving node 
+ :9 :14 :118.322 hello 6 
+Processing Saving node 
+ :14 :29 :118.275 
+Processing Saving node 
+ :14 :42 :118.182 hello 6 
+Processing Saving node 
+ :21 :26 :117.772 hello 6 
+Processing Saving node 
+ :33 :39 :117.63 hello 6 
+Processing Saving node 
+ :15 :43 :117.398 hello 6 
+Processing Saving node 
+ :3 :14 :117.305 hello 6 
+Processing Saving node 
+ :6 :43 :117.068
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :39 :45 :116.537 
+Processing Saving node 
+ :2 :16 :116.072 hello 6 
+Processing Saving node 
+ :8 :11 :116.006 hello 6 
+Processing Saving node 
+ :4 :8 :115.679 hello 6 
+Processing Saving node 
+ :13 :22 :115.309 
+Processing Saving node 
+ :26 :34 :115.161 
+Processing Saving node 
+ :1 :33 :115.115 hello 6 
+Processing Saving node 
+ :3 :42 :114.798 
+Processing Saving node 
+ :2 :10 :114.772 hello 6 
+Processing Saving node 
+ :6 :21 :114.509
+ At least one of them is laready there and other is not  hello 1 -1 is not there  hello 2 -1 is not there  
+ and 2 is extreme  
+ current route of j is 
+ 0 1 24 10 16 23 4 21 0 
+ new route of merge with j 
+ 0 1 24 10 16 23 4 21 6 0
+ Route Codes 
+ 2 3 1 2 1 2 -1 4 1 2 1 -1 1 4 3 2 1 -1 -1 -1 2 1 2 2 -1 1 -1 -1 4 -1 -1 3 4 1 -1 3 1 -1 3 1 -1 1 1 -1 3 
+Processing Saving node 
+ :7 :45 :114.427
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :7 :36 :114.418
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :15 :23 :114.268 hello 6 
+Processing Saving node 
+ :33 :42 :114.171 hello 6 
+Processing Saving node 
+ :2 :40 :114.144 hello 6 
+Processing Saving node 
+ :7 :15 :114.131
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :9 :33 :114.073 hello 6 
+Processing Saving node 
+ :8 :21 :113.956 hello 6 
+Processing Saving node 
+ :7 :32 :113.936
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :23 :32 :113.892 hello 6 
+Processing Saving node 
+ :2 :7 :113.867
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :6 :37 :113.75 hello 6 
+Processing Saving node 
+ :11 :29 :113.696 hello 6 
+Processing Saving node 
+ :10 :21 :113.414 
+Processing Saving node 
+ :4 :29 :113.294 hello 6 
+Processing Saving node 
+ :3 :9 :113.27 
+Processing Saving node 
+ :14 :34 :113.228 hello 6 
+Processing Saving node 
+ :3 :21 :112.722 hello 6 
+Processing Saving node 
+ :3 :27 :112.711
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :24 :27 :112.701
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :5 :32 :112.579 hello 6 
+Processing Saving node 
+ :26 :27 :112.424
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :16 :22 :112.18 hello 6 
+Processing Saving node 
+ :1 :27 :111.875
+ At least one of them is laready there and other is not  hello 3 -1 is not there  hello 4 -1 is not there  
+ and 2 is extreme  
+ current route of i is 
+ 0 1 24 10 16 23 4 21 6 0 
+ new route of merge with i 
+ 0 27 1 24 10 16 23 4 21 6 0
+ Route Codes 
+ 2 3 1 2 1 2 -1 4 1 2 1 -1 1 4 3 2 1 -1 -1 -1 2 1 2 2 -1 1 2 -1 4 -1 -1 3 4 1 -1 3 1 -1 3 1 -1 1 1 -1 3 
+Processing Saving node 
+ :6 :40 :111.723 hello 6 
+Processing Saving node 
+ :5 :15 :111.577 hello 6 
+Processing Saving node 
+ :13 :27 :111.463 hello 6 
+Processing Saving node 
+ :1 :45 :111.405 hello 6 
+Processing Saving node 
+ :2 :37 :111.352 hello 6 
+Processing Saving node 
+ :10 :27 :111.341 
+Processing Saving node 
+ :21 :29 :111.3 hello 6 
+Processing Saving node 
+ :14 :24 :111.132 hello 6 
+Processing Saving node 
+ :7 :39 :111.105
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :27 :39 :111.009 hello 6 
+Processing Saving node 
+ :36 :43 :110.822 hello 6 
+Processing Saving node 
+ :3 :45 :110.764 hello 6 
+Processing Saving node 
+ :6 :23 :110.654 
+Processing Saving node 
+ :10 :42 :110.47 hello 6 
+Processing Saving node 
+ :16 :27 :110.392 
+Processing Saving node 
+ :15 :29 :109.887 hello 6 
+Processing Saving node 
+ :9 :10 :109.768 hello 6 
+Processing Saving node 
+ :11 :24 :109.72 hello 6 
+Processing Saving node 
+ :4 :24 :108.791 
+Processing Saving node 
+ :33 :34 :108.611 hello 6 
+Processing Saving node 
+ :14 :22 :108.506 hello 6 
+Processing Saving node 
+ :27 :40 :108.46 hello 6 
+Processing Saving node 
+ :26 :45 :107.989 hello 6 
+Processing Saving node 
+ :23 :36 :107.879 hello 6 
+Processing Saving node 
+ :3 :34 :107.709 
+Processing Saving node 
+ :27 :37 :107.274 hello 6 
+Processing Saving node 
+ :27 :29 :107.232 hello 6 
+Processing Saving node 
+ :8 :42 :107.041 hello 6 
+Processing Saving node 
+ :8 :9 :106.933 hello 6 
+Processing Saving node 
+ :1 :7 :106.836
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :24 :45 :106.572 hello 6 
+Processing Saving node 
+ :29 :32 :106.223 hello 6 
+Processing Saving node 
+ :15 :17 :106.173 hello 6 
+Processing Saving node 
+ :17 :32 :106.158 hello 6 
+Processing Saving node 
+ :3 :7 :105.85
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :8 :15 :105.473 hello 6 
+Processing Saving node 
+ :11 :39 :105.257 hello 6 
+Processing Saving node 
+ :5 :36 :105.061 hello 6 
+Processing Saving node 
+ :14 :39 :104.934 hello 6 
+Processing Saving node 
+ :22 :26 :104.927 
+Processing Saving node 
+ :13 :45 :104.822 hello 6 
+Processing Saving node 
+ :8 :27 :104.686 hello 6 
+Processing Saving node 
+ :21 :24 :104.605 
+Processing Saving node 
+ :29 :42 :104.6 hello 6 
+Processing Saving node 
+ :29 :36 :104.501 hello 6 
+Processing Saving node 
+ :9 :29 :104.446 hello 6 
+Processing Saving node 
+ :15 :27 :104.301 hello 6 
+Processing Saving node 
+ :10 :34 :104.004 hello 6 
+Processing Saving node 
+ :4 :39 :103.97 hello 6 
+Processing Saving node 
+ :23 :27 :103.419 
+Processing Saving node 
+ :7 :26 :103.289
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :26 :30 :103.247
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :27 :43 :103.168 hello 6 
+Processing Saving node 
+ :22 :33 :103.038 hello 6 
+Processing Saving node 
+ :3 :30 :103.033
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :10 :30 :103.028
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :24 :30 :103.004
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :13 :30 :102.927
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :1 :14 :102.871 hello 6 
+Processing Saving node 
+ :16 :30 :102.442
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :7 :24 :102.407
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :2 :43 :102.339 hello 6 
+Processing Saving node 
+ :27 :30 :101.897
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :6 :14 :101.766 hello 6 
+Processing Saving node 
+ :8 :32 :101.732 hello 6 
+Processing Saving node 
+ :8 :34 :101.471 hello 6 
+Processing Saving node 
+ :2 :29 :101.327 hello 6 
+Processing Saving node 
+ :29 :30 :101.325
+ At least one of them is laready there and other is not  hello 3 -1 is not there  hello 5 -1 is not there  
+ and 4 is extreme  
+ current route of i is 
+ 0 14 33 8 29 0 
+ new route of merge with i 
+ 0 14 33 8 29 30 0
+ Route Codes 
+ 2 3 1 2 1 2 -1 4 1 2 1 -1 1 4 3 2 1 -1 -1 -1 2 1 2 2 -1 1 2 -1 4 4 -1 3 4 1 -1 3 1 -1 3 1 -1 1 1 -1 3 
+Processing Saving node 
+ :1 :30 :101.324 hello 6 
+Processing Saving node 
+ :30 :40 :101.067 hello 6 
+Processing Saving node 
+ :2 :27 :101.004 hello 6 
+Processing Saving node 
+ :2 :23 :100.991 hello 6 
+Processing Saving node 
+ :27 :36 :100.839 hello 6 
+Processing Saving node 
+ :16 :45 :100.495 hello 6 
+Processing Saving node 
+ :30 :39 :100.397 hello 6 
+Processing Saving node 
+ :10 :45 :100.33 hello 6 
+Processing Saving node 
+ :7 :13 :100.298
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :27 :33 :100.276 hello 6 
+Processing Saving node 
+ :30 :37 :100.259 hello 6 
+Processing Saving node 
+ :6 :13 :100.212 hello 6 
+Processing Saving node 
+ :8 :36 :100.173 hello 6 
+Processing Saving node 
+ :27 :32 :100.111 hello 6 
+Processing Saving node 
+ :24 :42 :100.078 hello 6 
+Processing Saving node 
+ :5 :27 :99.9851 hello 6 
+Processing Saving node 
+ :15 :33 :99.8155 hello 6 
+Processing Saving node 
+ :8 :30 :99.7882 
+Processing Saving node 
+ :17 :36 :99.7761 hello 6 
+Processing Saving node 
+ :9 :24 :99.5404 hello 6 
+Processing Saving node 
+ :1 :11 :99.39 hello 6 
+Processing Saving node 
+ :6 :16 :98.9459 
+Processing Saving node 
+ :29 :34 :98.9412 hello 6 
+Processing Saving node 
+ :1 :4 :98.6866 
+Processing Saving node 
+ :21 :39 :98.5898 hello 6 
+Processing Saving node 
+ :3 :22 :98.3005 
+Processing Saving node 
+ :40 :45 :98.2183 hello 6 
+Processing Saving node 
+ :23 :30 :97.8349 hello 6 
+Processing Saving node 
+ :2 :5 :97.4121 hello 6 
+Processing Saving node 
+ :30 :43 :97.3874 hello 6 
+Processing Saving node 
+ :17 :27 :97.3726 hello 6 
+Processing Saving node 
+ :2 :8 :97.367 hello 6 
+Processing Saving node 
+ :10 :22 :96.6895 hello 6 
+Processing Saving node 
+ :7 :10 :96.6294
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :30 :33 :96.5371 
+Processing Saving node 
+ :7 :16 :96.4526
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :32 :33 :96.1261 hello 6 
+Processing Saving node 
+ :8 :22 :96.0149 hello 6 
+Processing Saving node 
+ :1 :21 :95.8605 
+Processing Saving node 
+ :37 :45 :95.8279 hello 6 
+Processing Saving node 
+ :6 :33 :95.5722 hello 6 
+Processing Saving node 
+ :39 :42 :95.5431 hello 6 
+Processing Saving node 
+ :5 :30 :94.8814 hello 6 
+Processing Saving node 
+ :9 :39 :94.7072 hello 6 
+Processing Saving node 
+ :33 :36 :94.5106 hello 6 
+Processing Saving node 
+ :7 :40 :94.091
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :24 :34 :93.8101 hello 6 
+Processing Saving node 
+ :15 :30 :93.6436 hello 6 
+Processing Saving node 
+ :22 :29 :93.3744 hello 6 
+Processing Saving node 
+ :27 :45 :93.3046 hello 6 
+Processing Saving node 
+ :2 :17 :93.1654 hello 6 
+Processing Saving node 
+ :17 :30 :92.8499 hello 6 
+Processing Saving node 
+ :6 :26 :92.2679 hello 6 
+Processing Saving node 
+ :7 :37 :91.876
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :2 :33 :91.8667 hello 6 
+Processing Saving node 
+ :14 :27 :91.8219 hello 6 
+Processing Saving node 
+ :7 :27 :91.4389
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :2 :30 :90.9441 hello 6 
+Processing Saving node 
+ :40 :44 :90.5087
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :37 :44 :90.4728
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :30 :36 :90.4263 hello 6 
+Processing Saving node 
+ :8 :44 :90.4016
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :33 :44 :90.3476
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :23 :44 :90.181
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :29 :45 :90.0527 hello 6 
+Processing Saving node 
+ :16 :44 :90.0343
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :25 :32 :90
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :29 :44 :89.9932
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :43 :44 :89.9134
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :1 :42 :89.9066 hello 6 
+Processing Saving node 
+ :14 :30 :89.8386 
+Processing Saving node 
+ :25 :36 :89.7359
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :13 :44 :89.7096
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :1 :9 :89.5591 hello 6 
+Processing Saving node 
+ :30 :32 :89.5522 hello 6 
+Processing Saving node 
+ :25 :45 :89.3966
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :7 :25 :89.2189
+ Both are not in any route so add in enw route 
+ capacity constraint satisfied
+ 0 7 25 0
+ Route Codes 
+ 2 3 1 2 1 2 5 4 1 2 1 -1 1 4 3 2 1 -1 -1 -1 2 1 2 2 5 1 2 -1 4 4 -1 3 4 1 -1 3 1 -1 3 1 -1 1 1 -1 3 
+Processing Saving node 
+ :6 :8 :89.0737 hello 6 
+Processing Saving node 
+ :10 :44 :88.9971
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :15 :25 :88.9761 hello 6 
+Processing Saving node 
+ :5 :44 :88.9682
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :34 :39 :88.94 hello 6 
+Processing Saving node 
+ :2 :25 :88.6515 hello 6 
+Processing Saving node 
+ :26 :44 :88.4736
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :43 :45 :88.3416 hello 6 
+Processing Saving node 
+ :14 :44 :88.3357
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :14 :15 :88.2016 hello 6 
+Processing Saving node 
+ :17 :44 :88.1151
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :23 :45 :87.7191 hello 6 
+Processing Saving node 
+ :6 :10 :87.5794 
+Processing Saving node 
+ :7 :29 :87.3988 hello 6 
+Processing Saving node 
+ :22 :24 :87.1325 hello 6 
+Processing Saving node 
+ :3 :44 :87.125
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :3 :6 :86.8845 hello 6 
+Processing Saving node 
+ :8 :45 :86.6087 hello 6 
+Processing Saving node 
+ :6 :29 :86.4287 hello 6 
+Processing Saving node 
+ :24 :44 :86.4263
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :25 :39 :86.0997 hello 6 
+Processing Saving node 
+ :7 :43 :84.9805 hello 6 
+Processing Saving node 
+ :21 :27 :84.9767 
+Processing Saving node 
+ :30 :45 :84.6287 hello 6 
+Processing Saving node 
+ :7 :23 :84.5781 hello 6 
+Processing Saving node 
+ :21 :44 :84.4527
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :14 :32 :84.2204 hello 6 
+Processing Saving node 
+ :4 :27 :84.2113 
+Processing Saving node 
+ :11 :27 :84.201 hello 6 
+Processing Saving node 
+ :7 :8 :84.1466 hello 6 
+Processing Saving node 
+ :5 :45 :83.9845 hello 6 
+Processing Saving node 
+ :1 :34 :83.9177 hello 6 
+Processing Saving node 
+ :30 :44 :83.8785
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :21 :30 :83.5623 hello 6 
+Processing Saving node 
+ :7 :30 :83.2887 hello 6 
+yes 1 caught
+ before merge 
+ 0 7 25 0
+ 0 14 33 8 29 30 0 
+ after merge in j
+ 0 14 33 8 29 30 7 25 0
+ Route Codes 
+ 2 3 1 2 1 2 4 4 1 2 1 -1 1 4 3 2 1 -1 -1 -1 2 1 2 2 4 1 2 -1 4 4 -1 3 4 1 -1 3 1 -1 3 1 -1 1 1 -1 3 
+Processing Saving node 
+ :11 :15 :83.2554 hello 6 
+Processing Saving node 
+ :14 :36 :83.2139 hello 6 
+Processing Saving node 
+ :1 :25 :83.1246 hello 6 
+Processing Saving node 
+ :1 :44 :83.0571
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :4 :15 :82.7097 hello 6 
+Processing Saving node 
+ :4 :44 :82.6532
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :27 :44 :82.6372
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :11 :44 :82.4128
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :4 :30 :82.2458 hello 6 
+Processing Saving node 
+ :39 :44 :82.1769
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :11 :30 :82.1259 hello 6 
+Processing Saving node 
+ :3 :25 :81.7547 hello 6 
+Processing Saving node 
+ :33 :45 :81.536 hello 6 
+Processing Saving node 
+ :22 :39 :81.5159 hello 6 
+Processing Saving node 
+ :2 :14 :81.4987 hello 6 
+Processing Saving node 
+ :15 :21 :80.9625 hello 6 
+Processing Saving node 
+ :5 :7 :80.8472 hello 6 
+Processing Saving node 
+ :17 :45 :80.3961 hello 6 
+Processing Saving node 
+ :11 :32 :80.21 hello 6 
+Processing Saving node 
+ :24 :25 :79.7543 hello 6 
+Processing Saving node 
+ :25 :26 :79.6938 hello 6 
+Processing Saving node 
+ :4 :32 :79.4774 hello 6 
+Processing Saving node 
+ :7 :33 :79.2596 
+Processing Saving node 
+ :6 :24 :79.1973 
+Processing Saving node 
+ :18 :21 :78.7006
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :17 :18 :78.6131
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :19 :43 :78.4092
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :5 :18 :78.3809
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :19 :23 :78.3601
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :14 :19 :78.2703
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :5 :19 :78.2282
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :4 :18 :78.2249
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :19 :37 :78.1619
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :19 :33 :78.1526
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :11 :18 :78.1058
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :1 :22 :77.968 hello 6 
+Processing Saving node 
+ :19 :40 :77.9286
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :17 :19 :77.9273
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :14 :18 :77.9236
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :18 :43 :77.6952
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :11 :36 :77.6713 hello 6 
+Processing Saving node 
+ :7 :17 :77.4902 hello 6 
+Processing Saving node 
+ :9 :44 :77.3714
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :4 :36 :77.2159 hello 6 
+Processing Saving node 
+ :13 :25 :77.2021 hello 6 
+Processing Saving node 
+ :8 :19 :77.174
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :18 :23 :77.1012
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :21 :32 :77.0386 hello 6 
+Processing Saving node 
+ :42 :44 :77.0028
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :16 :19 :76.6901
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :19 :21 :76.6619
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :9 :27 :76.5842 hello 6 
+Processing Saving node 
+ :18 :37 :76.5772
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :19 :44 :76.3972
+ Both are not in any route so add in enw route 
+ capacity constraint satisfied
+ 0 19 44 0
+ Route Codes 
+ 2 3 1 2 1 2 4 4 1 2 1 -1 1 4 3 2 1 -1 6 -1 2 1 2 2 4 1 2 -1 4 4 -1 3 4 1 -1 3 1 -1 3 1 -1 1 1 6 3 
+Processing Saving node 
+ :19 :29 :76.3909 hello 6 
+Processing Saving node 
+ :27 :42 :76.3798 hello 6 
+Processing Saving node 
+ :13 :19 :76.2494 hello 6 
+Processing Saving node 
+ :9 :18 :76.1397
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :18 :40 :75.9972
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :21 :36 :75.9479 hello 6 
+Processing Saving node 
+ :18 :42 :75.8581
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :18 :33 :75.8347
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :10 :25 :75.3879 hello 6 
+Processing Saving node 
+ :4 :19 :75.2786 hello 6 
+Processing Saving node 
+ :9 :30 :75.2518 hello 6 
+Processing Saving node 
+ :10 :19 :75.1541 hello 6 
+Processing Saving node 
+ :11 :19 :75.0625 hello 6 
+Processing Saving node 
+ :30 :42 :74.9685 hello 6 
+Processing Saving node 
+ :25 :27 :74.8796 hello 6 
+Processing Saving node 
+ :2 :11 :74.7412 hello 6 
+Processing Saving node 
+ :19 :26 :74.6327 hello 6 
+Processing Saving node 
+ :16 :25 :74.5522 hello 6 
+Processing Saving node 
+ :2 :4 :74.5222 hello 6 
+Processing Saving node 
+ :2 :21 :74.3079 hello 6 
+Processing Saving node 
+ :15 :44 :74.2766 hello 6 
+Processing Saving node 
+ :18 :34 :74.1241
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :15 :42 :73.9595 hello 6 
+Processing Saving node 
+ :9 :15 :73.7598 hello 6 
+Processing Saving node 
+ :34 :44 :73.7222 hello 6 
+Processing Saving node 
+ :8 :18 :73.5974
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :1 :28 :73.5381
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :16 :18 :73.4348
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :28 :39 :73.375
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :3 :28 :73.2981
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :24 :28 :73.2093
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :18 :22 :73.1736
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :27 :28 :73.1256
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :3 :19 :73.1046 hello 6 
+Processing Saving node 
+ :6 :39 :73.0167 hello 6 
+Processing Saving node 
+ :13 :18 :72.8907
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :26 :28 :72.8411
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :6 :18 :72.614
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :14 :45 :72.4326 hello 6 
+Processing Saving node 
+ :19 :24 :72.3206 hello 6 
+Processing Saving node 
+ :18 :29 :72.2865
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :25 :40 :72.1744 hello 6 
+Processing Saving node 
+ :10 :28 :72.0276
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :32 :38 :72.0062
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :28 :30 :71.992
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :13 :28 :71.9898
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :36 :38 :71.9622
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :25 :38 :71.9585
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :38 :45 :71.8908
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :7 :38 :71.8552
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :2 :44 :71.7961 hello 6 
+Processing Saving node 
+ :27 :34 :71.7848 hello 6 
+Processing Saving node 
+ :9 :19 :71.6826 hello 6 
+Processing Saving node 
+ :15 :28 :71.6013
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :15 :38 :71.5903
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :22 :44 :71.5306 hello 6 
+Processing Saving node 
+ :2 :38 :71.5037
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :18 :19 :71.3508
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+ and 6 is extreme  
+ current route of j is 
+ 0 19 44 0 
+ new route of merge with j 
+ 0 18 19 44 0
+ Route Codes 
+ 2 3 1 2 1 2 4 4 1 2 1 -1 1 4 3 2 1 6 6 -1 2 1 2 2 4 1 2 -1 4 4 -1 3 4 1 -1 3 1 -1 3 1 -1 1 1 6 3 
+Processing Saving node 
+ :19 :42 :71.332 hello 6 
+Processing Saving node 
+ :16 :28 :71.2711
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :2 :28 :71.2664
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :1 :6 :71.2142 
+Processing Saving node 
+ :36 :44 :71.118 hello 6 
+Processing Saving node 
+ :10 :18 :70.7801 hello 6 
+Processing Saving node 
+ :30 :34 :70.7779 hello 6 
+Processing Saving node 
+ :32 :42 :70.6982 hello 6 
+Processing Saving node 
+ :7 :14 :70.5811 
+Processing Saving node 
+ :25 :37 :70.482 hello 6 
+Processing Saving node 
+ :19 :30 :70.4322 hello 6 
+Processing Saving node 
+ :18 :26 :70.4295 hello 6 
+Processing Saving node 
+ :9 :32 :70.3528 hello 6 
+Processing Saving node 
+ :28 :36 :70.3267
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :18 :44 :70.2944 
+Processing Saving node 
+ :32 :44 :70.1956 hello 6 
+Processing Saving node 
+ :28 :29 :70.1701
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :28 :40 :69.8114
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :38 :39 :69.7547
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :25 :30 :69.6051 
+Processing Saving node 
+ :6 :44 :69.468 hello 6 
+Processing Saving node 
+ :28 :45 :69.4639
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :25 :29 :69.4011 
+Processing Saving node 
+ :28 :32 :69.3225
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :7 :28 :69.2903
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :19 :27 :69.0842 hello 6 
+Processing Saving node 
+ :1 :19 :69.0445 hello 6 
+Processing Saving node 
+ :28 :37 :69.0382
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :8 :28 :69.0023
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :19 :34 :68.9381 hello 6 
+Processing Saving node 
+ :36 :42 :68.5194 hello 6 
+Processing Saving node 
+ :9 :36 :68.3985 hello 6 
+Processing Saving node 
+ :3 :18 :68.3435 hello 6 
+Processing Saving node 
+ :15 :34 :68.2454 hello 6 
+Processing Saving node 
+ :22 :27 :68.1608 hello 6 
+Processing Saving node 
+ :19 :39 :68.1346 hello 6 
+Processing Saving node 
+ :1 :38 :68.0621
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :22 :30 :67.6543 hello 6 
+Processing Saving node 
+ :19 :22 :67.5431 hello 6 
+Processing Saving node 
+ :23 :28 :67.0979
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :18 :24 :66.9768 hello 6 
+Processing Saving node 
+ :8 :25 :66.9727 
+Processing Saving node 
+ :3 :38 :66.7307
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :28 :33 :66.7002
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :28 :43 :66.6192
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :44 :45 :66.5655 hello 6 
+Processing Saving node 
+ :6 :19 :66.5078 hello 6 
+Processing Saving node 
+ :2 :9 :66.1739 hello 6 
+Processing Saving node 
+ :2 :42 :66.1142 hello 6 
+Processing Saving node 
+ :24 :38 :65.7409
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :7 :44 :65.677 hello 6 
+Processing Saving node 
+ :23 :25 :65.6125 hello 6 
+Processing Saving node 
+ :21 :45 :65.576 hello 6 
+Processing Saving node 
+ :25 :43 :65.4352 hello 6 
+Processing Saving node 
+ :26 :38 :65.2443
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :11 :45 :64.8999 hello 6 
+Processing Saving node 
+ :4 :45 :64.8705 hello 6 
+Processing Saving node 
+ :32 :34 :64.7267 hello 6 
+Processing Saving node 
+ :5 :28 :64.6185
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :6 :30 :64.4956 hello 6 
+Processing Saving node 
+ :6 :27 :64.3873 
+Processing Saving node 
+ :25 :28 :63.9651
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :28 :44 :63.9136
+ At least one of them is laready there and other is not  hello 1 -1 is not there  hello 2 -1 is not there  
+ and 6 is extreme  
+ current route of j is 
+ 0 18 19 44 0 
+ new route of merge with j 
+ 0 18 19 44 28 0
+ Route Codes 
+ 2 3 1 2 1 2 4 4 1 2 1 -1 1 4 3 2 1 6 6 -1 2 1 2 2 4 1 2 6 4 4 -1 3 4 1 -1 3 1 -1 3 1 -1 1 1 6 3 
+Processing Saving node 
+ :7 :21 :63.8718 hello 6 
+Processing Saving node 
+ :18 :30 :63.778 hello 6 
+Processing Saving node 
+ :27 :38 :63.7168
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :13 :38 :63.3466
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :17 :28 :63.112 hello 6 
+Processing Saving node 
+ :25 :33 :63.0543 
+Processing Saving node 
+ :15 :22 :63.007 hello 6 
+Processing Saving node 
+ :1 :18 :62.9844 hello 6 
+Processing Saving node 
+ :34 :36 :62.9739 hello 6 
+Processing Saving node 
+ :4 :7 :62.9469 hello 6 
+Processing Saving node 
+ :7 :11 :62.9288 hello 6 
+Processing Saving node 
+ :10 :38 :62.6392
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :18 :27 :62.4718 hello 6 
+Processing Saving node 
+ :14 :28 :62.4255 hello 6 
+Processing Saving node 
+ :18 :39 :62.1835 hello 6 
+Processing Saving node 
+ :5 :25 :62.153 hello 6 
+Processing Saving node 
+ :16 :38 :61.6327
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :15 :19 :61.0452 hello 6 
+Processing Saving node 
+ :2 :34 :61.029 hello 6 
+Processing Saving node 
+ :30 :38 :60.4346
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :17 :25 :59.6422 hello 6 
+Processing Saving node 
+ :28 :38 :59.6305
+ At least one of them is laready there and other is not  hello 3 -1 is not there  hello 5 -1 is not there  
+ and 6 is extreme  
+ current route of i is 
+ 0 18 19 44 28 0 
+ new route of merge with i 
+ 0 18 19 44 28 38 0
+ Route Codes 
+ 2 3 1 2 1 2 4 4 1 2 1 -1 1 4 3 2 1 6 6 -1 2 1 2 2 4 1 2 6 4 4 -1 3 4 1 -1 3 1 6 3 1 -1 1 1 6 3 
+Processing Saving node 
+ :38 :40 :59.5227 hello 6 
+Processing Saving node 
+ :2 :19 :59.1815 hello 6 
+Processing Saving node 
+ :22 :32 :59.0646 hello 6 
+Processing Saving node 
+ :29 :38 :58.7667 hello 6 
+Processing Saving node 
+ :37 :38 :58.2787 hello 6 
+Processing Saving node 
+ :19 :36 :58.2653 hello 6 
+Processing Saving node 
+ :22 :36 :58.0834 hello 6 
+Processing Saving node 
+ :21 :28 :57.8918 hello 6 
+Processing Saving node 
+ :6 :15 :57.5267 hello 6 
+Processing Saving node 
+ :19 :32 :57.1986 hello 6 
+Processing Saving node 
+ :9 :45 :57.18 hello 6 
+Processing Saving node 
+ :8 :38 :56.9842 hello 6 
+Processing Saving node 
+ :42 :45 :56.9724 hello 6 
+Processing Saving node 
+ :2 :22 :56.8588 hello 6 
+Processing Saving node 
+ :14 :25 :56.4069 
+Processing Saving node 
+ :19 :28 :56.2511 
+Processing Saving node 
+ :4 :28 :56.0885 hello 6 
+Processing Saving node 
+ :11 :28 :55.8518 hello 6 
+Processing Saving node 
+ :25 :44 :55.715 hello 6 
+Processing Saving node 
+ :7 :9 :55.4812 hello 6 
+Processing Saving node 
+ :7 :42 :55.2394 hello 6 
+Processing Saving node 
+ :23 :38 :55.0621 hello 6 
+Processing Saving node 
+ :19 :45 :55.0054 hello 6 
+Processing Saving node 
+ :38 :43 :54.6442 hello 6 
+Processing Saving node 
+ :7 :19 :54.4116 hello 6 
+Processing Saving node 
+ :15 :18 :54.2234 hello 6 
+Processing Saving node 
+ :33 :38 :53.9339 hello 6 
+Processing Saving node 
+ :6 :32 :53.2524 hello 6 
+Processing Saving node 
+ :6 :36 :53.118 hello 6 
+Processing Saving node 
+ :15 :35 :52.914
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :2 :35 :52.9112
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :2 :6 :52.7094 hello 6 
+Processing Saving node 
+ :7 :35 :52.6953
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :35 :36 :52.6867
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :35 :45 :52.6844
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :35 :39 :52.6704
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :34 :45 :52.4343 hello 6 
+Processing Saving node 
+ :32 :35 :52.3099
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :1 :35 :52.206
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :2 :18 :52.187 hello 6 
+Processing Saving node 
+ :5 :38 :52.0775 hello 6 
+Processing Saving node 
+ :25 :35 :51.8295
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :35 :38 :51.72
+ At least one of them is laready there and other is not  hello 1 -1 is not there  hello 2 -1 is not there  
+ and 6 is extreme  
+ current route of j is 
+ 0 18 19 44 28 38 0 
+ new route of merge with j 
+ 0 18 19 44 28 38 35 0
+ Route Codes 
+ 2 3 1 2 1 2 4 4 1 2 1 -1 1 4 3 2 1 6 6 -1 2 1 2 2 4 1 2 6 4 4 -1 3 4 1 6 3 1 6 3 1 -1 1 1 6 3 
+Processing Saving node 
+ :3 :35 :51.4675 hello 6 
+Processing Saving node 
+ :18 :36 :51.3128 hello 6 
+Processing Saving node 
+ :24 :35 :51.2325 hello 6 
+Processing Saving node 
+ :28 :35 :51.2044 
+Processing Saving node 
+ :27 :35 :50.942 hello 6 
+Processing Saving node 
+ :9 :28 :50.886 hello 6 
+Processing Saving node 
+ :7 :34 :50.8665 hello 6 
+Processing Saving node 
+ :26 :35 :50.7492 hello 6 
+Processing Saving node 
+ :21 :25 :50.6771 hello 6 
+Processing Saving node 
+ :28 :42 :50.5139 hello 6 
+Processing Saving node 
+ :18 :32 :50.2796 hello 6 
+Processing Saving node 
+ :17 :38 :50.1867 hello 6 
+Processing Saving node 
+ :38 :44 :50.0117 
+Processing Saving node 
+ :18 :28 :49.7261 
+Processing Saving node 
+ :10 :35 :49.7188 hello 6 
+Processing Saving node 
+ :13 :35 :49.7157 hello 6 
+Processing Saving node 
+ :30 :35 :49.6747 hello 6 
+Processing Saving node 
+ :22 :45 :49.0671 hello 6 
+Processing Saving node 
+ :4 :25 :49.0459 hello 6 
+Processing Saving node 
+ :16 :35 :48.938 hello 6 
+Processing Saving node 
+ :11 :25 :48.8676 hello 6 
+Processing Saving node 
+ :14 :38 :48.8274 hello 6 
+Processing Saving node 
+ :18 :45 :47.9514 hello 6 
+Processing Saving node 
+ :29 :35 :47.9424 hello 6 
+Processing Saving node 
+ :7 :22 :47.7096 hello 6 
+Processing Saving node 
+ :35 :40 :47.5071 hello 6 
+Processing Saving node 
+ :28 :34 :47.5029 hello 6 
+Processing Saving node 
+ :7 :18 :47.3726 hello 6 
+Processing Saving node 
+ :8 :35 :46.9532 hello 6 
+Processing Saving node 
+ :35 :37 :46.7942 hello 6 
+Processing Saving node 
+ :19 :25 :46.7613 hello 6 
+Processing Saving node 
+ :6 :45 :45.9602 hello 6 
+Processing Saving node 
+ :22 :28 :45.7258 hello 6 
+Processing Saving node 
+ :23 :35 :45.1898 hello 6 
+Processing Saving node 
+ :33 :35 :45.091 hello 6 
+Processing Saving node 
+ :6 :7 :44.8559 hello 6 
+Processing Saving node 
+ :35 :43 :44.7245 hello 6 
+Processing Saving node 
+ :6 :28 :44.4163 hello 6 
+Processing Saving node 
+ :35 :44 :44.0726 
+Processing Saving node 
+ :21 :38 :44.0266 hello 6 
+Processing Saving node 
+ :5 :35 :43.0679 hello 6 
+Processing Saving node 
+ :19 :38 :42.9075 
+Processing Saving node 
+ :9 :25 :42.8196 hello 6 
+Processing Saving node 
+ :25 :42 :42.4687 hello 6 
+Processing Saving node 
+ :4 :38 :42.2264 hello 6 
+Processing Saving node 
+ :11 :38 :41.9937 hello 6 
+Processing Saving node 
+ :14 :35 :41.9071 hello 6 
+Processing Saving node 
+ :17 :35 :41.885 hello 6 
+Processing Saving node 
+ :18 :25 :40.1533 hello 6 
+Processing Saving node 
+ :19 :35 :39.6042 
+Processing Saving node 
+ :12 :26 :39.4417
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :12 :30 :39.4406
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :12 :24 :39.4243
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :3 :12 :39.4188
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :12 :27 :39.4049
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+ and 2 is extreme  
+ current route of j is 
+ 0 27 1 24 10 16 23 4 21 6 0 
+ new route of merge with j 
+ 0 12 27 1 24 10 16 23 4 21 6 0
+ Route Codes 
+ 2 3 1 2 1 2 4 4 1 2 1 2 1 4 3 2 1 6 6 -1 2 1 2 2 4 1 2 6 4 4 -1 3 4 1 6 3 1 6 3 1 -1 1 1 6 3 
+Processing Saving node 
+ :10 :12 :39.3717 
+Processing Saving node 
+ :12 :13 :39.3202 hello 6 
+Processing Saving node 
+ :12 :16 :39.1927 
+Processing Saving node 
+ :1 :12 :39.166 
+Processing Saving node 
+ :12 :29 :39.084 hello 6 
+Processing Saving node 
+ :12 :28 :39.0284 hello 6 
+Processing Saving node 
+ :25 :34 :38.9517 hello 6 
+Processing Saving node 
+ :12 :39 :38.8756 hello 6 
+Processing Saving node 
+ :8 :12 :38.8279 hello 6 
+Processing Saving node 
+ :12 :40 :38.7383 hello 6 
+Processing Saving node 
+ :12 :37 :38.5042 hello 6 
+Processing Saving node 
+ :21 :35 :38.4752 hello 6 
+Processing Saving node 
+ :12 :44 :38.3509 hello 6 
+Processing Saving node 
+ :12 :33 :38.2019 hello 6 
+Processing Saving node 
+ :12 :23 :38.0264 
+Processing Saving node 
+ :12 :43 :37.7595 hello 6 
+Processing Saving node 
+ :12 :15 :37.5657 hello 6 
+Processing Saving node 
+ :2 :12 :37.4544 hello 6 
+Processing Saving node 
+ :5 :12 :37.0196 hello 6 
+Processing Saving node 
+ :9 :38 :36.9943 hello 6 
+Processing Saving node 
+ :12 :14 :36.9148 hello 6 
+Processing Saving node 
+ :18 :38 :36.9005 
+Processing Saving node 
+ :12 :36 :36.8193 hello 6 
+Processing Saving node 
+ :4 :35 :36.8099 hello 6 
+Processing Saving node 
+ :12 :19 :36.7917 hello 6 
+Processing Saving node 
+ :22 :25 :36.7792 hello 6 
+Processing Saving node 
+ :12 :45 :36.6413 hello 6 
+Processing Saving node 
+ :7 :12 :36.6307 hello 6 
+Processing Saving node 
+ :38 :42 :36.622 hello 6 
+Processing Saving node 
+ :11 :35 :36.5716 hello 6 
+Processing Saving node 
+ :12 :17 :36.48 hello 6 
+Processing Saving node 
+ :12 :32 :36.1299 hello 6 
+Processing Saving node 
+ :12 :35 :35.9039 hello 6 
+Processing Saving node 
+ :6 :25 :35.1255 hello 6 
+Processing Saving node 
+ :12 :21 :35.1192 
+Processing Saving node 
+ :12 :25 :34.9909 hello 6 
+Processing Saving node 
+ :18 :35 :34.7854 
+Processing Saving node 
+ :12 :38 :34.7132 hello 6 
+Processing Saving node 
+ :12 :18 :34.0604 hello 6 
+Processing Saving node 
+ :4 :12 :33.9662 
+Processing Saving node 
+ :11 :12 :33.7863 hello 6 
+Processing Saving node 
+ :34 :38 :33.7059 hello 6 
+Processing Saving node 
+ :9 :35 :32.8831 hello 6 
+Processing Saving node 
+ :35 :42 :32.5366 hello 6 
+Processing Saving node 
+ :22 :38 :32.0842 hello 6 
+Processing Saving node 
+ :9 :12 :31.4992 hello 6 
+Processing Saving node 
+ :12 :42 :31.2321 hello 6 
+Processing Saving node 
+ :6 :38 :31.0309 hello 6 
+Processing Saving node 
+ :34 :35 :30.3356 hello 6 
+Processing Saving node 
+ :12 :34 :29.7727 hello 6 
+Processing Saving node 
+ :20 :39 :29.7255
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :1 :20 :29.7159
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :20 :28 :29.7039
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :3 :20 :29.5615
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :20 :27 :29.5447
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :20 :24 :29.5353
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :15 :20 :29.3801
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :2 :20 :29.3664
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :20 :26 :29.3635
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :20 :35 :29.3425
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :20 :30 :29.2876
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :22 :35 :29.2528 hello 6 
+Processing Saving node 
+ :12 :22 :29.1402 hello 6 
+Processing Saving node 
+ :10 :20 :29.1056
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :7 :20 :29.0849
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :20 :36 :29.0779
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :20 :45 :29.074
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :13 :20 :29.017
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :6 :12 :28.9798 
+Processing Saving node 
+ :10 :41 :28.841
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :26 :41 :28.8331
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :30 :41 :28.8303
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :13 :41 :28.8261
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :16 :20 :28.7829
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :16 :41 :28.7793
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :24 :41 :28.7618
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :12 :41 :28.7601
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :12 :20 :28.7582
+ At least one of them is laready there and other is not  hello 3 -1 is not there  hello 4 -1 is not there  
+ and 2 is extreme  
+ current route of i is 
+ 0 12 27 1 24 10 16 23 4 21 6 0 
+ new route of merge with i 
+ 0 20 12 27 1 24 10 16 23 4 21 6 0
+ Route Codes 
+ 2 3 1 2 1 2 4 4 1 2 1 2 1 4 3 2 1 6 6 2 2 1 2 2 4 1 2 6 4 4 -1 3 4 1 6 3 1 6 3 1 -1 1 1 6 3 
+Processing Saving node 
+ :3 :41 :28.7548
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :29 :41 :28.7412
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :27 :41 :28.7306
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :6 :35 :28.7257 hello 6 
+Processing Saving node 
+ :20 :32 :28.7225 hello 6 
+Processing Saving node 
+ :8 :41 :28.622
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :20 :29 :28.5898 hello 6 
+Processing Saving node 
+ :40 :41 :28.5474
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :20 :38 :28.5193 hello 6 
+Processing Saving node 
+ :1 :41 :28.4845
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :20 :25 :28.4654 hello 6 
+Processing Saving node 
+ :41 :44 :28.436
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :37 :41 :28.4181
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :28 :41 :28.3882
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :33 :41 :28.2922
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :8 :20 :28.247 hello 6 
+Processing Saving node 
+ :39 :41 :28.2244
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :20 :40 :28.1699 hello 6 
+Processing Saving node 
+ :23 :41 :28.1614
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :41 :43 :27.9911
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :20 :37 :27.8891 hello 6 
+Processing Saving node 
+ :19 :41 :27.6846
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :20 :44 :27.6709 hello 6 
+Processing Saving node 
+ :14 :41 :27.5606
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :5 :41 :27.5378
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :20 :33 :27.5306 hello 6 
+Processing Saving node 
+ :20 :23 :27.3527 
+Processing Saving node 
+ :17 :41 :27.2055
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :15 :41 :27.1814
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :2 :41 :27.1179
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :20 :43 :27.0763 hello 6 
+Processing Saving node 
+ :36 :41 :26.6129
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :35 :41 :26.5808
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :7 :41 :26.5412
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :41 :45 :26.5365
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :21 :41 :26.4468
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :5 :20 :26.3383 hello 6 
+Processing Saving node 
+ :14 :20 :26.2549 hello 6 
+Processing Saving node 
+ :19 :20 :26.2139 hello 6 
+Processing Saving node 
+ :18 :41 :26.1209
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :32 :41 :26.0634
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :17 :20 :25.8253 hello 6 
+Processing Saving node 
+ :20 :41 :25.6827
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :4 :41 :25.6463
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :11 :41 :25.5161
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :25 :41 :25.4664
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :38 :41 :25.4361
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :20 :21 :24.64 
+Processing Saving node 
+ :9 :41 :23.9853
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :18 :20 :23.9579 hello 6 
+Processing Saving node 
+ :41 :42 :23.7877
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :4 :20 :23.6184 
+Processing Saving node 
+ :11 :20 :23.4585 hello 6 
+Processing Saving node 
+ :34 :41 :22.7883
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :22 :41 :22.4008
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :6 :41 :22.3892
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :9 :20 :21.5544 hello 6 
+Processing Saving node 
+ :20 :42 :21.3251 hello 6 
+Processing Saving node 
+ :31 :35 :20.3956
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :15 :31 :20.3803
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :2 :31 :20.3803
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :7 :31 :20.3213
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :31 :39 :20.3171
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :31 :45 :20.3161
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :31 :36 :20.3062
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :31 :38 :20.1927
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :1 :31 :20.1909
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :31 :32 :20.1761
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :20 :34 :20.1469 hello 6 
+Processing Saving node 
+ :25 :31 :20.1409
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :28 :31 :20.1348
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :20 :31 :20.0641
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :3 :31 :19.9383
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :27 :31 :19.9064
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :24 :31 :19.9011
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :26 :31 :19.7044
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :20 :22 :19.681 hello 6 
+Processing Saving node 
+ :6 :20 :19.6323 
+Processing Saving node 
+ :30 :31 :19.6198
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :10 :31 :19.4385
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :13 :31 :19.3513
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :12 :31 :19.291
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :16 :31 :19.1327
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :29 :31 :18.9679
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :8 :31 :18.6753
+ At least one of them is laready there and other is not  hello 3 -1 is not there  
+Processing Saving node 
+ :31 :40 :18.5874
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :31 :37 :18.3503
+ At least one of them is laready there and other is not  hello 1 -1 is not there  
+Processing Saving node 
+ :31 :41 :18.2957
+ Both are not in any route so add in enw route 
+ capacity constraint satisfied
+ 0 31 41 0
+ Route Codes 
+ 2 3 1 2 1 2 4 4 1 2 1 2 1 4 3 2 1 6 6 2 2 1 2 2 4 1 2 6 4 4 7 3 4 1 6 3 1 6 3 1 7 1 1 6 3 
+Processing Saving node 
+ :31 :44 :18.2507 hello 6 
+Processing Saving node 
+ :31 :33 :18.0895 hello 6 
+Processing Saving node 
+ :23 :31 :17.9238 hello 6 
+Processing Saving node 
+ :31 :43 :17.6934 hello 6 
+Processing Saving node 
+ :19 :31 :17.2001 hello 6 
+Processing Saving node 
+ :5 :31 :17.112 hello 6 
+Processing Saving node 
+ :14 :31 :17.107 hello 6 
+Processing Saving node 
+ :17 :31 :16.7204 hello 6 
+Processing Saving node 
+ :21 :31 :15.8984 hello 6 
+Processing Saving node 
+ :18 :31 :15.5995 hello 6 
+Processing Saving node 
+ :4 :31 :15.1148 hello 6 
+Processing Saving node 
+ :11 :31 :14.9907 hello 6 
+Processing Saving node 
+ :9 :31 :13.6175 hello 6 
+Processing Saving node 
+ :31 :42 :13.444 hello 6 
+Processing Saving node 
+ :31 :34 :12.6094 hello 6 
+Processing Saving node 
+ :6 :31 :12.3372 hello 6 
+Processing Saving node 
+ :22 :31 :12.3119 hello 6 Now printing routes 
+ 
+ current route cost 
+ Route 0 :  0 22 34 42 9 11 17 5 43 37 40 13 26 3 0
+ Now update route for tsp is 22 34 42 9 11 17 5 43 37 40 13 26 3 Calling TSP now 
+Running for k iteration number 1
+ printing initiazl tour11 0 3 2 8 12 5 4 1 9 6 10 7 
+Running for i 0
+ working.......i : 0,j 1
+yes
+ working.......i : 0,j 2
+Here
+ updating improvement
+ working.......i : 0,j 3
+Here
+ working.......i : 0,j 4
+Here
+ updating improvement
+ working.......i : 0,j 5
+Here
+ updating improvement
+ working.......i : 0,j 6
+Here
+ working.......i : 0,j 7
+Here
+ working.......i : 0,j 8
+Here
+ working.......i : 0,j 9
+Here
+ working.......i : 0,j 10
+Here
+ working.......i : 0,j 11
+Here
+ working.......i : 0,j 12
+HereRunning for i 0
+ working.......i : 0,j 1
+yes
+ working.......i : 0,j 2
+Here
+ working.......i : 0,j 3
+Here
+ working.......i : 0,j 4
+Here
+ working.......i : 0,j 5
+Here
+ working.......i : 0,j 6
+Here
+ working.......i : 0,j 7
+Here
+ working.......i : 0,j 8
+Here
+ working.......i : 0,j 9
+Here
+ working.......i : 0,j 10
+Here
+ working.......i : 0,j 11
+Here
+ working.......i : 0,j 12
+HereRunning for i 1
+ working.......i : 1,j 2
+yes
+ working.......i : 1,j 3
+Here
+ working.......i : 1,j 4
+Here
+ working.......i : 1,j 5
+Here
+ updating improvement
+ working.......i : 1,j 6
+Here
+ working.......i : 1,j 7
+Here
+ working.......i : 1,j 8
+Here
+ updating improvement
+ working.......i : 1,j 9
+Here
+ updating improvement
+ working.......i : 1,j 10
+Here
+ updating improvement
+ working.......i : 1,j 11
+Here
+ updating improvement
+ working.......i : 1,j 12
+Here
+ updating improvement
+ working.......i : 1,j 0
+yesRunning for i 0
+ working.......i : 0,j 1
+yes
+ working.......i : 0,j 2
+Here
+ working.......i : 0,j 3
+Here
+ working.......i : 0,j 4
+Here
+ working.......i : 0,j 5
+Here
+ working.......i : 0,j 6
+Here
+ working.......i : 0,j 7
+Here
+ working.......i : 0,j 8
+Here
+ working.......i : 0,j 9
+Here
+ working.......i : 0,j 10
+Here
+ working.......i : 0,j 11
+Here
+ working.......i : 0,j 12
+HereRunning for i 1
+ working.......i : 1,j 2
+yes
+ working.......i : 1,j 3
+Here
+ working.......i : 1,j 4
+Here
+ working.......i : 1,j 5
+Here
+ working.......i : 1,j 6
+Here
+ working.......i : 1,j 7
+Here
+ working.......i : 1,j 8
+Here
+ working.......i : 1,j 9
+Here
+ updating improvement
+ working.......i : 1,j 10
+Here
+ working.......i : 1,j 11
+Here
+ working.......i : 1,j 12
+Here
+ working.......i : 1,j 0
+yesRunning for i 0
+ working.......i : 0,j 1
+yes
+ working.......i : 0,j 2
+Here
+ working.......i : 0,j 3
+Here
+ working.......i : 0,j 4
+Here
+ working.......i : 0,j 5
+Here
+ working.......i : 0,j 6
+Here
+ working.......i : 0,j 7
+Here
+ working.......i : 0,j 8
+Here
+ working.......i : 0,j 9
+Here
+ working.......i : 0,j 10
+Here
+ working.......i : 0,j 11
+Here
+ working.......i : 0,j 12
+HereRunning for i 1
+ working.......i : 1,j 2
+yes
+ working.......i : 1,j 3
+Here
+ updating improvement
+ working.......i : 1,j 4
+Here
+ working.......i : 1,j 5
+Here
+ updating improvement
+ working.......i : 1,j 6
+Here
+ working.......i : 1,j 7
+Here
+ updating improvement
+ working.......i : 1,j 8
+Here
+ working.......i : 1,j 9
+Here
+ working.......i : 1,j 10
+Here
+ working.......i : 1,j 11
+Here
+ working.......i : 1,j 12
+Here
+ working.......i : 1,j 0
+yesRunning for i 0
+ working.......i : 0,j 1
+yes
+ working.......i : 0,j 2
+Here
+ working.......i : 0,j 3
+Here
+ working.......i : 0,j 4
+Here
+ working.......i : 0,j 5
+Here
+ working.......i : 0,j 6
+Here
+ working.......i : 0,j 7
+Here
+ working.......i : 0,j 8
+Here
+ working.......i : 0,j 9
+Here
+ working.......i : 0,j 10
+Here
+ working.......i : 0,j 11
+Here
+ working.......i : 0,j 12
+HereRunning for i 1
+ working.......i : 1,j 2
+yes
+ working.......i : 1,j 3
+Here
+ updating improvement
+ working.......i : 1,j 4
+Here
+ working.......i : 1,j 5
+Here
+ working.......i : 1,j 6
+Here
+ working.......i : 1,j 7
+Here
+ working.......i : 1,j 8
+Here
+ working.......i : 1,j 9
+Here
+ working.......i : 1,j 10
+Here
+ working.......i : 1,j 11
+Here
+ working.......i : 1,j 12
+Here
+ working.......i : 1,j 0
+yesRunning for i 0
+ working.......i : 0,j 1
+yes
+ working.......i : 0,j 2
+Here
+ working.......i : 0,j 3
+Here
+ working.......i : 0,j 4
+Here
+ working.......i : 0,j 5
+Here
+ working.......i : 0,j 6
+Here
+ working.......i : 0,j 7
+Here
+ working.......i : 0,j 8
+Here
+ working.......i : 0,j 9
+Here
+ working.......i : 0,j 10
+Here
+ working.......i : 0,j 11
+Here
+ working.......i : 0,j 12
+HereRunning for i 1
+ working.......i : 1,j 2
+yes
+ working.......i : 1,j 3
+Here
+ working.......i : 1,j 4
+Here
+ working.......i : 1,j 5
+Here
+ working.......i : 1,j 6
+Here
+ working.......i : 1,j 7
+Here
+ working.......i : 1,j 8
+Here
+ working.......i : 1,j 9
+Here
+ working.......i : 1,j 10
+Here
+ working.......i : 1,j 11
+Here
+ working.......i : 1,j 12
+Here
+ working.......i : 1,j 0
+yesRunning for i 2
+ working.......i : 2,j 3
+yes
+ working.......i : 2,j 4
+Here
+ updating improvement
+ working.......i : 2,j 5
+Here
+ working.......i : 2,j 6
+Here
+ working.......i : 2,j 7
+Here
+ working.......i : 2,j 8
+Here
+ working.......i : 2,j 9
+Here
+ working.......i : 2,j 10
+Here
+ working.......i : 2,j 11
+Here
+ working.......i : 2,j 12
+Here
+ working.......i : 2,j 0
+Here
+ working.......i : 2,j 1
+yesRunning for i 0
+ working.......i : 0,j 1
+yes
+ working.......i : 0,j 2
+Here
+ working.......i : 0,j 3
+Here
+ working.......i : 0,j 4
+Here
+ working.......i : 0,j 5
+Here
+ working.......i : 0,j 6
+Here
+ working.......i : 0,j 7
+Here
+ working.......i : 0,j 8
+Here
+ working.......i : 0,j 9
+Here
+ working.......i : 0,j 10
+Here
+ working.......i : 0,j 11
+Here
+ working.......i : 0,j 12
+HereRunning for i 1
+ working.......i : 1,j 2
+yes
+ working.......i : 1,j 3
+Here
+ working.......i : 1,j 4
+Here
+ working.......i : 1,j 5
+Here
+ working.......i : 1,j 6
+Here
+ working.......i : 1,j 7
+Here
+ working.......i : 1,j 8
+Here
+ working.......i : 1,j 9
+Here
+ working.......i : 1,j 10
+Here
+ working.......i : 1,j 11
+Here
+ working.......i : 1,j 12
+Here
+ working.......i : 1,j 0
+yesRunning for i 2
+ working.......i : 2,j 3
+yes
+ working.......i : 2,j 4
+Here
+ working.......i : 2,j 5
+Here
+ working.......i : 2,j 6
+Here
+ working.......i : 2,j 7
+Here
+ working.......i : 2,j 8
+Here
+ working.......i : 2,j 9
+Here
+ working.......i : 2,j 10
+Here
+ working.......i : 2,j 11
+Here
+ working.......i : 2,j 12
+Here
+ working.......i : 2,j 0
+Here
+ working.......i : 2,j 1
+yesRunning for i 3
+ working.......i : 3,j 4
+yes
+ working.......i : 3,j 5
+Here
+ working.......i : 3,j 6
+Here
+ working.......i : 3,j 7
+Here
+ working.......i : 3,j 8
+Here
+ working.......i : 3,j 9
+Here
+ working.......i : 3,j 10
+Here
+ working.......i : 3,j 11
+Here
+ working.......i : 3,j 12
+Here
+ working.......i : 3,j 0
+Here
+ working.......i : 3,j 1
+Here
+ working.......i : 3,j 2
+yesRunning for i 4
+ working.......i : 4,j 5
+yes
+ working.......i : 4,j 6
+Here
+ working.......i : 4,j 7
+Here
+ working.......i : 4,j 8
+Here
+ working.......i : 4,j 9
+Here
+ working.......i : 4,j 10
+Here
+ working.......i : 4,j 11
+Here
+ working.......i : 4,j 12
+Here
+ working.......i : 4,j 0
+Here
+ working.......i : 4,j 1
+Here
+ working.......i : 4,j 2
+Here
+ working.......i : 4,j 3
+yesRunning for i 5
+ working.......i : 5,j 6
+yes
+ working.......i : 5,j 7
+Here
+ working.......i : 5,j 8
+Here
+ working.......i : 5,j 9
+Here
+ working.......i : 5,j 10
+Here
+ working.......i : 5,j 11
+Here
+ working.......i : 5,j 12
+Here
+ working.......i : 5,j 0
+Here
+ working.......i : 5,j 1
+Here
+ working.......i : 5,j 2
+Here
+ working.......i : 5,j 3
+Here
+ working.......i : 5,j 4
+yesRunning for i 6
+ working.......i : 6,j 7
+yes
+ working.......i : 6,j 8
+Here
+ working.......i : 6,j 9
+Here
+ working.......i : 6,j 10
+Here
+ working.......i : 6,j 11
+Here
+ working.......i : 6,j 12
+Here
+ working.......i : 6,j 0
+Here
+ working.......i : 6,j 1
+Here
+ working.......i : 6,j 2
+Here
+ working.......i : 6,j 3
+Here
+ working.......i : 6,j 4
+Here
+ working.......i : 6,j 5
+yesRunning for i 7
+ working.......i : 7,j 8
+yes
+ working.......i : 7,j 9
+Here
+ working.......i : 7,j 10
+Here
+ working.......i : 7,j 11
+Here
+ working.......i : 7,j 12
+Here
+ working.......i : 7,j 0
+Here
+ working.......i : 7,j 1
+Here
+ working.......i : 7,j 2
+Here
+ working.......i : 7,j 3
+Here
+ working.......i : 7,j 4
+Here
+ working.......i : 7,j 5
+Here
+ working.......i : 7,j 6
+yesRunning for i 8
+ working.......i : 8,j 9
+yes
+ working.......i : 8,j 10
+Here
+ working.......i : 8,j 11
+Here
+ working.......i : 8,j 12
+Here
+ working.......i : 8,j 0
+Here
+ working.......i : 8,j 1
+Here
+ working.......i : 8,j 2
+Here
+ working.......i : 8,j 3
+Here
+ working.......i : 8,j 4
+Here
+ working.......i : 8,j 5
+Here
+ working.......i : 8,j 6
+Here
+ working.......i : 8,j 7
+yesRunning for i 9
+ working.......i : 9,j 10
+yes
+ working.......i : 9,j 11
+Here
+ working.......i : 9,j 12
+Here
+ working.......i : 9,j 0
+Here
+ working.......i : 9,j 1
+Here
+ working.......i : 9,j 2
+Here
+ working.......i : 9,j 3
+Here
+ working.......i : 9,j 4
+Here
+ working.......i : 9,j 5
+Here
+ working.......i : 9,j 6
+Here
+ working.......i : 9,j 7
+Here
+ working.......i : 9,j 8
+yesRunning for i 10
+ working.......i : 10,j 11
+yes
+ working.......i : 10,j 12
+Here
+ working.......i : 10,j 0
+Here
+ working.......i : 10,j 1
+Here
+ working.......i : 10,j 2
+Here
+ working.......i : 10,j 3
+Here
+ working.......i : 10,j 4
+Here
+ working.......i : 10,j 5
+Here
+ working.......i : 10,j 6
+Here
+ working.......i : 10,j 7
+Here
+ working.......i : 10,j 8
+Here
+ working.......i : 10,j 9
+yesRunning for i 11
+ working.......i : 11,j 12
+yes
+ working.......i : 11,j 0
+Here
+ working.......i : 11,j 1
+Here
+ working.......i : 11,j 2
+Here
+ working.......i : 11,j 3
+Here
+ working.......i : 11,j 4
+Here
+ working.......i : 11,j 5
+Here
+ working.......i : 11,j 6
+Here
+ working.......i : 11,j 7
+Here
+ working.......i : 11,j 8
+Here
+ working.......i : 11,j 9
+Here
+ working.......i : 11,j 10
+yesRunning for i 12
+ working.......i : 12,j 0
+Here
+ working.......i : 12,j 1
+Here
+ working.......i : 12,j 2
+Here
+ working.......i : 12,j 3
+Here
+ working.......i : 12,j 4
+Here
+ working.......i : 12,j 5
+Here
+ working.......i : 12,j 6
+Here
+ working.......i : 12,j 7
+Here
+ working.......i : 12,j 8
+Here
+ working.......i : 12,j 9
+Here
+ working.......i : 12,j 10
+Here
+ working.......i : 12,j 11
+yesDone11 12 4 0 1 2 3 5 6 7 8 9 10 

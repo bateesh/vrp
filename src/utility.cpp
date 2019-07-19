@@ -6,7 +6,7 @@ Description :- utility functions implementation declared in utility.h
 ***********************************/
 #include "utility.h"
 using namespace std;
-
+  
 // extract the first number in a string
 int extract_int(const string & term) {
   size_t start_p = term.find_first_of("-0123456789");
@@ -31,6 +31,7 @@ vector < int > extract_ints(const string & term) {
 // next 'dimension' vectors contain locations (x, y)
 // then the customer demands (demand)
 vector < vector < int > > readFile(const char * path) {
+	cout<<" Now readinf file";
   ifstream file(path);
   string line;
   vector < vector < int > > data;
@@ -38,7 +39,7 @@ vector < vector < int > > readFile(const char * path) {
   vector < int > constraint;
   // read the first line and second line to get the dimension and capacity
   getline(file, line);
-  // extract demand
+  // extract dimension
   constraint.push_back(extract_int(line));
   getline(file, line);
   // extract capacity
@@ -71,11 +72,6 @@ vector < vector < int > > readFile(const char * path) {
   }
   data.push_back(demand);
 
-  file.ignore(256, '\n');
-  getline(file, line);
-  vector < int > depotLocation = extract_ints(line);
-  data.push_back(depotLocation);
-
   return data;
 }
 
@@ -86,21 +82,77 @@ double getDistance(int px, int py, int dx, int dy) {
   double distance = sqrt(pow(a, 2) + pow(b, 2));
   return distance;
 }
+double getDistanceByCustomerNumber(vector < vector < int > > data,int c1,int c2)
+{
+	vector<int> x=data[c1+1];
+	vector<int> y=data[c2+1];
+	int px=x[0];
+	int py=x[1];
+	int dx=y[0];
+	int dy=y[1];
+  int a = px - dx;
+  int b = py - dy;
+  double distance = sqrt(pow(a, 2) + pow(b, 2));
+  return distance;
+	
+}
+void printRoute(vector<int> cr)
+{
+
+	cout << endl;
+	for (auto j = cr.begin(); j != cr.end(); j++)
+	{
+		cout << " " << *j;
+	}
+}
+double calculateRouteCost(vector<int> route, double distance[300][300])
+{
+	if (route.size() == 0)
+		return 0;
+	double cost = 0;
+	auto cr = route.begin();
+	int prev = *cr;
+	cr++;
+	while (cr != route.end())
+	{
+		int curr = *cr;
+    //cout<<" \n Adding cost for city :"<<prev<<","<<curr<<" : "<<distance[prev][curr];
+		cost += distance[prev][curr];
+		prev = curr;
+		cr++;
+	}
+	return cost;
+}
+int getRouteCapacity(vector < int> demand,vector<int> route)
+{
+	int total=0;
+	for(auto itr=route.begin();itr!=route.end();itr++)
+	total=total+demand[*itr];
+	return total;
+	
+}
 
 //getDistanceTable to preprocess all distance between any two customers
-vector < vector < double > > getDistanceTable(vector < vector < int > > data) {
-  int dimension = data[0][0];
-  vector < vector < double >> distanceTable;
+void getDistanceTable(vector < vector < int > > d,double distanceTable[300][300]) {
+
+  int dimension = d[0][0];
+  auto p1 = d.begin() + 1;
+  auto p2 = d.end()-1;
+
+  vector < vector < int > > data =vector < vector < int >> (p1, p2);
+   
   for (int i = 0; i < dimension; ++i) {
 
     for (int j = i; j < dimension; ++j) {
       int dx = data[j][0] - data[i][0];
-      int dy = data[j][1] - data[i][1];
-      double distance = sqrt(pow(dx, 2) + pow(dy, 2));
+    int dy = data[j][1] - data[i][1];
+      double distance = sqrt(pow(dx, 2) + pow(dy, 2));10;
 
-      distanceTable[i][j] = distance;
-      distanceTable[j][i] = distance;
+    distanceTable[i][j] = distance;
+     distanceTable[j][i] = distance;
+     //cout<<" \n Setting distance "<<i<<" "<<j<<" as :"<< distance;
+     //cout<<" Corresponding points are :"<<data[i][0]<< " ,"<<data[i][1];
+     cout<<endl<<data[j][0]<< " ,"<<data[j][1];
     }
   }
-  return distanceTable;
 }
