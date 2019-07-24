@@ -1,0 +1,58 @@
+ 
+ Reading File:-input_files/A-n55-k9.vrp
+ Now readinf file opened file
+ Total customer a are 54
+
+Dimension : 55
+
+Capacity :100
+
+ Now printing routes 
+
+ Route 0 :  
+Capacity this route:- 99
+ 
+Cost of this route:- 175.419
+
+ Route 1 :  
+Capacity this route:- 98
+ 
+Cost of this route:- 155.626
+
+ Route 2 :  
+Capacity this route:- 100
+ 
+Cost of this route:- 135.492
+
+ Route 3 :  
+Capacity this route:- 94
+ 
+Cost of this route:- 130.8
+
+ Route 4 :  
+Capacity this route:- 94
+ 
+Cost of this route:- 133.677
+
+ Route 5 :  
+Capacity this route:- 89
+ 
+Cost of this route:- 104.94
+
+ Route 6 :  
+Capacity this route:- 93
+ 
+Cost of this route:- 76.3516
+
+ Route 7 :  
+Capacity this route:- 86
+ 
+Cost of this route:- 80.0933
+
+ Route 8 :  
+Capacity this route:- 86
+ 
+Cost of this route:- 118.171
+
+ Total opt cost of the route is: 1110.57
+ Total vechicles used: 9

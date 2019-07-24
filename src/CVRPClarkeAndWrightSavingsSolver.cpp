@@ -34,38 +34,42 @@ bool comparater(SavingsNode i1, SavingsNode i2)
 
 int main(int argc, char *argv[])
 {
-	cout<<" straig to read;";
-	cout<<" argv is "<<argv[0];
-	vector<vector<int>> data = readFile("A-n33-k5.vrp");
+	cout<<" \n Reading File:-"<<argv[1]<<endl;
+	vector<vector<int>> data = readFile(argv[1]);
 	CVRPInput input = CVRPInput(data);
 	vector<CVRPVehicleOutput> output;
 	int dimension = input.getDimension();
 	int capacity = input.getCapacity();
 	vector<int> demand = input.getDemandList();
 	vector<vector<int>> customerCordinates = input.getCustomerCordinates();
-	cout << " DIMENSION " << dimension << endl;
-	cout << " CAPCCITY " << capacity << endl;
-	cout << " cusotmer or ";
-	for (auto itr = customerCordinates.begin(); itr != customerCordinates.end(); itr++)
+	cout << "\nDimension : " << dimension << endl;
+	cout << "\nCapacity :" << capacity << endl;
+	/* for (auto itr = customerCordinates.begin(); itr != customerCordinates.end(); itr++)
 	{
 		vector<int> data = *itr;
 		cout << " " << data[0] << " " << data[1];
 	}
 	cout << " ehck demand";
+	int cap=0;
 	for (auto itr = demand.begin(); itr != demand.end(); itr++)
 	{
 		cout << " " << *itr << endl;
+		cap+=*itr;
 	}
-	cout << "a";
+*/
+	//cout<<" \n Total demand is "<<cap;
+	
+	//cout << "a";
 	vector<int> depotLocation = input.getDepotCord();
-	cout << "b";
+	//cout << "b";
 
 	int p1 = depotLocation[0];
 	int p2 = depotLocation[1];
-	cout << " depot is " << p1 << " " << p2;
+	//cout << " depot is " << p1 << " " << p2;
 	vector<SavingsNode> savings;
 
 	double distanceTable[300][300];
+	//cout<<"\n anc";
 	getDistanceTable(data, distanceTable);
 	for (int i = 1; i < dimension; i++)
 		for (int j = i + 1; j < dimension; j++)
@@ -99,15 +103,15 @@ int main(int argc, char *argv[])
 		int routei = routeNumber[node.i];
 
 		int routej = routeNumber[node.j];
-//		cout << " \nProcessing Saving node " << endl;
-//		cout << " :" << node.i;
-//		cout << " :" << node.j;
-//		cout << " :" << node.savings;
+	//	cout << " \nProcessing Saving node " << endl;
+	//	cout << " :" << node.i;
+	//	cout << " :" << node.j;
+	//	cout << " :" << node.savings;
 		int yy;
 
 		if (routei == -1 && routej == -1)
 		{
-			cout << "\n Both are not in any route so add in enw route ";
+///		cout << "\n Both are not in any route so add in enw route ";
 			vector<int> route;
 			route.push_back(0);
 			route.push_back(node.i);
@@ -116,32 +120,32 @@ int main(int argc, char *argv[])
 			int capacityOfRoute = getRouteCapacity(demand, route);
 			if (capacityOfRoute <= capacity)
 			{
-				cout << "\n capacity constraint satisfied";
+//				cout << "\n capacity constraint satisfied";
 				routes[currentRoute] = route;
 
-				// capacity[currentRoute]=capacityOfRoute;
-				printRoute(route);
+			//	capacity[currentRoute]=capacityOfRoute;
+				//printRoute(route);
 
 				routeNumber[node.i] = currentRoute;
 				routeNumber[node.j] = currentRoute;
 				currentRoute++;
 				//	  cin>>yy;
-				printRouteCodes(dimension, routeNumber);
+//				printRouteCodes(dimension, routeNumber);
 			}
 		}
 		else if (routei == -1 || routej == -1)
 		{
-			cout << "\n At least one of them is laready there and other is not ";
+//			cout << "\n At least one of them is laready there and other is not ";
 			if (routei == -1)
 			{
-				cout << " hello 1";
-				cout << " " << routei << " is not there ";
+//				cout << " hello 1";
+//				cout << " " << routei << " is not there ";
 				vector<int> routeOfJ = routes[routeNumber[node.j]];
-				if (routeOfJ[1] == node.j && demand[node.i] + getRouteCapacity(demand, routeOfJ) <= capacity)
+				if (routeOfJ[1] == node.j && (demand[node.i] + getRouteCapacity(demand, routeOfJ)) <= capacity)
 				{
-					cout << " \n and " << routej << " is extreme ";
-					cout << " \n current route of j is ";
-					printRoute(routes[routej]);
+//					cout << " \n and " << routej << " is extreme ";
+//					cout << " \n current route of j is ";
+//	printRoute(routes[routej]);
 					//routeOfJ.push_front(node.i);
 					routeOfJ.insert(routeOfJ.begin(),node.i);
 					routeOfJ[0] = 0;
@@ -150,18 +154,18 @@ int main(int argc, char *argv[])
 					routes[rnumber] = routeOfJ;
 					routeNumber[node.j] = rnumber;
 					routeNumber[node.i] = rnumber;
-					cout << " \n new route of merge with j ";
-					printRoute(routes[routej]);
+//					cout << " \n new route of merge with j ";
+//					printRoute(routes[routej]);
 					//        cin>>yy;
-					printRouteCodes(dimension, routeNumber);
+					//printRouteCodes(dimension, routeNumber);
 				}
 				else if ((routeOfJ[routeOfJ.size() - 1 - 1] == node.j) && demand[node.i] + getRouteCapacity(demand, routeOfJ) <= capacity)
 				{
-					cout << " hello 2";
-					cout << " " << routei << " is not there ";
-					cout << " \n and " << routej << " is extreme ";
-					cout << " \n current route of j is ";
-					printRoute(routes[routej]);
+//					cout << " hello 2";
+//					cout << " " << routei << " is not there ";
+//					cout << " \n and " << routej << " is extreme ";
+//					cout << " \n current route of j is ";
+//					printRoute(routes[routej]);
 					routeOfJ.push_back(node.i);
 					//routeOfJ.insert(routeOfJ.begin(),node.i);
 					routeOfJ[routeOfJ.size() - 1] = 0;
@@ -171,24 +175,24 @@ int main(int argc, char *argv[])
 					routeNumber[node.j] = rnumber;
 					routeNumber[node.i] = rnumber;
 
-					cout << " \n new route of merge with j ";
-					printRoute(routes[routej]);
+//					cout << " \n new route of merge with j ";
+//					printRoute(routes[routej]);
 					//      cin>>yy;
-					printRouteCodes(dimension, routeNumber);
+//					printRouteCodes(dimension, routeNumber);
 				}
 			}
 			else
 			{
-				cout << " hello 3";
-				cout << " " << routej << " is not there ";
+//				cout << " hello 3";
+//				cout << " " << routej << " is not there ";
 				vector<int> routeOfi = routes[routeNumber[node.i]];
 				if (routeOfi[1] == node.i && demand[node.j] + getRouteCapacity(demand, routeOfi) <= capacity)
 				{
-					cout << " hello 4";
-					cout << " " << routej << " is not there ";
-					cout << " \n and " << routei << " is extreme ";
-					cout << " \n current route of i is ";
-					printRoute(routes[routei]);
+//					cout << " hello 4";
+//					cout << " " << routej << " is not there ";
+//					cout << " \n and " << routei << " is extreme ";
+//					cout << " \n current route of i is ";
+//					printRoute(routes[routei]);
 					//routeOfi.push_front(node.j);
 					routeOfi.insert(routeOfi.begin(),node.j);
 					routeOfi[0] = 0;
@@ -197,19 +201,19 @@ int main(int argc, char *argv[])
 					routes[rnumber] = routeOfi;
 					routeNumber[node.j] = rnumber;
 					routeNumber[node.i] = rnumber;
-					cout << " \n new route of merge with i ";
-					printRoute(routes[routei]);
-					printRouteCodes(dimension, routeNumber);
+//					cout << " \n new route of merge with i ";
+//					printRoute(routes[routei]);
+//					printRouteCodes(dimension, routeNumber);
 					//    cin>>yy;
 				}
 
 				else if ((routeOfi[routeOfi.size() - 1 - 1] == node.i) && demand[node.j] + getRouteCapacity(demand, routeOfi) <= capacity)
 				{
-					cout << " hello 5";
-					cout << " " << routej << " is not there ";
-					cout << " \n and " << routei << " is extreme ";
-					cout << " \n current route of i is ";
-					printRoute(routes[routei]);
+//					cout << " hello 5";
+//					cout << " " << routej << " is not there ";
+//					cout << " \n and " << routei << " is extreme ";
+//					cout << " \n current route of i is ";
+//					printRoute(routes[routei]);
 
 					routeOfi.push_back(node.j);
 					routeOfi[routeOfi.size() - 1] = 0;
@@ -218,9 +222,9 @@ int main(int argc, char *argv[])
 					routes[rnumber] = routeOfi;
 					routeNumber[node.j] = rnumber;
 					routeNumber[node.i] = rnumber;
-					cout << " \n new route of merge with i ";
-					printRoute(routes[routei]);
-					printRouteCodes(dimension, routeNumber);
+//					cout << " \n new route of merge with i ";
+//					printRoute(routes[routei]);
+//					printRouteCodes(dimension, routeNumber);
 					// 		        cin>>yy;
 				}
 			}
@@ -228,17 +232,18 @@ int main(int argc, char *argv[])
 
 		else if (routei != routej)
 		{
-			cout << " hello 6";
+//			cout << " hello 6";
 
 			vector<int> routeOfi = routes[routei];
 			vector<int> routeOfj = routes[routej];
-			if (routeOfi[1] == node.i && routeOfj[routeOfj.size() - 2] == node.j && getRouteCapacity(demand, routeOfi) + getRouteCapacity(demand, routeOfi) <= capacity)
+			if (routeOfi[1] == node.i && routeOfj[routeOfj.size() - 2] == node.j && 
+			getRouteCapacity(demand, routeOfi) + getRouteCapacity(demand, routeOfj) <= capacity)
 
 			{
-				cout << " \nyes 1 caught";
-				cout << "\n before merge ";
-				printRoute(routeOfi);
-				printRoute(routeOfj);
+//				cout << " \nyes 1 caught";
+//				cout << "\n before merge ";
+//				printRoute(routeOfi);
+//				printRoute(routeOfj);
 
 				routeOfj.pop_back();
 				//routeOfj.pop_back();
@@ -257,21 +262,23 @@ int main(int argc, char *argv[])
 				routeNumber[node.i] = rnumber;
 				routes[routei].clear();
 
-				cout << " \n after merge in j";
-				printRoute(routeOfj);
-				printRouteCodes(dimension, routeNumber);
+//				cout << " \n after merge in j";
+//				printRoute(routeOfj);
+//				printRouteCodes(dimension, routeNumber);
 
 				// cin>>yy;
 			}
 
-			else if (routeOfi[routeOfi.size() - 2] == node.i && routeOfj[1] == node.j && getRouteCapacity(demand, routeOfi) + getRouteCapacity(demand, routeOfi) <= capacity)
+			else if (routeOfi[routeOfi.size() - 2] == node.i && routeOfj[1] == node.j 
+			&& (getRouteCapacity(demand, routeOfi) + getRouteCapacity(demand, routeOfj)) <= capacity)
 
 			{
-				cout << " hello 7";
-				cout << " \nyes 1 caught";
-				cout << "\n before merge ";
-				printRoute(routeOfi);
-				printRoute(routeOfj);
+//				cout << " hello 7";
+//				cout << " \nyes 1 caught";
+//				cout << "\n before merge ";
+				//cout<<" \n capcity of following route is "<<getRouteCapacity
+//				printRoute(routeOfi);
+//				printRoute(routeOfj);
 				//routeOfi.pop_back();
 				//routeOfj.pop_front();
 				routeOfi.pop_back();
@@ -288,14 +295,14 @@ int main(int argc, char *argv[])
 				routeNumber[node.i] = rnumber;
 				routes[routej].clear();
 
-				cout << " \n after merge in i";
-				printRoute(routeOfi);
-				printRouteCodes(dimension, routeNumber);
+//				cout << " \n after merge in i";
+//				printRoute(routeOfi);
+//				printRouteCodes(dimension, routeNumber);
 				//cin>>yy;
 			}
 		}
 	}
-
+//cout<<"hello 10";
 for(int i=1;i<dimension;i++)
 {
 
@@ -311,13 +318,13 @@ for(int i=1;i<dimension;i++)
 
 	}
 }
-	cout << " Now printing routes ";
+	cout << "\n Now printing routes ";
 	cout << endl;
 	double total = 0;
 	double optimiZedtotal = 0;
 	int rr = 0;
-
-
+//cout<<"hello";
+int countOfRoutes=0;
 
 	for (auto i = routes.begin(); i != routes.end(); i++)
 	{
@@ -327,6 +334,7 @@ for(int i=1;i<dimension;i++)
 		//	routes.erase(i);
 			continue;
 		}
+		countOfRoutes++;
 		total += calculateRouteCost(cr, distanceTable);
 		
 		cout << endl;
@@ -335,43 +343,48 @@ for(int i=1;i<dimension;i++)
 
 		
 		rr++;
-		/* for (auto j = cr.begin(); j != cr.end(); j++)
-		{
-			cout << " " << *j;
-		}*/
+//for (auto j = cr.begin(); j != cr.end(); j++)
+//		{
+//			cout << " " << *j;
+//		}
 		vector<int> tempRoute(cr.begin(),cr.end());
 		tempRoute.erase(tempRoute.begin());
 		tempRoute.pop_back();
-		//cout<<"\n Now update route for tsp is";
-		 /* for (auto j = tempRoute.begin(); j != tempRoute.end(); j++)
-		{
-			cout << " " << *j;
-		}*/
-
+	//	cout<<"\n Now update route for tsp is";
+	//	  for (auto j = tempRoute.begin(); j != tempRoute.end(); j++)
+	//	{
+	//		cout << " " << *j;
+	//	}
+		int capacityHandled=0;
 		
 
 		vector<vector<int>> tspInput=input.convertRouteToCordinateList(tempRoute);
 		TSPSolver tsp(tspInput,depotLocation);
-//		cout<<" Calling TSP now";
+	
+		for(auto itr=tempRoute.begin();itr!=tempRoute.end();itr++)
+		capacityHandled=capacityHandled+demand[*itr];
+		
+	//	cout<<" Calling TSP now";
 	    vector<vector<int>> tspOutput=tsp.solveTSP();
-//		cout<<" Called TSP now";
+	//	cout<<" Called TSP now";
 		vector<int> optimizedRoute=input.convertCordinateListToRoute(tspOutput);
 		optimizedRoute.push_back(0);
 		optimizedRoute.insert(optimizedRoute.begin(),0);
 		
-		cout<<" optimized route after tsp is ";
-		printRoute(optimizedRoute);
-		cout<<" \n cost of this route:- "<<calculateRouteCost(optimizedRoute, distanceTable)<<"\n";
+	//cout<<" optimized route after tsp is ";
+	//	printRoute(optimizedRoute);
+		cout<<" \nCapacity this route:- "<<capacityHandled<<"\n";
+		
+		cout<<" \nCost of this route:- "<<calculateRouteCost(optimizedRoute, distanceTable)<<"\n";
 		optimiZedtotal += calculateRouteCost(optimizedRoute, distanceTable);
 		calculateRouteCost	(optimizedRoute, distanceTable);
 
-		
-
-
+	
 	}
 
-	printRouteCodes(dimension, routeNumber);
-	cout << "\n Total cost of the route is " << total;
-	cout << "\n Total opt cost of the route is " << optimiZedtotal;
+	//printRouteCodes(dimension, routeNumber);
+	//cout << "\n Total cost of the route is " << total;
+	cout << "\n Total opt cost of the route is: " << optimiZedtotal;
+	cout<<"\n Total vechicles used: "<<countOfRoutes;
 
 }

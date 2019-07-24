@@ -33,6 +33,8 @@ vector < int > extract_ints(const string & term) {
 vector < vector < int > > readFile(const char * path) {
 	cout<<" Now readinf file";
   ifstream file(path);
+  	cout<<" opened file";
+
   string line;
   vector < vector < int > > data;
 
@@ -58,8 +60,8 @@ vector < vector < int > > readFile(const char * path) {
     p.erase(p.begin());
     data.push_back(p);
   }
-  cout << " in Total number of data is :" << data.size();
-  cout << " capacity is  :" << constraint[0];
+  //cout << " in Total number of data is :" << data.size();
+  //cout << " capacity is  :" << constraint[0];
 
   //ignore the demand section start line
   file.ignore(256, '\n');
@@ -152,7 +154,7 @@ void getDistanceTable(vector < vector < int > > d,double distanceTable[300][300]
      distanceTable[j][i] = distance;
      //cout<<" \n Setting distance "<<i<<" "<<j<<" as :"<< distance;
      //cout<<" Corresponding points are :"<<data[i][0]<< " ,"<<data[i][1];
-     cout<<endl<<data[j][0]<< " ,"<<data[j][1];
+    // cout<<endl<<data[j][0]<< " ,"<<data[j][1];
     }
   }
 }
