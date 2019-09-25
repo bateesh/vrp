@@ -29,7 +29,8 @@ int find(int i,int parent[])
     parent[a] = b; 
 }
 
-  
+  vector<float> getCentroid(vector<vector<int>> route);
+
 vector<int> generateTSPApproxRoute(vector<int> r,CVRPInput i,double distanceTable[300][300]);
 
 double get_Distance(vector<int> x,vector<int> y)
@@ -454,6 +455,79 @@ for(int i=1;i<dimension;i++)
 
 	}
 }
+
+
+
+
+
+
+
+
+
+cout<<"\n Optimizing routes now:-";
+vector<vector<int>> centroidRoutes;
+vector<vector<float>> gc;
+// get centroid of all routes
+for(auto itr=routes.begin();itr!=routes.end();itr++)
+{
+
+vector<int> r=*itr;
+if(r.size()==0)
+continue;
+vector<float> result=getCentroid(input.convertRouteToCordinateList(r));
+gc.push_back(result);
+centroidRoutes.push_back(r);
+}
+for(int i = 0;i<gc.size();i++)
+for(int vk=1;vk<centroidRoutes[i].size()-1;vk++)
+for(int j = 0;j<gc.size();j++)
+{
+    if(i!=j)
+    {
+        int nodeNumber=centroidRoutes[i][vk];
+        vector<int> data=customerCordinates[nodeNumber-1];
+        int px=data[0];
+        int py=data[1];
+        vector<float> g1=gc[i];
+        vector<float> g2=gc[j];
+        float d1=sqrt(pow( (px-g1[0]) , 2) + pow((py-g1[1]), 2));
+        float d2=sqrt(pow( (px-g2[0]) , 2) + pow((py-g2[1]), 2));
+        if(d2<d1 && getRouteCapacity(demand,centroidRoutes[j])+demand[nodeNumber]<capacity)
+        {
+            centroidRoutes[j].pop_back();
+            centroidRoutes[j].push_back(nodeNumber);
+            centroidRoutes[j].push_back(0);
+            cout<<" \n Yes.Centroid movement done!!!!";
+        }
+        
+        gc[i]=getCentroid(input.convertRouteToCordinateList(centroidRoutes[i]));
+        gc[j]=getCentroid(input.convertRouteToCordinateList(centroidRoutes[j]));
+    }
+    
+}
+
+routes.clear();
+routes=centroidRoutes;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	cout << "\n Now printing routes ";
 	cout << endl;
 	double total = 0;
@@ -708,3 +782,26 @@ cout<<" \n its cost is "<<calculateRouteCost(optimizedRoute,distanceTable);
 
 // This code is contributed by rathbhupendra 
 
+vector<float> getCentroid(vector<vector<int>> route)
+{
+float xsum=0;
+float ysum=0;
+float xavg;
+float yavg;
+int count=0;
+vector<vector<int>> d=route;
+for(auto it=d.begin();it!=d.end();it++)
+{
+    vector<int> data=(*it);
+    xsum+=data[0];
+    ysum+=data[1];
+
+}
+vector<float> result;
+xavg=xsum/d.size();
+yavg=ysum/d.size();
+result.push_back(xavg);
+result.push_back(yavg);
+return result;
+
+}

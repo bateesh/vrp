@@ -10,8 +10,8 @@ Description :- Solving CVRP using clark and wright savings algorithms
 
 #include "CVRPInput.h"
 #include "TSPSolver.h"
-#include <stdlib.h>     /* srand, rand */
-
+int ax;
+int ay;
 struct SavingsNode
 {
 	int i;
@@ -24,6 +24,7 @@ void printRouteCodes(int dimension, vector<int> routeNumber)
 	for (int ii = 1; ii <= dimension; ii++)
 		cout << " " << routeNumber[ii];
 }
+vector<float> getCentroid(vector<vector<int>> route);
 
 
 // Compares two intervals according to staring times.
@@ -32,6 +33,17 @@ bool comparater(SavingsNode i1, SavingsNode i2)
 	return (i1.savings > i2.savings);
 }
 
+bool comp(vector<int> i1, vector<int> i2)
+{
+	int dx=i1[0]-ax;
+	int dy=i1[1]-ay;
+	 double distance1 = sqrt(pow(dx, 2) + pow(dy, 2));
+	 dx=i2[0]-ax;
+	 dy=i2[1]-ay;
+	 double distance2 = sqrt(pow(dx, 2) + pow(dy, 2));
+	 return distance1>distance2;
+	 
+}
 
 
 int main(int argc, char *argv[])
@@ -46,6 +58,7 @@ int main(int argc, char *argv[])
 	vector<vector<int>> customerCordinates = input.getCustomerCordinates();
 	cout << "\nDimension : " << dimension << endl;
 	cout << "\nCapacity :" << capacity << endl;
+	
 	/* for (auto itr = customerCordinates.begin(); itr != customerCordinates.end(); itr++)
 	{
 		vector<int> data = *itr;
@@ -63,10 +76,13 @@ int main(int argc, char *argv[])
 	
 	//cout << "a";
 	vector<int> depotLocation = input.getDepotCord();
+	
 	//cout << "b";
 
 	int p1 = depotLocation[0];
 	int p2 = depotLocation[1];
+	ax=p1;
+	ay=p2;
 	//cout << " depot is " << p1 << " " << p2;
 	vector<SavingsNode> savings;
 
@@ -320,6 +336,112 @@ for(int i=1;i<dimension;i++)
 
 	}
 }
+cout<<"\n Optimizing routes now:-";
+vector<vector<int>> centroidRoutes;
+vector<vector<float>> gc;
+// get centroid of all routes
+for(auto itr=routes.begin();itr!=routes.end();itr++)
+{
+
+vector<int> r=*itr;
+if(r.size()==0)
+continue;
+vector<float> result=getCentroid(input.convertRouteToCordinateList(r));
+gc.push_back(result);
+centroidRoutes.push_back(r);
+}
+for(int i = 0;i<gc.size();i++)
+{int vk=1;
+while(vk<centroidRoutes[i].size()-1)
+{
+for(int j = 0;j<gc.size();j++)
+{
+    if(i!=j)
+    {
+        int nodeNumber=centroidRoutes[i][vk];
+        vector<int> data=customerCordinates[nodeNumber-1];
+        int px=data[0];
+        int py=data[1];
+        vector<float> g1=gc[i];
+        vector<float> g2=gc[j];
+        float d1=sqrt(pow( (px-g1[0]) , 2) + pow((py-g1[1]), 2));
+        float d2=sqrt(pow( (px-g2[0]) , 2) + pow((py-g2[1]), 2));
+        if(d2<d1 && getRouteCapacity(demand,centroidRoutes[j])+demand[nodeNumber]<capacity)
+        {
+            centroidRoutes[j].pop_back();
+            centroidRoutes[j].push_back(nodeNumber);
+            centroidRoutes[j].push_back(0);
+            centroidRoutes[i][vk]=-1;
+            cout<<" \n Yes.Centroid movement done!!!!";
+            break;
+        }
+        
+        gc[i]=getCentroid(input.convertRouteToCordinateList(centroidRoutes[i]));
+        gc[j]=getCentroid(input.convertRouteToCordinateList(centroidRoutes[j]));
+    }
+    
+}
+    std::vector<int>::iterator it; 
+     it = std::find (centroidRoutes[i].begin(), centroidRoutes[i].end(), -1); 
+     if (it != centroidRoutes[i].end()) 
+    {
+        centroidRoutes[i].erase(it);
+    } 
+    else
+        vk++;
+
+
+
+}
+
+}
+
+routes.clear();
+routes=centroidRoutes;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	cout << "\n Now printing routes ";
 	cout << endl;
 	double total = 0;
@@ -327,7 +449,6 @@ for(int i=1;i<dimension;i++)
 	int rr = 0;
 //cout<<"hello";
 int countOfRoutes=0;
-vector<vector<int>> first_result;
 
 	for (auto i = routes.begin(); i != routes.end(); i++)
 	{
@@ -375,9 +496,9 @@ vector<vector<int>> first_result;
 		optimizedRoute.insert(optimizedRoute.begin(),0);
 		
 	//cout<<" optimized route after tsp is ";
-	//	printRoute(optimizedRoute);
+		printRoute(optimizedRoute);
 		cout<<" \nCapacity this route:- "<<capacityHandled<<"\n";
-		first_result.push_back(optimizedRoute);
+		
 		cout<<" \nCost of this route:- "<<calculateRouteCost(optimizedRoute, distanceTable)<<"\n";
 		optimiZedtotal += calculateRouteCost(optimizedRoute, distanceTable);
 		calculateRouteCost	(optimizedRoute, distanceTable);
@@ -385,86 +506,51 @@ vector<vector<int>> first_result;
 	
 	}
 
-	int vechicleCount=first_result.size();
-	cout<<"\n total vehicls"<<vechicleCount;
-	  srand (time(NULL));
-	int firstTour=rand()%vechicleCount;//generate random number 0 to size-1;
-	int secondTour=rand()%vechicleCount;//generate random number 0 to size-1;
-	int improvement=0;
-
-	while(improvement<dimension*20)
-	{
-
-		int firstTour=rand()%vechicleCount;//generate random number 0 to size-1;
-	int secondTour=rand()%vechicleCount;//generate random number 0 to size-1;
-	while(secondTour==firstTour)
-	{
-		 secondTour=rand()%vechicleCount;
-	}
-	cout<<" \n selected "<<firstTour<<" "<<secondTour;
-	
-		int firstTourSize=first_result[firstTour].size();
-		int secondTourSize=first_result[secondTour].size();
-		int firstTourlocation=(rand()%(firstTourSize-2))+1;
-		int secondTourlocation=(rand()%(secondTourSize-2))+1;
-
-		cout<<"\n index in fist tour "<<firstTourlocation;
-		cout<<"\n index in second tour "<<secondTourlocation;
-		vector<int> temp1=first_result[firstTour];
-		vector<int> temp2=first_result[secondTour];
-		int k=temp1[firstTourlocation];
-		temp1[firstTourlocation]=temp2[secondTourlocation];
-		temp2[secondTourlocation]=k;
-		cout<<"\n earlier tours";
-		printRoute(first_result[firstTour]);
-		cout<<" \n its cost is "<<calculateRouteCost(first_result[firstTour],distanceTable);
-		cout<<endl;
-		printRoute(first_result[secondTour]);
-		cout<<" \n its cost is "<<calculateRouteCost(first_result[secondTour],distanceTable);
-		cout<<"\n new tours";
-		printRoute(temp1);
-		cout<<" \n its cost is "<<calculateRouteCost(temp1,distanceTable);
-		
-		cout<<endl;
-		printRoute(temp2);
-		cout<<" \n its cost is "<<calculateRouteCost(temp2,distanceTable);
-		
-		if((calculateRouteCost(temp1,distanceTable)+calculateRouteCost(temp2,distanceTable))
-		<(calculateRouteCost(first_result[firstTour],distanceTable)+
-		calculateRouteCost(first_result[secondTour],distanceTable)))
-		{
-
-			if(getRouteCapacity(demand,temp1)<capacity && getRouteCapacity(demand,temp2)<capacity  )
-			{
-		first_result[firstTour]=temp1;
-		first_result[secondTour]=temp2;
-		improvement=0;
-		cout<<"\n yes improvement found";
-			}
-		}
-		else
-		{cout<<"\n No improvement";
-		cout<<" set improvment ";
-			improvement++;
-			cout<<improvement;
-		}
-
-	}
-	
-	//printRouteCodes(dimension, routerunTSNumber);
+	//printRouteCodes(dimension, routeNumber);
 	//cout << "\n Total cost of the route is " << total;
 	cout << "\n Total opt cost of the route is: " << optimiZedtotal;
 	cout<<"\n Total vechicles used: "<<countOfRoutes;
-cout<<"\n lets see final";
-		optimiZedtotal=0;
-		for(auto itr=first_result.begin();itr!=first_result.end();itr++)
-		{
-			vector<int> data=*itr;
-			printRoute(data);
-			cout<<" c\n cap is"<<getRouteCapacity(demand,data);
-			optimiZedtotal+=calculateRouteCost(data,distanceTable);
-		}
-cout << "\n Total opt cost of the route is: " << optimiZedtotal;
-	cout<<"\n Total vechicles used: "<<countOfRoutes;
+
+	cout<<"\n Distance sort";
+	vector<vector<int>> t;
+	t.push_back(depotLocation);
+	for(auto itr=customerCordinates.begin();itr!=customerCordinates.end();itr++)
+	{
+		t.push_back(*itr);
+	}
+	sort(t.begin(),t.end(),comp);
+	vector<int> data2=input.convertCordinateListToRoute(t);
+
+	printRoute(data2);
+	cout<<"\n";
+	for(auto itr=data2.begin();itr!=data2.end();itr++)
+	{
+		cout<<" "<<demand[*itr];
+	}
+	cout<<"\n sort done!!";
+
+
+}
+vector<float> getCentroid(vector<vector<int>> route)
+{
+float xsum=0;
+float ysum=0;
+float xavg;
+float yavg;
+int count=0;
+vector<vector<int>> d=route;
+for(auto it=d.begin();it!=d.end();it++)
+{
+    vector<int> data=(*it);
+    xsum+=data[0];
+    ysum+=data[1];
+
+}
+vector<float> result;
+xavg=xsum/d.size();
+yavg=ysum/d.size();
+result.push_back(xavg);
+result.push_back(yavg);
+return result;
 
 }

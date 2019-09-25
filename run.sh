@@ -7,6 +7,6 @@ do
     name=$(basename $f)
     echo "-------------------------------------------------------------------------------------"
     echo "Running Savings algorihtm on instance " $name
-    ./CVRPClarkeAndWrightSavingsSolver input_files/$name > output_files/$name
+    ./CVRPClarkeAndWrightHeuristicSolver input_files/$name > output_files/$name
     echo "Results are stored in  output_files/"$name 
 done

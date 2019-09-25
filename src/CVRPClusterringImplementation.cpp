@@ -5,13 +5,27 @@ Date :- 15th Jul 2019
 Description :- Solving CVRP using clark and wright savings algorithms
 ***********************************/
 #include "utility.h"
-
-#include "CVRPVehicleOutput.h"
-
-#include "CVRPInput.h"
-#include "TSPSolver.h"
 #include <stdlib.h>     /* srand, rand */
 
+#include "CVRPVehicleOutput.h"
+#include "CVRPInput.h"
+#include "TSPSolver.h"
+vector<vector<int>> updateCenteroid(vector<vector<int>> clusterCenteroid,
+									vector<vector<int>> nodeCentroid, vector<vector<int>> custmerCordinates);
+vector<vector<int>> checkCapacityConstrain(int capacity, vector<int> demand,
+										   vector<vector<int>> prevNodeCentroid, double distanceTable[300][300]);
+vector<int> getNearestCentroidLocation(vector<int> location,vector<vector<int>> clusterCenteroid);
+
+// A hash function used to hash a pair of any kind 
+struct hash_pair { 
+    template <class T1, class T2> 
+    size_t operator()(const pair<T1, T2>& p) const
+    { 
+        auto hash1 = hash<T1>{}(p.first); 
+        auto hash2 = hash<T2>{}(p.second); 
+        return hash1 ^ hash2; 
+    } 
+}; 
 struct SavingsNode
 {
 	int i;
@@ -327,7 +341,6 @@ for(int i=1;i<dimension;i++)
 	int rr = 0;
 //cout<<"hello";
 int countOfRoutes=0;
-vector<vector<int>> first_result;
 
 	for (auto i = routes.begin(); i != routes.end(); i++)
 	{
@@ -377,7 +390,7 @@ vector<vector<int>> first_result;
 	//cout<<" optimized route after tsp is ";
 	//	printRoute(optimizedRoute);
 		cout<<" \nCapacity this route:- "<<capacityHandled<<"\n";
-		first_result.push_back(optimizedRoute);
+		
 		cout<<" \nCost of this route:- "<<calculateRouteCost(optimizedRoute, distanceTable)<<"\n";
 		optimiZedtotal += calculateRouteCost(optimizedRoute, distanceTable);
 		calculateRouteCost	(optimizedRoute, distanceTable);
@@ -385,86 +398,255 @@ vector<vector<int>> first_result;
 	
 	}
 
-	int vechicleCount=first_result.size();
-	cout<<"\n total vehicls"<<vechicleCount;
-	  srand (time(NULL));
-	int firstTour=rand()%vechicleCount;//generate random number 0 to size-1;
-	int secondTour=rand()%vechicleCount;//generate random number 0 to size-1;
-	int improvement=0;
-
-	while(improvement<dimension*20)
-	{
-
-		int firstTour=rand()%vechicleCount;//generate random number 0 to size-1;
-	int secondTour=rand()%vechicleCount;//generate random number 0 to size-1;
-	while(secondTour==firstTour)
-	{
-		 secondTour=rand()%vechicleCount;
-	}
-	cout<<" \n selected "<<firstTour<<" "<<secondTour;
-	
-		int firstTourSize=first_result[firstTour].size();
-		int secondTourSize=first_result[secondTour].size();
-		int firstTourlocation=(rand()%(firstTourSize-2))+1;
-		int secondTourlocation=(rand()%(secondTourSize-2))+1;
-
-		cout<<"\n index in fist tour "<<firstTourlocation;
-		cout<<"\n index in second tour "<<secondTourlocation;
-		vector<int> temp1=first_result[firstTour];
-		vector<int> temp2=first_result[secondTour];
-		int k=temp1[firstTourlocation];
-		temp1[firstTourlocation]=temp2[secondTourlocation];
-		temp2[secondTourlocation]=k;
-		cout<<"\n earlier tours";
-		printRoute(first_result[firstTour]);
-		cout<<" \n its cost is "<<calculateRouteCost(first_result[firstTour],distanceTable);
-		cout<<endl;
-		printRoute(first_result[secondTour]);
-		cout<<" \n its cost is "<<calculateRouteCost(first_result[secondTour],distanceTable);
-		cout<<"\n new tours";
-		printRoute(temp1);
-		cout<<" \n its cost is "<<calculateRouteCost(temp1,distanceTable);
-		
-		cout<<endl;
-		printRoute(temp2);
-		cout<<" \n its cost is "<<calculateRouteCost(temp2,distanceTable);
-		
-		if((calculateRouteCost(temp1,distanceTable)+calculateRouteCost(temp2,distanceTable))
-		<(calculateRouteCost(first_result[firstTour],distanceTable)+
-		calculateRouteCost(first_result[secondTour],distanceTable)))
-		{
-
-			if(getRouteCapacity(demand,temp1)<capacity && getRouteCapacity(demand,temp2)<capacity  )
-			{
-		first_result[firstTour]=temp1;
-		first_result[secondTour]=temp2;
-		improvement=0;
-		cout<<"\n yes improvement found";
-			}
-		}
-		else
-		{cout<<"\n No improvement";
-		cout<<" set improvment ";
-			improvement++;
-			cout<<improvement;
-		}
-
-	}
-	
-	//printRouteCodes(dimension, routerunTSNumber);
+	//printRouteCodes(dimension, routeNumber);
 	//cout << "\n Total cost of the route is " << total;
 	cout << "\n Total opt cost of the route is: " << optimiZedtotal;
-	cout<<"\n Total vechicles used: "<<countOfRoutes;
-cout<<"\n lets see final";
-		optimiZedtotal=0;
-		for(auto itr=first_result.begin();itr!=first_result.end();itr++)
-		{
-			vector<int> data=*itr;
-			printRoute(data);
-			cout<<" c\n cap is"<<getRouteCapacity(demand,data);
-			optimiZedtotal+=calculateRouteCost(data,distanceTable);
-		}
-cout << "\n Total opt cost of the route is: " << optimiZedtotal;
-	cout<<"\n Total vechicles used: "<<countOfRoutes;
+   	cout<<"\n Total vechicles used: "<<countOfRoutes;
+//Implementaion of new Clusterring  algorithm
+    cout << "**************************************Now running clusterring algorithm";
+	bool found = false;
+    bool move;
+    int clusterSize = countOfRoutes;
+    int totalNodes = dimension - 1;
+    while (found == false)
+    {
+        move = true;
+        srand(time(NULL));
+        vector<vector<int>> clusterCenteroid;
+        for (int i = 0; i < clusterSize; i++)
+        {
+            while (true)
+            {
+                int centroid = (rand() % totalNodes);
+				bool c1=false;
+				int x=customerCordinates[centroid][0];
+				int y=customerCordinates[centroid][1];
+				for(auto itr=clusterCenteroid.begin();itr!=clusterCenteroid.end();itr++)
+				{
+					vector<int> d=*itr;
+					if(d[0]==x && d[1]==y)
+					c1=true;
+				}
+                if (c1==false)
+                {
+					vector<int> d=customerCordinates[centroid];
+                    clusterCenteroid.push_back(d);
+                    break;
+                }
+            }
+			
+        }
 
+		cout<<"\nThe cluster node selected are:-\n";
+		for (int i = 0; i < clusterSize; i++)
+		{
+			cout<<" "<<clusterCenteroid[i][0]<<" , "<<clusterCenteroid[i][1];
+		}
+		//for(int i=0;i<clusterCenteroid.size();i++)
+		//cout<<" "<<clusterCenteroid[i];
+		cout<<endl;
+		vector<vector<int>> prevNodeCentroid;
+        for (int i = 0; i <= totalNodes - 1; i++)
+        {
+            vector<int> location = customerCordinates[i];
+            vector<int> shortestCentroid = getNearestCentroidLocation(location, clusterCenteroid);
+			prevNodeCentroid.push_back(shortestCentroid);
+			
+			cout<<"\n Nearest details check for "<<location[0]<<" "<<location[1];
+			cout<<"\n now got nearest"<<shortestCentroid[0]<<" "<<shortestCentroid[1];
+			
+
+        }
+		cout<<" \n All nodes allcoated to shortest cluster\n";
+
+        while (move == true)
+        {
+			int yy;
+		// /cin>>yy;
+        
+			cout<<"\n Now start new iteration";
+			bool check=false;
+			cout<<"\n initialized bool";
+			vector<vector<int>> newCentroid;
+			cout<<"\n Declaration done";
+			cout<<"\n now updating the cluster centroids..";
+								for (int i = 0; i < clusterSize; i++)
+		{
+			cout<<" "<<clusterCenteroid[i][0]<<" , "<<clusterCenteroid[i][1];
+		}
+
+            vector<vector<int>> centroidList = updateCenteroid(clusterCenteroid,prevNodeCentroid,customerCordinates);
+			cout<<"\n Updation doen succesfully the cluster centroids..";
+					for (int i = 0; i < clusterSize; i++)
+		{
+			cout<<" "<<centroidList[i][0]<<" , "<<centroidList[i][1];
+		}
+		cout<<"\n continue...\n";
+			
+            for (int i = 0; i <= totalNodes - 1; i++)
+            {
+                vector<int> location = customerCordinates[i];
+				cout<<"\n getting nearest for customer "<<location[0]<<" "<<location[1];
+                vector<int> shortestCentroid  = getNearestCentroidLocation(location, centroidList);
+				
+				cout<<"\n now got nearest"<<shortestCentroid[0]<<" "<<shortestCentroid[1];
+				newCentroid.push_back(shortestCentroid);
+				if(newCentroid[i][0]!=prevNodeCentroid[i][0] 
+				 || newCentroid[i][1]!=prevNodeCentroid[i][1] )
+				 {
+					 check=true;
+				 }
+
+
+            }
+
+			cout<<"\n One iteration of loop again done\n";
+			cout<<"\n value of check is "<<check;
+			prevNodeCentroid=newCentroid;
+			clusterCenteroid=centroidList;
+
+            if (check==false)
+                move = false;
+
+        }
+		cout<<" \n Found one iteration... NOw checing the capcity lkeft yout";
+		int yy;
+		cin>>yy;
+		if(checkCapacityConstrain(capacity,demand,prevNodeCentroid,distanceTable).size()>0)
+        found=true;
+    }
+}
+
+vector<vector<int>> updateCenteroid(vector<vector<int>> clusterCenteroid, 
+						vector<vector<int>> nodeCentroid, vector<vector<int>> custmerCordinates)
+{
+	cout<<"\n start x allocaton";
+	vector<int> temp;
+	int y1;
+	vector<vector<int>> x;
+	vector<vector<int>> y;
+	 for(int i=0;i<clusterCenteroid.size();i++)
+	{
+	x.push_back(temp);
+	y.push_back(temp);
+	}
+	cout<<"\n done x allocaton";
+	cout<<" \n szie of x and y "<<x.size()<<" "<<y.size();
+	int count =0;
+	for(int i=0;i<custmerCordinates.size();i++)
+	{
+		vector<int> clusterid=nodeCentroid[i];
+				int j;
+			for( j=0;j<clusterCenteroid.size();j++)
+			{
+				if(clusterid[0]==clusterCenteroid[j][0] &&
+				   clusterid[1]==clusterCenteroid[j][1] )
+				   break;
+			}
+
+		vector<int> data=custmerCordinates[i];
+		x[j].push_back(data[0]);
+		y[j].push_back(data[1]);
+
+	}
+	for(int i=0;i<x.size();i++)
+	{	
+		vector<int> sum;
+
+		int totx=0;
+		int toty=0;
+		for(int j=0;j<x[i].size();j++)
+		{
+		totx+=x[i][j];
+		toty+=y[i][j];
+		}
+		totx=totx/x.size();
+		toty=toty/y.size();
+		sum.push_back(totx);
+		sum.push_back(toty);
+		cout<<"\n updating to "<<totx<<" "<<toty;
+		clusterCenteroid[i]=sum;
+	}
+	return clusterCenteroid;
+}
+vector<int> getNearestCentroidLocation(vector<int> location,vector<vector<int>> clusterCenteroid)
+{
+
+	cout<<"\n input list is:-";
+	for(auto itr=clusterCenteroid.begin();itr!=clusterCenteroid.end();itr++)
+	{
+		vector<int> d=*itr;
+	cout<<" "<<d[0]<<" "<<d[1];
+	}
+int x=location[0];
+int y=location[1];
+int px=clusterCenteroid[0][0];
+int py=clusterCenteroid[0][1];
+int dx,dy;
+dx=x-px;
+dy=y-py;
+int a,b;
+a=px;
+b=py;
+float min=sqrt(pow(dx, 2) + pow(dy, 2));
+cout<<"\n min is "<<min;
+
+for(auto itr=clusterCenteroid.begin()+1;itr!=clusterCenteroid.end();itr++)
+{
+	vector<int> d=*itr;
+	int px1=d[0];
+	int py1=d[1];
+	dx=x-px1;
+	dy=y-py1;
+
+	float distance=	sqrt(pow(dx, 2) + pow(dy, 2));
+	cout<<" found distance as "<<distance;
+	if(distance<min)
+	{
+		a=px1;
+		b=py1;
+		cout<<"\n min updated...";
+	}
+}
+vector<int> shortest;
+shortest.push_back(a);
+shortest.push_back(b);
+return shortest;
+}
+
+vector<vector<int>> checkCapacityConstrain(int capacity,vector<int> demand,
+vector<vector<int>> prevNodeCentroid,double distanceTable[300][300])
+{
+	cout<<" Size if demand list is "<<demand.size();
+
+  auto p1 = demand.begin() + 1;
+  auto p2 = demand.end();
+
+  vector<int> filterDemand = vector<int>(p1, p2);
+  unordered_map<pair<int, int>,vector<int>,hash_pair> umap;
+
+  for(int i=0;i<prevNodeCentroid.size();i++)
+  {
+	  vector<int> centroid=prevNodeCentroid[i];
+	  pair<int, int> p1(centroid[0],centroid[1]);
+	  umap[p1].push_back(i);
+  }
+  vector<vector<int>> routes;
+  vector<vector<int>> route1;
+  for(auto itr=umap.begin();itr!=umap.end();itr++)
+  {
+	  routes.push_back(itr->second);
+
+  }
+
+bool flag=true;
+for(auto itr=routes.begin();itr!=routes.end();itr++)
+{
+	if(calculateRouteCost(*itr,distanceTable)>capacity)
+	flag=false;
+
+}
+if(flag==false)
+return route1;
+return routes;
 }
