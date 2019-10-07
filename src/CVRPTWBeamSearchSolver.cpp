@@ -16,6 +16,16 @@ struct SavingsNode
     int j;
     double savings;
 };
+
+struct NodeDetails
+{
+    vector<int> visited;
+    vector<int> notVisited;
+    float dist;
+
+};
+vector<int> beamSearch(vector<int> route,int beamWidth);
+
 vector<vector<int>> Kmeans(vector<vector<float>> nodeList, int k, vector<int> demand, int maxCapacity);
 double getDistanceBetweenTwoNodes(vector<float> x, vector<float> y)
 {
@@ -294,8 +304,11 @@ int main(int argc, char *argv[])
     for(int i=0;i<result.size();i++)
     {
         cout<<endl;
+        result[i].insert(result[i].begin(),0);
+        result[i].push_back(0);
+      
         printRoute(result[i]);
-        cout<<"\n Capacity of route is "<<getRouteCapacity(demand,result[i]);
+         cout<<"\n Capacity of route is "<<getRouteCapacity(demand,result[i]);
     }
 
     //Result contains k means solution
@@ -489,4 +502,70 @@ vector<vector<int>> Kmeans(vector<vector<float>> nodeList, int k, vector<int> de
 
     }
     return final_routes;
+}
+
+vector<int> beamSearch(vector<int> route,int beamWidth,CVRPTW tw,
+    double distanceTable[300][300])
+{
+    int tot=route.size()-1;
+    struct NodeDetails n0,nstar;
+    n0.visited.push_back(0);
+    for(int i=1;i<route.size()-1;i++)
+    {
+        n0.notVisited.push_back(route[i]);
+    }
+    n0.dist=0;
+    vector<struct NodeDetails>b,boff;
+    b.push_back(n0);
+    int l=0;
+    nstar=n0;
+    nstar.dist=FLT_MAX;
+    while(b.size!=0)
+    {
+        //brach from each node
+
+        for(auto itr=b.begin();itr!=b.end();itr++)
+        {
+            struct NodeDetails temp=*itr;
+            int last=temp.visited[temp.visited.size()-1];
+
+            for(auto r=temp.notVisited.begin();r!=temp.notVisited.end();r++)
+            {
+                    bool flag=false;
+                    float cost=distanceTable[last][*r]+temp.dist;
+                    if(cost<=tw.getNodeList()[*r].getNodeBeginTime())
+                    {
+                        cost=tw.getNodeList()[*r].getNodeBeginTime();
+                        flag=true;
+                    }
+                    else
+                    {
+                        if(cost+tw.getNodeList()[*r].getNodeServiceTime<=
+                        tw.getNodeList()[*r].getNodeEndTime())
+                        {
+                        flag=true;
+                        }
+                    }
+                    if(flag==true)
+                    {
+                        std::vector<int>::iterator it; 
+                        struct NodeDetails child;
+                        child.visited=temp.visited;
+                        child.visited.push_back(*r);
+                        vector<int> not_vis(temp.notVisited.begin(),temp.notVisited.end());
+                        it = std::find (not_vis.begin(), not_vis.end(),*r); 
+                        not_vis.erase(it);
+                        child.notVisited=not_vis;
+                        child.dist=temp.dist+distanceTable[last][*r]+tw.getNodeList()[*r].getNodeServiceTime();
+                        boff.push_back(child);
+
+
+                    }
+
+
+            }
+
+
+        }
+    }
 }
