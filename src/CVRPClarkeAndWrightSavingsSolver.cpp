@@ -378,7 +378,7 @@ int countOfRoutes=0;
 		cout<<" \nCost of this route:- "<<calculateRouteCost(optimizedRoute, distanceTable)<<"\n";
 		optimiZedtotal += calculateRouteCost(optimizedRoute, distanceTable);
 		calculateRouteCost	(optimizedRoute, distanceTable);
-
+	printRoute(optimizedRoute);
 	
 	}
 
