@@ -1,0 +1,296 @@
+
+Opening File for reading..... 
+Path is cvrp_tw_input_files/c105
+File opened...... 
+Processing node details0 
+Processing node details1 
+Processing node details2 
+Processing node details3 
+Processing node details4 
+Processing node details5 
+Processing node details6 
+Processing node details7 
+Processing node details8 
+Processing node details9 
+Processing node details10 
+Processing node details11 
+Processing node details12 
+Processing node details13 
+Processing node details14 
+Processing node details15 
+Processing node details16 
+Processing node details17 
+Processing node details18 
+Processing node details19 
+Processing node details20 
+Processing node details21 
+Processing node details22 
+Processing node details23 
+Processing node details24 
+Processing node details25 
+Processing node details26 
+Processing node details27 
+Processing node details28 
+Processing node details29 
+Processing node details30 
+Processing node details31 
+Processing node details32 
+Processing node details33 
+Processing node details34 
+Processing node details35 
+Processing node details36 
+Processing node details37 
+Processing node details38 
+Processing node details39 
+Processing node details40 
+Processing node details41 
+Processing node details42 
+Processing node details43 
+Processing node details44 
+Processing node details45 
+Processing node details46 
+Processing node details47 
+Processing node details48 
+Processing node details49 
+Processing node details50 
+Processing node details51 
+Processing node details52 
+Processing node details53 
+Processing node details54 
+Processing node details55 
+Processing node details56 
+Processing node details57 
+Processing node details58 
+Processing node details59 
+Processing node details60 
+Processing node details61 
+Processing node details62 
+Processing node details63 
+Processing node details64 
+Processing node details65 
+Processing node details66 
+Processing node details67 
+Processing node details68 
+Processing node details69 
+Processing node details70 
+Processing node details71 
+Processing node details72 
+Processing node details73 
+Processing node details74 
+Processing node details75 
+Processing node details76 
+Processing node details77 
+Processing node details78 
+Processing node details79 
+Processing node details80 
+Processing node details81 
+Processing node details82 
+Processing node details83 
+Processing node details84 
+Processing node details85 
+Processing node details86 
+Processing node details87 
+Processing node details88 
+Processing node details89 
+Processing node details90 
+Processing node details91 
+Processing node details92 
+Processing node details93 
+Processing node details94 
+Processing node details95 
+Processing node details96 
+Processing node details97 
+Processing node details98 
+Processing node details99 
+Processing node details100
+ File read successfully
+ CVRP Instance.........
+ Maximum Number of vehicles 10 
+ Maximum Number of nodes 100
+ Maximum Capacity 200
+0 40 50 0 0 1236 0 
+1 45 68 90 10 885 994 
+2 45 70 90 30 802 893 
+3 42 66 90 10 25 186 
+4 42 68 90 10 699 810 
+5 42 65 90 10 15 120 
+6 40 69 90 20 580 743 
+7 40 66 90 20 142 253 
+8 38 68 90 20 220 359 
+9 38 70 90 10 499 640 
+10 35 66 90 10 331 436 
+11 35 69 90 10 420 533 
+12 25 85 90 20 617 756 
+13 22 75 90 30 30 155 
+14 22 85 90 10 541 646 
+15 20 80 90 40 362 451 
+16 20 85 90 40 448 555 
+17 18 75 90 20 75 172 
+18 15 75 90 20 142 291 
+19 15 80 90 10 244 379 
+20 30 50 90 10 10 137 
+21 30 52 90 20 888 991 
+22 28 52 90 20 776 919 
+23 28 55 90 10 709 800 
+24 25 50 90 10 25 184 
+25 25 52 90 40 142 251 
+26 25 55 90 10 582 741 
+27 23 52 90 10 234 343 
+28 23 55 90 20 523 616 
+29 20 50 90 10 335 428 
+30 20 55 90 10 422 531 
+31 10 35 90 20 181 256 
+32 10 40 90 30 31 170 
+33 8 40 90 40 52 193 
+34 8 45 90 20 719 848 
+35 5 35 90 10 252 375 
+36 5 45 90 10 639 742 
+37 2 40 90 20 357 460 
+38 0 40 90 30 457 544 
+39 0 45 90 20 538 653 
+40 35 30 90 10 236 349 
+41 35 32 90 10 132 269 
+42 33 32 90 20 27 190 
+43 33 35 90 10 16 144 
+44 32 30 90 10 332 439 
+45 30 30 90 10 512 629 
+46 30 32 90 30 417 540 
+47 30 35 90 10 982 1127 
+48 28 30 90 10 601 724 
+49 28 35 90 10 969 1098 
+50 26 32 90 10 783 912 
+51 25 30 90 10 695 816 
+52 25 35 90 10 883 998 
+53 44 5 90 20 255 378 
+54 42 10 90 40 150 293 
+55 42 15 90 10 63 190 
+56 40 5 90 30 359 462 
+57 40 15 90 40 35 140 
+58 38 5 90 30 439 566 
+59 38 15 90 10 607 784 
+60 35 5 90 20 529 662 
+61 50 30 90 10 491 650 
+62 50 35 90 20 235 344 
+63 50 40 90 50 147 242 
+64 48 30 90 10 601 724 
+65 48 40 90 10 50 155 
+66 47 35 90 10 802 899 
+67 47 40 90 10 12 143 
+68 45 30 90 10 712 799 
+69 45 35 90 10 889 996 
+70 95 30 90 30 353 490 
+71 95 35 90 20 260 393 
+72 53 30 90 10 422 533 
+73 92 30 90 10 442 587 
+74 53 35 90 50 323 442 
+75 45 65 90 20 962 1103 
+76 90 35 90 10 175 288 
+77 88 30 90 10 539 678 
+78 88 35 90 20 78 201 
+79 87 30 90 10 636 763 
+80 85 25 90 10 744 845 
+81 85 35 90 30 47 201 
+82 75 55 90 20 344 445 
+83 72 55 90 10 228 375 
+84 70 58 90 20 425 556 
+85 68 60 90 30 527 640 
+86 66 55 90 10 141 270 
+87 65 55 90 20 56 173 
+88 65 60 90 30 614 739 
+89 63 58 90 10 705 834 
+90 60 55 90 10 20 148 
+91 60 60 90 10 809 916 
+92 67 85 90 20 331 478 
+93 65 85 90 40 453 540 
+94 65 82 90 10 260 361 
+95 62 80 90 30 174 261 
+96 60 80 90 10 64 187 
+97 60 85 90 30 531 652 
+98 58 75 90 20 30 139 
+99 55 80 90 10 705 858 
+100 55 85 90 20 608 765 
+Dimension : 100
+
+Capacity :200
+
+ Now printing routes 
+ Now rnning k means....
+ Result of K means is :-
+
+
+ 0 1 2 3 4 5 6 7 8 9 10 11 75 0
+ Capacity of route is 180
+
+
+ 0 31 32 33 34 35 36 37 38 39 0
+ Capacity of route is 200
+
+
+ 0 82 83 84 85 86 87 88 89 90 91 0
+ Capacity of route is 170
+
+
+ 0 20 21 22 23 24 25 26 27 28 29 30 0
+ Capacity of route is 170
+
+
+ 0 12 13 14 15 16 17 18 19 0
+ Capacity of route is 190
+
+
+ 0 40 41 42 43 44 45 46 47 48 49 50 51 52 0
+ Capacity of route is 160
+
+
+ 0 61 62 63 64 65 66 67 68 69 72 74 0
+ Capacity of route is 200
+
+
+ 0 53 54 55 56 57 58 59 60 0
+ Capacity of route is 200
+
+
+ 0 92 93 94 95 96 97 98 99 100 0
+ Capacity of route is 190
+
+
+ 0 70 71 73 76 77 78 79 80 81 0
+ Capacity of route is 150
+********** K-Means Completed ****************************
+ Processing..Please wait......
+ ********************Results stabilized with beam width 102*****************
+ Cost is 828.937
+
+******** Running 2 opt on clsuter ********0
+ 0 5 3 7 8 10 11 9 6 4 2 1 75 0
+
+******** Running 2 opt on clsuter ********1
+ 0 32 33 31 35 37 38 39 36 34 0
+
+******** Running 2 opt on clsuter ********2
+ 0 90 87 86 83 82 84 85 88 89 91 0
+
+******** Running 2 opt on clsuter ********3
+ 0 20 24 25 27 29 30 28 26 23 22 21 0
+
+******** Running 2 opt on clsuter ********4
+ 0 13 17 18 19 15 16 14 12 0
+
+******** Running 2 opt on clsuter ********5
+ 0 43 42 41 40 44 46 45 48 51 50 52 49 47 0
+
+******** Running 2 opt on clsuter ********6
+ 0 67 65 63 62 74 72 61 64 68 66 69 0
+
+******** Running 2 opt on clsuter ********7
+ 0 57 55 54 53 56 58 60 59 0
+
+******** Running 2 opt on clsuter ********8
+ 0 98 96 95 94 92 93 97 100 99 0
+
+******** Running 2 opt on clsuter ********9
+ 0 81 78 76 71 70 73 77 79 80 0 
+Cost of the solution is : 828.937 
+ Beam width : 102
+ Vechicles used : 10
+Time Taken 9.795487 seconds to execute : 

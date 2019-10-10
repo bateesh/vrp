@@ -28,11 +28,11 @@ vector < int > extract_ints(const string & term) {
 }
 // extract the first number in a string
 float extract_float(const string & term) {
-  cout<<" \n input term is "<<term;
+  //cout<<" \n input term is "<<term;
   size_t start_p = term.find_first_of("-0123456789");
   float i;
   istringstream(term.substr(start_p, term.size() - start_p)) >> i;
-  cout<<"\n extraceted float"<<i;
+  //cout<<"\n extraceted float"<<i;
   return i;
 }
 
@@ -43,12 +43,12 @@ vector < float > extract_floats(const string & term) {
   string token;
   vector < float > data;
   while (getline(ss, token, ' ')){
-    cout<<"\nCurretn token "<<token;
-    cout<<" \n pushing"<<token;
-    cout<<"\n token size"<<token.size();
+    //cout<<"\nCurretn token "<<token;
+    //cout<<" \n pushing"<<token;
+    //cout<<"\n token size"<<token.size();
     
     data.push_back(extract_float(token));}
-    cout<<"\n now returning";
+    //cout<<"\n now returning";
     return data;
 }
 
@@ -58,9 +58,9 @@ vector < float > extract_floats(const string & term) {
 // next 'dimension' vectors contain locations (x, y)
 // then the customer demands (demand)
 vector < vector < int > > readFile(const char * path) {
-	cout<<" Now readinf file";
+	//cout<<" Now readinf file";
   ifstream file(path);
-  	cout<<" opened file";
+  	//cout<<" opened file";
 
   string line;
   vector < vector < int > > data;
@@ -109,7 +109,7 @@ vector < vector < int > > readFile(const char * path) {
 // read CVRPTW data file and return a CVRPTW instance
 CVRPTW readFileWithTimeWindows(const char * path) {
 	cout<<"\nOpening File for reading.....";
-  cout<<" paht is "<<path;
+  cout<<" \nPath is "<<path;
   ifstream file(path);
   cout<<"\nFile opened......";
   //return ;

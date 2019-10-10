@@ -5,7 +5,7 @@ Date :- 15th Jul 2019
 Description :- Solving CVRP using clark and wright savings algorithms
 ***********************************/
 #include "utility.h"
-
+#include<time.h>
 #include "CVRPVehicleOutput.h"
 
 #include "CVRPInput.h"
@@ -16,15 +16,33 @@ struct SavingsNode
     int j;
     double savings;
 };
-
 struct NodeDetails
 {
     vector<int> visited;
     vector<int> notVisited;
     float dist;
-
+    float begin_time;
 };
-vector<int> beamSearch(vector<int> route,int beamWidth);
+vector<int> two_opt(vector<int> route, double distanceTable[300][300], CVRPTW tw);
+
+void printNodeDetails(struct NodeDetails a)
+{
+    cout << "\n Vsiited :  ";
+    for (int i = 0; i < a.visited.size(); i++)
+        cout << " " << a.visited[i];
+    cout << "\n Note Vsiited :  ";
+    for (int i = 0; i < a.notVisited.size(); i++)
+        cout << " " << a.notVisited[i];
+    cout << "\n Dist :  ";
+    cout << " " << a.dist;
+}
+
+bool sortBeamNodes(NodeDetails a, NodeDetails b)
+{
+    return a.begin_time < b.begin_time;
+}
+struct NodeDetails beamSearch(vector<int> route, int beamWidth, CVRPTW tw,
+                              double distanceTable[300][300]);
 
 vector<vector<int>> Kmeans(vector<vector<float>> nodeList, int k, vector<int> demand, int maxCapacity);
 double getDistanceBetweenTwoNodes(vector<float> x, vector<float> y)
@@ -49,15 +67,19 @@ bool comparater(SavingsNode i1, SavingsNode i2)
 
 int main(int argc, char *argv[])
 {
-       
-    CVRPTW cvrptw = readFileWithTimeWindows("c101");
+
+    clock_t t; 
+    t = clock(); 
+  
+  
+    CVRPTW cvrptw = readFileWithTimeWindows(argv[1]);
     printf("\n File read successfully");
     cvrptw.printCVRPInstance();
     //return 0;
 
-    cout << " \n Reading File:-" << argv[1] << endl;
-    vector<vector<int>> data = readFile(argv[1]);
-    CVRPInput input = CVRPInput(data);
+    //cout << " \n Reading File:-" << argv[1] << endl;
+    //vector<vector<int>> data = readFile(argv[1]);
+    //CVRPInput input = CVRPInput(data);
     vector<CVRPVehicleOutput> output;
     int dimension = cvrptw.getNumberOfNodes(); //.getDimension();
     int capacity = cvrptw.getmaximumCapacity();
@@ -260,7 +282,7 @@ int main(int argc, char *argv[])
         }
     }
     cout << "\n Now printing routes ";
-    cout << endl;
+   // cout << endl;
     double total = 0;
     double optimiZedtotal = 0;
     int rr = 0;
@@ -278,42 +300,170 @@ int main(int argc, char *argv[])
         countOfRoutes++;
         total += calculateRouteCost(cr, distanceTable);
 
-        cout << endl;
+     //   cout << endl;
 
-        cout << " Route " << rr << " : ";
+        //cout << " Route " << rr << " : ";
 
         rr++;
         vector<int> tempRoute(cr.begin(), cr.end());
 
-        cout << " \nCapacity this route:- " << getRouteCapacity(demand, tempRoute);
+        //cout << " \nCapacity this route:- " << getRouteCapacity(demand, tempRoute);
 
-        cout << " \nCost of this route:- " << calculateRouteCost(tempRoute, distanceTable) << "\n";
+        //cout << " \nCost of this route:- " << calculateRouteCost(tempRoute, distanceTable) << "\n";
     }
 
-    cout << "\n Total opt cost of the route is: " << optimiZedtotal;
-    cout << "\n Total vechicles used: " << countOfRoutes;
+  //  cout << "\n Total opt cost of the route is: " << optimiZedtotal;
+    //cout << "\n Total vechicles used: " << countOfRoutes;
 
- cout << "\n Total Number of routes found are :-" << countOfRoutes;
+    //cout << "\n Total Number of routes found are :-" << countOfRoutes;
 
-    int maxRoutes =countOfRoutes;
+    int maxRoutes = countOfRoutes;
 
-
-    cout<<"\n Now rnning k means....";
-   vector<vector<int>> result= Kmeans(customerCordinates, maxRoutes, demand, capacity);
-    cout<<"\n Result of K means is :-";
-    for(int i=0;i<result.size();i++)
+    cout << "\n Now rnning k means....";
+    vector<vector<int>> result = Kmeans(customerCordinates, maxRoutes, demand, capacity);
+    cout << "\n Result of K means is :-";
+    // int beam_width=50;
+    for (int i = 0; i < result.size(); i++)
     {
-        cout<<endl;
-        result[i].insert(result[i].begin(),0);
+        cout << endl;
+
+        for (int j = 0; j < result[i].size(); j++)
+        {
+            result[i][j] += 1;
+        }
+        result[i].insert(result[i].begin(), 0);
         result[i].push_back(0);
-      
+
+        cout << endl;
         printRoute(result[i]);
-         cout<<"\n Capacity of route is "<<getRouteCapacity(demand,result[i]);
+        cout << "\n Capacity of route is " << getRouteCapacity(demand, result[i]);
     }
 
-    //Result contains k means solution
-     
+    cout << "\n********** K-Means Completed ****************************";
+    cout<<"\n Processing..Please wait......";
+    int beam_width =150;
+    int maxItrWithoutImprovement = 0;
+    double cur_cost, prev_cost, best_cost;
+    best_cost=cur_cost = prev_cost = FLT_MAX;
+    vector<vector<int>> bestSolution;
+    int a = 1;
+    double tot_cost = 0;
+    while (a<2)
+    {
+        a++;
+        bool infeasible=false;
+        bestSolution.clear();
+
+         tot_cost = 0;
+        for (int i = 0; i < result.size(); i++)
+        {
+       //     cout << endl;
+            cout<<"\n running beam width "<<beam_width;
+            cout << "\n Running beam search on cluster" << i << "....";
+            struct NodeDetails beamCluster = beamSearch(result[i], beam_width, cvrptw, distanceTable);
+            vector<int> output = beamCluster.visited;
+            if (beamCluster.dist == FLT_MAX)
+            {
+                infeasible=true;
+              //  break;
+                cout << "\n unable to process cluster.no feasible solution exists...";
+            }
+            else
+            {
+                cout<<"\n Cluster processed succesfully";
+                output = beamCluster.visited;
+            }
+
+          //  printRoute(output);
+            bestSolution.push_back(output);
+          //  cout << "\n Capacity of route is " << getRouteCapacity(demand, result[i]);
+            tot_cost += calculateRouteCost(output, distanceTable);
+            //cout << "\n cost of route is " << calculateRouteCost(output, distanceTable);
+        }
+        //cout << "\n The total cost of route is " << tot_cost;
+        if (infeasible==false)
+        {
+          //  cout << "\n for beam wodth " << beam_width << " tot is " << tot_cost << " and rev is " << prev_cost;
+
+                if(best_cost==FLT_MAX)
+                {
+                    best_cost=tot_cost;
+          //          cout<<"\n set initial sol.";
+            //        cout<<"\n cost is "<<best_cost;
+              //      cout<<" \n itr "<<maxItrWithoutImprovement;
+                //    cout<<"\n beamwidth"<<beam_width;
+                cout<<"\n found first feaible";
+                    getchar();
+                  
+                }
+                else if(tot_cost<.98*best_cost)
+                {
+                    //cout<<"\n important information";
+                    //cout<<" \ncost is "<<best_cost;
+                    //cout<<"\n enw cost "<<tot_cost;
+                    //cout<<" \n itr "<<maxItrWithoutImprovement;
+                    //cout<<"\n beamwidth"<<beam_width;
+
+cout<<"\n scope of improement";
+getchar();
+                    best_cost=tot_cost;
+                    maxItrWithoutImprovement=0;
+                }
+                else
+                {
+  //                  cout<<"\n **********88important information";
+    //                cout<<" \ncost is "<<best_cost;
+                   // cout<<"\n enw cost "<<tot_cost;
+      //              cout<<" \n itr "<<maxItrWithoutImprovement;
+        //            cout<<"\n beamwidth"<<beam_width;
+        cout<<"\n incremnt itr"<<maxItrWithoutImprovement;
+    
+                    getchar();
+                maxItrWithoutImprovement ++;
+                }
+                
+
+
+       }
+       else
+       {
+          cout<<" \n Infeasible";
+           cout<<"\n beam_wodth here is "<<beam_width;
+           getchar();
+       }
+        //
+        
+        //Result contains k means solution
+        beam_width++;
+    }
+double two_result=0;
+    cout << "\n ********************Results stabilized with beam width " 
+    << beam_width << "*****************" << endl;
+    cout<<" Cost is "<<best_cost;
+    
+    for (int i = 0; i < bestSolution.size(); i++)
+    {
+        cout << endl;
+
+        cout<<"\n******** Running 2 opt on clsuter ********"<<i;
+        vector<int> r= two_opt(bestSolution[i], distanceTable,cvrptw);
+        //cout<<" calling cost";
+        
+        two_result+=calculateRouteCost(r,distanceTable);
+
+        printRoute(r);
+    }
+
+    cout << " \nCost of the solution is : " << two_result;
+    cout<<" \n Beam width : "<<beam_width;
+    cout<<"\n Vechicles used : "<<bestSolution.size();
+    t = clock() - t; 
+    double time_taken = ((double)t)/CLOCKS_PER_SEC; // in seconds 
+  
+    printf("\nTime Taken %f seconds to execute : ", time_taken); 
+
 }
+
 
 // implementation of k means
 vector<vector<int>> Kmeans(vector<vector<float>> nodeList, int k, vector<int> demand, int maxCapacity)
@@ -330,23 +480,23 @@ vector<vector<int>> Kmeans(vector<vector<float>> nodeList, int k, vector<int> de
         tempAssignment.push_back(-1);
     }
     vector<vector<int>> final_routes;
-    
+
     bool found = false;
     bool move;
-    int itr=1;
+    int itr = 1;
     while (found == false)
     {
-       
+
         move = true;
 
         // generated k random means
-        int currentMeanGenerated=0;
+        int currentMeanGenerated = 0;
         vector<int> meanLocationUsed;
 
-        while(currentMeanGenerated<k)
+        while (currentMeanGenerated < k)
         {
             int r = rand() % totalSize;
-           // cout<<"\n generated "<<r;
+            // cout<<"\n generated "<<r;
             vector<float> mean = nodeList[r];
             it = std::find(meanLocationUsed.begin(), meanLocationUsed.end(), r);
             if (it == meanLocationUsed.end())
@@ -366,28 +516,28 @@ vector<vector<int>> Kmeans(vector<vector<float>> nodeList, int k, vector<int> de
                 double newDistance = getDistanceBetweenTwoNodes(meanList[j], nodeList[i]);
                 if (newDistance < cur_distance)
                 {
-                    cur_distance=newDistance;
+                    cur_distance = newDistance;
                     currentAssignment[i] = j;
                 }
             }
         }
-        cout<<"\n Details of Before Iteration1 :-";
-        cout<<"\n Means are: ";
-        for(int i=0;i<k;i++)
+        //cout << "\n Details of Before Iteration1 :-";
+        //cout << "\n Means are: ";
+        for (int i = 0; i < k; i++)
         {
-            cout<<"\n";
-            cout<<""<<meanList[i][0]<<" "<<meanList[i][1];
+          //  cout << "\n";
+            //cout << "" << meanList[i][0] << " " << meanList[i][1];
         }
-        cout<<"\n Current assignment are :";
-        for(int i=0;i<nodeList.size();i++)
+        //cout << "\n Current assignment are :";
+        for (int i = 0; i < nodeList.size(); i++)
         {
-            cout<<" "<<currentAssignment[i];
+          //  cout << " " << currentAssignment[i];
         }
-        int move1=1;
+        int move1 = 1;
         while (move == true)
         {
-            cout<<"\n running move itr"<<move1;
-            
+            //cout << "\n running move itr" << move1;
+
             vector<vector<float>> newMeanList;
             vector<float> sumx;
             vector<int> countx;
@@ -408,7 +558,7 @@ vector<vector<int>> Kmeans(vector<vector<float>> nodeList, int k, vector<int> de
                 countx[currentCluster] += 1;
                 county[currentCluster] += 1;
             }
-            cout<<"\n Move and other calcaultion are don";
+            //cout << "\n Move and other calcaultion are don";
             for (int i = 0; i < k; i++)
             {
                 vector<float> res;
@@ -419,64 +569,62 @@ vector<vector<int>> Kmeans(vector<vector<float>> nodeList, int k, vector<int> de
 
                 newMeanList.push_back(res);
             }
-            cout<<"\n sums rae calcaulated";
+            //cout << "\n sums rae calcaulated";
             bool movement = false;
-            cout<<"\n size is "<<nodeList.size();
+            //cout << "\n size is " << nodeList.size();
             meanList.clear();
-            meanList=newMeanList;
+            meanList = newMeanList;
             for (int i = 0; i < nodeList.size(); i++)
             {
-              //  cout<<"\n making new assignment for node "<<i;
+                //  cout<<"\n making new assignment for node "<<i;
                 double cur_distance = FLT_MAX;
 
                 for (int j = 0; j < meanList.size(); j++)
                 {
-                   // cur_distance = FLT_MAX;
+                    // cur_distance = FLT_MAX;
                     double newDistance = getDistanceBetweenTwoNodes(meanList[j], nodeList[i]);
                     if (newDistance < cur_distance)
                     {
-                        cur_distance=newDistance;
+                        cur_distance = newDistance;
                         tempAssignment[i] = j;
                     }
-                
                 }
 
-                      if (currentAssignment[i] != tempAssignment[i])
-                    {
-                        cout<<"\n yes a movement has happended";
-                        movement = true;
-                    }
-              
+                if (currentAssignment[i] != tempAssignment[i])
+                {
+              //      cout << "\n yes a movement has happended";
+                    movement = true;
+                }
             }
-            cout<<"\n rounf completef;";
+            //cout << "\n rounf completef;";
             move1++;
-            currentAssignment=tempAssignment;
-            cout<<"\n prinitn updated details now:-";
-            for(int i=0;i<nodeList.size();i++)
+            currentAssignment = tempAssignment;
+            //cout << "\n prinitn updated details now:-";
+            for (int i = 0; i < nodeList.size(); i++)
             {
-                cout<<" "<<currentAssignment[i];
+              //  cout << " " << currentAssignment[i];
             }
 
-            cout<<"\n assignment done";
+            //cout << "\n assignment done";
             if (movement == false)
             {
-                cout<<"\n making it false";
+              //  cout << "\n making it false";
                 move = false;
             }
-            cout<<"\n status updated";
-            if(move==true)
-            cout<<"truel";
+            //cout << "\n status updated";
+            if (move == true)
+              {}//  cout << "truel";
             else
             {
-                cout<<"false";
+                //cout << "false";
             }
-                
-            cout<<"\n curretn set of iteration completed";    
+
+            //cout << "\n curretn set of iteration completed";
         }
 
         //return final_routes;
-    cout<<" came out";
-            vector<vector<int>> result_routes(k);
+      //  cout << " came out";
+        vector<vector<int>> result_routes(k);
 
         for (int i = 0; i < nodeList.size(); i++)
             result_routes[tempAssignment[i]].push_back(i);
@@ -492,80 +640,282 @@ vector<vector<int>> Kmeans(vector<vector<float>> nodeList, int k, vector<int> de
             found = true;
         }
 
-
         meanList.clear();
         for (int i = 0; i < nodeList.size(); i++)
         {
             currentAssignment.push_back(-1);
             tempAssignment.push_back(-1);
         }
-
     }
     return final_routes;
 }
 
-vector<int> beamSearch(vector<int> route,int beamWidth,CVRPTW tw,
-    double distanceTable[300][300])
+struct NodeDetails beamSearch(vector<int> route, int beamWidth, CVRPTW tw,
+                              double distanceTable[300][300])
 {
-    int tot=route.size()-1;
-    struct NodeDetails n0,nstar;
+    int tot = route.size() - 1;
+    struct NodeDetails n0, nstar;
     n0.visited.push_back(0);
-    for(int i=1;i<route.size()-1;i++)
+    for (int i = 1; i < route.size() - 1; i++)
     {
         n0.notVisited.push_back(route[i]);
     }
-    n0.dist=0;
-    vector<struct NodeDetails>b,boff;
+    n0.dist = 0;
+    n0.begin_time = tw.getNodeList()[0].getNodeBeginTime();
+    vector<struct NodeDetails> b, boff;
     b.push_back(n0);
-    int l=0;
-    nstar=n0;
-    nstar.dist=FLT_MAX;
-    while(b.size!=0)
+    int l = 0;
+    nstar = n0;
+    nstar.dist = FLT_MAX;
+    //cout << " parameters set";
+    //return nstar;
+    while (b.size() != 0)
     {
+        cout << "\ n processing current set of b nodes";
         //brach from each node
 
-        for(auto itr=b.begin();itr!=b.end();itr++)
+        for (auto itr = b.begin(); itr != b.end(); itr++)
         {
-            struct NodeDetails temp=*itr;
-            int last=temp.visited[temp.visited.size()-1];
-
-            for(auto r=temp.notVisited.begin();r!=temp.notVisited.end();r++)
+            cout << "\n start new iteration of this";
+            struct NodeDetails temp = *itr;
+            int last = temp.visited[temp.visited.size() - 1];
+            cout << "\n last node is " << last;
+            for (auto r = temp.notVisited.begin(); r != temp.notVisited.end(); r++)
             {
-                    bool flag=false;
-                    float cost=distanceTable[last][*r]+temp.dist;
-                    if(cost<=tw.getNodeList()[*r].getNodeBeginTime())
+                cout << "\n Processing unvisited node " << *r;
+                bool flag = false;
+                float cost = distanceTable[last][*r] + temp.dist;
+                if (cost <= tw.getNodeList()[*r].getNodeEndTime())
+                {
+                    if (cost < tw.getNodeList()[*r].getNodeBeginTime())
+                        cost = tw.getNodeList()[*r].getNodeBeginTime();
+                    flag = true;
+                }
+                else
+                {
+                    // if(cost+tw.getNodeList()[*r].getNodeServiceTime()<=
+                    //tw.getNodeList()[*r].getNodeEndTime())
+                    //{
+                    //flag=true;
+                    // }
+                    //else
+                    //{
+                    cout << "\n not possible to add";
+                    cout << " \nlast is " << last;
+                    //cout << "\n cost is " << cost;
+                    //cout << "\n open is " << tw.getNodeList()[*r].getNodeBeginTime();
+
+                    //}
+                }
+                if (flag == true)
+                {
+                    cout << "\n yes can be added";
+                    std::vector<int>::iterator it;
+                    struct NodeDetails child;
+                    child.visited = temp.visited;
+                    child.visited.push_back(*r);
+                    vector<int> not_vis(temp.notVisited.begin(), temp.notVisited.end());
+                    it = std::find(not_vis.begin(), not_vis.end(), *r);
+                    not_vis.erase(it);
+                    child.notVisited = not_vis;
+                    child.begin_time = tw.getNodeList()[*r].getNodeBeginTime();
+                    child.dist = temp.dist + distanceTable[last][*r] + tw.getNodeList()[*r].getNodeServiceTime();
+                    if (child.notVisited.empty())
                     {
-                        cost=tw.getNodeList()[*r].getNodeBeginTime();
-                        flag=true;
+                        cout << "\n but all are visited";
+                        child.visited.push_back(0);
+                        child.dist += distanceTable[*r][0];
+                        if (child.dist < nstar.dist)
+                            nstar = child;
                     }
                     else
                     {
-                        if(cost+tw.getNodeList()[*r].getNodeServiceTime<=
-                        tw.getNodeList()[*r].getNodeEndTime())
-                        {
-                        flag=true;
-                        }
-                    }
-                    if(flag==true)
-                    {
-                        std::vector<int>::iterator it; 
-                        struct NodeDetails child;
-                        child.visited=temp.visited;
-                        child.visited.push_back(*r);
-                        vector<int> not_vis(temp.notVisited.begin(),temp.notVisited.end());
-                        it = std::find (not_vis.begin(), not_vis.end(),*r); 
-                        not_vis.erase(it);
-                        child.notVisited=not_vis;
-                        child.dist=temp.dist+distanceTable[last][*r]+tw.getNodeList()[*r].getNodeServiceTime();
+                        cout << "\n prepared new child ";
+                        printNodeDetails(child);
                         boff.push_back(child);
-
-
                     }
-
-
+                }
             }
-
-
+           cout << "\n completed for iterations";
         }
+        cout << "\n all nodes processed";
+
+        vector<struct NodeDetails> temp_B(boff.begin(), boff.end());
+        sort(temp_B.begin(), temp_B.end(), sortBeamNodes);
+        cout << "\n sorting done";
+        cout << " size of b off is " << temp_B.size();
+        b.clear();
+        int k = (beamWidth < temp_B.size()) ? beamWidth : temp_B.size();
+        cout << "********";
+        cout << " \n rpitn sort order";
+        int count = 1;
+        for (auto itr = temp_B.begin(); itr != temp_B.end(); itr++)
+        {
+            cout << endl;
+            cout << " ";
+            printNodeDetails(*itr);
+            cout << " \n count " << count++;
+        }
+        cout << "\n**** beam wodt is " << beamWidth;
+        cout << "\n*** tem is " << temp_B.size();
+        cout << "\n min(k) is " << k;
+        cout << "\n now it will run for " << k;
+        int current_count = 0;
+        int index = 0;
+
+        while (current_count <= beamWidth && temp_B.empty() == false)
+        {
+            cout << " now running for loop";
+            bool flag = false;
+            struct NodeDetails a = temp_B[index];
+        cout << " \n Processing node ";
+            printNodeDetails(a);
+            for (int i = 0; i < a.notVisited.size(); i++)
+            {
+
+                float begin_time = tw.getNodeList()[a.notVisited[i]].getNodeBeginTime();
+                float end_time = tw.getNodeList()[a.notVisited[i]].getNodeEndTime();
+                float service_time = tw.getNodeList()[a.notVisited[i]].getNodeServiceTime();
+                float current_cost = 0;
+                if (a.dist > end_time)
+                {
+                 cout << " cannot process " << a.notVisited[i] << " for this node";
+                    flag = true;
+                }
+            }
+            if (!flag)
+            {
+                b.push_back(temp_B[index]);
+                current_count++;
+            }
+            index++;
+            if (index == temp_B.size())
+                break;
+        }
+        cout << " new set prepared with size" << b.size();
+        boff.clear();
+        temp_B.clear();
+        cout << "\n new data prepared";
+        //  return nstar;
     }
+
+    return nstar;
+}
+
+vector<int> two_opt(vector<int> route, double distanceTable[300][300], CVRPTW tw)
+{
+    bool improvement = true;
+    vector<int> bestRoute = route;
+    //cout<<"\n inpute route isn ";
+    //printRoute(route);
+    while (improvement == true)
+    {
+        //cout<<"\n ne round started";
+        improvement = false;
+        for (int i = 1; i < bestRoute.size() - 2; i++)
+            for (int j = 1; j < bestRoute.size() - 2; j++)
+                if (j != i - 1 && j != i + 1 && i!=j)
+                {
+//cout<<"\n CUrrent route is ";
+      //              printRoute(bestRoute);
+                    int a = bestRoute[i];
+                    int b = bestRoute[j];
+                    int c = bestRoute[i+1];
+                    int d = bestRoute[j+1];
+//cout<<" \n data access";
+                    if ((distanceTable[a][c] + distanceTable[b][d]) >
+                    (distanceTable[a][b] + distanceTable[c][d]))
+                    {
+  //                      cout<<"\n yes try to update imp";
+    //                    cout<<endl;
+      //                  cout<<a<<" "<<c<<"+"<<" "<<b<<" "<<d;
+        //                cout<<a<<" "<<b<<"+"<<" "<<c<<" "<<d;
+          //              cout<<endl;
+                           vector<int> temp_route;
+                     
+                        if(i<j)
+                        {
+
+                        
+            //            cout<<"\n currnet i"<<i<<" j "<<j;
+                     //   vector<int> temp_route;
+                        for (int k = 0; k <= i; k++)
+                        {
+                            temp_route.push_back(bestRoute[k]);
+                        }
+                        for (int k = j; k >= i + 1; k--)
+                        {
+                            temp_route.push_back(bestRoute[k]);
+                        }
+                        for (int k = j + 1; k < bestRoute.size(); k++)
+                        {
+                            temp_route.push_back(bestRoute[k]);
+                        }
+                        }
+                        else
+                        {
+                  //          cout<<"\n yes here";
+                //            cout<<"*********constructi from***";
+              //              printRoute(bestRoute);
+            //            cout<<"\n currnet i"<<i<<" j "<<j;
+                        for (int k = 0; k <= j; k++)
+                        {
+                            temp_route.push_back(bestRoute[k]);
+                        }
+                        for (int k = i; k >= j + 1; k--)
+                        {
+                            temp_route.push_back(bestRoute[k]);
+                        }
+                        for (int k = i + 1; k < bestRoute.size(); k++)
+                        {
+                            temp_route.push_back(bestRoute[k]);
+                        }
+                        }
+                        
+                        int s = temp_route.size();
+                        float cur_time = distanceTable[0][temp_route[1]];
+                        bool satisfies = true;
+                        for (int i = 1; i < temp_route.size() - 1; i++)
+                        {
+                            CVRPTWNode node = tw.getNodeList()[temp_route[i]];
+                            if (cur_time > node.getNodeEndTime())
+                            {
+                                satisfies = false;
+                                break;
+                            }
+                            else
+                            {
+                                cur_time += node.getNodeServiceTime();
+                                cur_time += distanceTable[temp_route[i]][temp_route[i + 1]];
+                            }
+                        }
+                    //    cout<<"**** here temp route is ***";
+                      //  printRoute(temp_route);
+                        if (satisfies )
+                        {
+                            improvement = true;
+                        //    cout<<"\n **********************************yes found improvement";
+                          //  cout<<"\n Old tour";
+                            //printRoute(bestRoute);
+                            bestRoute = temp_route;
+          //                  cout<<"\n new tour";
+                            //printRoute(bestRoute);
+                         
+                        }
+                        else
+                        {
+                            //cout<<"\n no imp";
+                        }
+                    
+                    }
+                    else
+                    {
+                        //cout<<"\n nothing so gar";
+                    }
+                }
+                //cout<<" **** Round is done ****";
+
+    }
+    //cout<<"\n let us exit now";
+    return bestRoute;
 }
