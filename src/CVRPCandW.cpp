@@ -34,45 +34,43 @@ bool comparater(SavingsNode i1, SavingsNode i2)
 
 int main(int argc, char *argv[])
 {
-	//cout<<" \n Reading File:-"<<argv[1]<<endl;
-	vector<vector<double>> data = readFile("test.vrp");
-	
+	cout<<" \n Reading File:-"<<argv[1]<<endl;
+	vector<vector<int>> data = readFile(argv[1]);
 	CVRPInput input = CVRPInput(data);
 	vector<CVRPVehicleOutput> output;
-	double dimension = input.getDimension();
-	double capacity = input.getCapacity();
-	vector<double> demand = input.getDemandList();
-	vector<vector<double>> customerCordinates = input.getCustomerCordinates();
+	int dimension = input.getDimension();
+	int capacity = input.getCapacity();
+	vector<int> demand = input.getDemandList();
+	vector<vector<int>> customerCordinates = input.getCustomerCordinates();
 	cout << "\nDimension : " << dimension << endl;
 	cout << "\nCapacity :" << capacity << endl;
-	 for (auto itr = customerCordinates.begin(); itr != customerCordinates.end(); itr++)
+	/* for (auto itr = customerCordinates.begin(); itr != customerCordinates.end(); itr++)
 	{
-		vector<double> data = *itr;
+		vector<int> data = *itr;
 		cout << " " << data[0] << " " << data[1];
-		cout<<endl;
 	}
 	cout << " ehck demand";
-	double cap=0;
+	int cap=0;
 	for (auto itr = demand.begin(); itr != demand.end(); itr++)
 	{
 		cout << " " << *itr << endl;
 		cap+=*itr;
 	}
-
+*/
 	//cout<<" \n Total demand is "<<cap;
 	
 	//cout << "a";
-	vector<double> depotLocation = input.getDepotCord();
+	vector<int> depotLocation = input.getDepotCord();
 	//cout << "b";
 
-	double p1 = depotLocation[0];
-	double p2 = depotLocation[1];
+	int p1 = depotLocation[0];
+	int p2 = depotLocation[1];
 	//cout << " depot is " << p1 << " " << p2;
 	vector<SavingsNode> savings;
 
 	double distanceTable[300][300];
 	//cout<<"\n anc";
-	getLiveDistanceTable(data, distanceTable);
+	getDistanceTable(data, distanceTable);
 	for (int i = 1; i < dimension; i++)
 		for (int j = i + 1; j < dimension; j++)
 		{
@@ -345,31 +343,22 @@ int countOfRoutes=0;
 
 		
 		rr++;
-//for (auto j = cr.begin(); j != cr.end(); j++)
-//		{
-//			cout << " " << *j;
-//		}
 		vector<int> tempRoute(cr.begin(),cr.end());
 		tempRoute.erase(tempRoute.begin());
 		tempRoute.pop_back();
-	//	cout<<"\n Now update route for tsp is";
-	//	  for (auto j = tempRoute.begin(); j != tempRoute.end(); j++)
-	//	{
-	//		cout << " " << *j;
-	//	}
 		int capacityHandled=0;
 		
 
-		vector<vector<double>> tspInput=input.convertRouteToCordinateList(tempRoute);
-		TSPSolver tsp(tspInput,depotLocation);
+		//vector<vector<int>> tspInputnput.convertRouteToCordinateList(tempRoute);
+		//TSPSolver tsp(tspInput,depotLocation);
 	
 		for(auto itr=tempRoute.begin();itr!=tempRoute.end();itr++)
 		capacityHandled=capacityHandled+demand[*itr];
 		
 	//	cout<<" Calling TSP now";
-	    vector<vector<double>> tspOutput=tsp.solveTSP();
+	    //vector<vector<int>> tspOutput=tsp.solveTSP();
 	//	cout<<" Called TSP now";
-		vector<int> optimizedRoute=input.convertCordinateListToRoute(tspOutput);
+		vector<int> optimizedRoute=tempRoute;//input.convertCordinateListToRoute(tspOutput);
 		optimizedRoute.push_back(0);
 		optimizedRoute.insert(optimizedRoute.begin(),0);
 		

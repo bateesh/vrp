@@ -1,38 +1,134 @@
  
  Reading File:-input_files/A-n34-k5.vrp
- Now readinf file opened file
+
  Total customer a are 33
 
 Dimension : 34
 
 Capacity :100
 
+ Earlier route with cost162.173:-
+ 0 17 19 25 31 28 0
+ called:
+ 
+ pre.v COst of the tour is 162.173
+
+ i ma giving input to k-tsp now:- 0 17 19 25 31 28 
+ let us check0 73 39
+1 27 91
+2 29 93
+3 23 81
+4 19 83
+5 19 77
+
+ now TSP is done ...let us see output...
+ Now readinf file opened file
+ size of ret. data is
+...
+ 0
+.....
+ zn now i have data from the tsp
+ now see the output route
+ TSP Approx route generated successfully..
+ cost od this route is : 0
+ updated route with cost0:-
+
+ Earlier route with cost131.639:-
+ 0 7 29 14 24 30 5 0
+ called:
+ 
+ pre.v COst of the tour is 131.639
+
+ i ma giving input to k-tsp now:- 0 7 29 14 24 30 5 
+ let us check0 73 39
+1 55 71
+2 65 77
+3 63 69
+4 87 81
+5 87 79
+6 91 65
+
+ now TSP is done ...let us see output...
+ Now readinf file opened file
+ size of ret. data is
+...
+ 0
+.....
+ zn now i have data from the tsp
+ now see the output route
+ TSP Approx route generated successfully..
+ cost od this route is : 0
+ updated route with cost0:-
+
+ Earlier route with cost164.598:-
+ 0 10 13 21 20 4 26 0
+ called:
+ 
+ pre.v COst of the tour is 164.598
+
+ i ma giving input to k-tsp now:- 0 10 13 21 20 4 26 
+ let us check0 73 39
+1 47 57
+2 43 59
+3 31 43
+4 71 27
+5 97 15
+6 89 33
+
+ now TSP is done ...let us see output...
+ Now readinf file opened file
+ size of ret. data is
+...
+ 0
+.....
+ zn now i have data from the tsp
+ now see the output route
+ TSP Approx route generated successfully..
+ cost od this route is : 0
+ updated route with cost0:-
+
+ Optimizing routes now:-
  Now printing routes 
 
  Route 0 :  
 Capacity this route:- 100
  
 Cost of this route:- 214.081
+ 
+ Route is:-
+ 0 15 11 17 19 25 31 28 32 0
 
  Route 1 :  
 Capacity this route:- 92
  
 Cost of this route:- 165.903
+ 
+ Route is:-
+ 0 33 16 22 3 12 9 2 18 0
 
  Route 2 :  
 Capacity this route:- 99
  
 Cost of this route:- 131.092
+ 
+ Route is:-
+ 0 6 8 1 23 27 0
 
  Route 3 :  
 Capacity this route:- 86
  
-Cost of this route:- 122.075
+Cost of this route:- 131.639
+ 
+ Route is:-
+ 0 7 29 14 24 30 5 0
 
  Route 4 :  
 Capacity this route:- 83
  
 Cost of this route:- 164.598
+ 
+ Route is:-
+ 0 10 13 21 20 4 26 0
 
- Total opt cost of the route is: 797.748
+ Total opt cost of the route is: 807.313
  Total vechicles used: 5

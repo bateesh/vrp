@@ -1,7 +1,10 @@
 
 Opening File for reading..... 
 Path is cvrp_tw_input_files/c105
-File opened...... 
+File opened......n geti linen processing line 4 10 100 1
+ size of daa is 4
+ size of daa is 2
+ 0 200 Number node are100 
 Processing node details0 
 Processing node details1 
 Processing node details2 
@@ -218,11 +221,19 @@ Capacity :200
  Result of K means is :-
 
 
+ 0 12 13 14 15 16 17 18 19 0
+ Capacity of route is 190
+
+
+ 0 40 41 42 43 44 45 46 47 48 49 50 51 52 0
+ Capacity of route is 160
+
+
  0 1 2 3 4 5 6 7 8 9 10 11 75 0
  Capacity of route is 180
 
 
- 0 31 32 33 34 35 36 37 38 39 0
+ 0 53 54 55 56 57 58 59 60 0
  Capacity of route is 200
 
 
@@ -234,19 +245,11 @@ Capacity :200
  Capacity of route is 170
 
 
- 0 12 13 14 15 16 17 18 19 0
- Capacity of route is 190
-
-
- 0 40 41 42 43 44 45 46 47 48 49 50 51 52 0
- Capacity of route is 160
+ 0 70 71 73 76 77 78 79 80 81 0
+ Capacity of route is 150
 
 
  0 61 62 63 64 65 66 67 68 69 72 74 0
- Capacity of route is 200
-
-
- 0 53 54 55 56 57 58 59 60 0
  Capacity of route is 200
 
 
@@ -254,43 +257,136 @@ Capacity :200
  Capacity of route is 190
 
 
- 0 70 71 73 76 77 78 79 80 81 0
- Capacity of route is 150
+ 0 31 32 33 34 35 36 37 38 39 0
+ Capacity of route is 200
 ********** K-Means Completed ****************************
  Processing..Please wait......
- ********************Results stabilized with beam width 102*****************
- Cost is 828.937
-
-******** Running 2 opt on clsuter ********0
- 0 5 3 7 8 10 11 9 6 4 2 1 75 0
-
-******** Running 2 opt on clsuter ********1
- 0 32 33 31 35 37 38 39 36 34 0
-
-******** Running 2 opt on clsuter ********2
- 0 90 87 86 83 82 84 85 88 89 91 0
-
-******** Running 2 opt on clsuter ********3
- 0 20 24 25 27 29 30 28 26 23 22 21 0
-
-******** Running 2 opt on clsuter ********4
+ total clusters are 10
+ starting for cluster 0
+ Completed cluster 0 beam_width 153 
+ Running two opt
+ current is 
  0 13 17 18 19 15 16 14 12 0
-
-******** Running 2 opt on clsuter ********5
+it is a complete solution
+ starting for cluster 1
+ Completed cluster 1 beam_width 153 
+ Running two opt
+ current is 
  0 43 42 41 40 44 46 45 48 51 50 52 49 47 0
-
-******** Running 2 opt on clsuter ********6
- 0 67 65 63 62 74 72 61 64 68 66 69 0
-
-******** Running 2 opt on clsuter ********7
+it is a complete solution
+ starting for cluster 2
+ Completed cluster 2 beam_width 153 
+ Running two opt
+ current is 
+ 0 5 3 7 8 10 11 9 6 4 2 1 75 0
+it is a complete solution
+ starting for cluster 3
+ Completed cluster 3 beam_width 153 
+ Running two opt
+ current is 
  0 57 55 54 53 56 58 60 59 0
-
-******** Running 2 opt on clsuter ********8
+it is a complete solution
+ starting for cluster 4
+ Completed cluster 4 beam_width 153 
+ Running two opt
+ current is 
+ 0 90 87 86 83 82 84 85 88 89 91 0
+it is a complete solution
+ starting for cluster 5
+ Completed cluster 5 beam_width 153 
+ Running two opt
+ current is 
+ 0 20 24 25 27 29 30 28 26 23 22 21 0
+it is a complete solution
+ starting for cluster 6
+ Completed cluster 6 beam_width 153 
+ Running two opt
+ current is 
+ 0 81 78 76 71 70 73 77 79 80 0
+it is a complete solution
+ starting for cluster 7
+ Completed cluster 7 beam_width 153 
+ Running two opt
+ current is 
+ 0 67 65 63 62 74 72 61 64 68 66 69 0
+it is a complete solution
+ starting for cluster 8
+ Completed cluster 8 beam_width 153 
+ Running two opt
+ current is 
  0 98 96 95 94 92 93 97 100 99 0
+it is a complete solution
+ starting for cluster 9
+ Completed cluster 9 beam_width 153 
+ Running two opt
+ current is 
+ 0 32 33 31 35 37 38 39 36 34 0
+it is a complete solution*************************************************************************
 
-******** Running 2 opt on clsuter ********9
+ Route for vehicle 0
+ 0 13 17 18 19 15 16 14 12 0 
+ Cost of route 95.8847
+ capacity of route 190
+ Clsuter stabilized at 153
+
+ Route for vehicle 1
+ 0 43 42 41 40 44 46 45 48 51 50 52 49 47 0 
+ Cost of route 64.8075
+ capacity of route 160
+ Clsuter stabilized at 153
+
+ Route for vehicle 2
+ 0 5 3 7 8 10 11 9 6 4 2 1 75 0 
+ Cost of route 59.6181
+ capacity of route 180
+ Clsuter stabilized at 153
+
+ Route for vehicle 3
+ 0 57 55 54 53 56 58 60 59 0 
+ Cost of route 101.883
+ capacity of route 200
+ Clsuter stabilized at 153
+
+ Route for vehicle 4
+ 0 90 87 86 83 82 84 85 88 89 91 0 
+ Cost of route 76.0696
+ capacity of route 170
+ Clsuter stabilized at 153
+
+ Route for vehicle 5
+ 0 20 24 25 27 29 30 28 26 23 22 21 0 
+ Cost of route 50.8036
+ capacity of route 170
+ Clsuter stabilized at 153
+
+ Route for vehicle 6
  0 81 78 76 71 70 73 77 79 80 0 
-Cost of the solution is : 828.937 
- Beam width : 102
- Vechicles used : 10
-Time Taken 9.795487 seconds to execute : 
+ Cost of route 127.297
+ capacity of route 150
+ Clsuter stabilized at 153
+
+ Route for vehicle 7
+ 0 67 65 63 62 74 72 61 64 68 66 69 0 
+ Cost of route 59.4031
+ capacity of route 200
+ Clsuter stabilized at 153
+
+ Route for vehicle 8
+ 0 98 96 95 94 92 93 97 100 99 0 
+ Cost of route 95.9431
+ capacity of route 190
+ Clsuter stabilized at 153
+
+ Route for vehicle 9
+ 0 32 33 31 35 37 38 39 36 34 0 
+ Cost of route 97.2272
+ capacity of route 200
+ Clsuter stabilized at 153
+ Adding panelty vechiles...
+ fpwwling are penality nodes
+
+ Printing voilated routes
+ Result
+ Total Cost : 828.937
+ Total Vechiles :10
+ Total Vechiles Combined:0

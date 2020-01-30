@@ -9,6 +9,10 @@ CVRPTW::CVRPTW(int v, int c, int m, vector<CVRPTWNode> list)
     nodeList = list;
 }
 
+CVRPTW::CVRPTW()
+{
+}
+
 void CVRPTW:: printCVRPInstance()
 {
     printf("\n CVRP Instance.........");

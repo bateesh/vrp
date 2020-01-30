@@ -11,7 +11,7 @@ Description :- Solving CVRP in brute force manner.Start from list and keep on as
 #include "CVRPInput.h"
 
 int main(int argc, char * argv[]) {
-  vector < vector < int > > data = readFile("data.txt");
+  vector < vector < int > > data = readFile(argv[1]);
   CVRPInput input = CVRPInput(data);
   vector < CVRPVehicleOutput > output;
   int dimension = input.getDimension();

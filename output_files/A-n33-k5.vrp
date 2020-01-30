@@ -1,38 +1,81 @@
  
  Reading File:-input_files/A-n33-k5.vrp
- Now readinf file opened file
+
  Total customer a are 32
 
 Dimension : 33
 
 Capacity :100
 
+ Earlier route with cost87.9163:-
+ 0 2 24 23 28 0
+ called:
+ 
+ pre.v COst of the tour is 87.9163
+
+ i ma giving input to k-tsp now:- 0 2 24 23 28 
+ let us check0 42 68
+1 28 64
+2 32 88
+3 52 72
+4 58 74
+
+ now TSP is done ...let us see output...
+ Now readinf file opened file
+ size of ret. data is
+...
+ 0
+.....
+ zn now i have data from the tsp
+ now see the output route
+ TSP Approx route generated successfully..
+ cost od this route is : 0
+ updated route with cost0:-
+
+ Optimizing routes now:- 
+ Yes.Centroid movement done!!!! 
+ Yes.Centroid movement done!!!!
  Now printing routes 
 
  Route 0 :  
 Capacity this route:- 97
  
 Cost of this route:- 173.119
+ 
+ Route is:-
+ 0 20 32 13 8 7 26 4 22 0
 
  Route 1 :  
-Capacity this route:- 94
+Capacity this route:- 96
  
-Cost of this route:- 135.252
+Cost of this route:- 188.212
+ 
+ Route is:-
+ 0 10 30 25 27 5 12 26 0
 
  Route 2 :  
 Capacity this route:- 92
  
 Cost of this route:- 184.175
+ 
+ Route is:-
+ 0 29 16 3 9 17 15 0
 
  Route 3 :  
 Capacity this route:- 98
  
 Cost of this route:- 113.277
+ 
+ Route is:-
+ 0 6 19 14 21 1 31 18 11 0
 
  Route 4 :  
-Capacity this route:- 65
+Capacity this route:- 84
  
-Cost of this route:- 85.5158
+Cost of this route:- 94.9174
+ 
+ Route is:-
+ 0 2 24 23 28 22 0
 
- Total opt cost of the route is: 691.339
+ Total opt cost of the route is: 753.7
  Total vechicles used: 5

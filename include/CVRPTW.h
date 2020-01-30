@@ -11,6 +11,7 @@ class CVRPTW
     vector<CVRPTWNode> nodeList;
     
     public:
+    CVRPTW();
     CVRPTW(int v,int c,int m,vector<CVRPTWNode> list);
     int getMaxNumberOfVehicles();
     int getNumberOfNodes();

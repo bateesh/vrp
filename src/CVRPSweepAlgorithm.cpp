@@ -24,7 +24,7 @@ bool comparater(polarAngle i1, polarAngle i2)
 
 int main(int argc, char *argv[])
 {
-    vector<vector<int>> data = readFile("A-n33-k5.vrp");
+    vector<vector<int>> data = readFile(argv[1]);
     CVRPInput input = CVRPInput(data);
     vector<CVRPVehicleOutput> output;
     int dimension = input.getDimension();

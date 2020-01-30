@@ -6,7 +6,7 @@ Description :- implemtation of CVRPInput class functions
 ***********************************/
 #include "CVRPInput.h"
 
-CVRPInput::CVRPInput(vector<vector<int>> data)
+CVRPInput::CVRPInput(vector<vector<double>> data)
 {
 
   dimension = data[0][0];
@@ -17,19 +17,19 @@ CVRPInput::CVRPInput(vector<vector<int>> data)
   auto p1 = data.begin() + 2;
   auto p2 = data.end() - 1;
 
-  customerCordinates = vector<vector<int>>(p1, p2);
+  customerCordinates = vector<vector<double>>(p1, p2);
   cout<<"\n Total customer a are "<<customerCordinates.size();
   cout<<endl;
   populatemap(data);
 }
 
-void CVRPInput::populatemap(vector<vector<int>> data)
+void CVRPInput::populatemap(vector<vector<double>> data)
 {
   auto p1 = data.begin() + 1;
   auto p2 = data.end() - 1;
-  vector < vector < int >> customerCordinates=vector<vector<int>>(p1, p2);
+  vector < vector < double >> customerCordinates=vector<vector<double>>(p1, p2);
  
-  customerCordinates = vector<vector<int>>(p1, p2);
+  customerCordinates = vector<vector<double>>(p1, p2);
   int count = 0;
   for (auto itr = customerCordinates.begin(); itr != customerCordinates.end(); itr++)
   {
@@ -39,9 +39,9 @@ void CVRPInput::populatemap(vector<vector<int>> data)
   }
 
 }
- vector<vector<int>> CVRPInput::convertRouteToCordinateList(vector<int> route)
+ vector<vector<double>> CVRPInput::convertRouteToCordinateList(vector<int> route)
  {
- vector<vector<int>> result;
+ vector<vector<double>> result;
  for(auto itr=route.begin();itr!=route.end();itr++)
  {
    result.push_back(customerToCordinateMapping[*itr]);
@@ -49,7 +49,7 @@ void CVRPInput::populatemap(vector<vector<int>> data)
  return result;
  }
 
-vector<int> CVRPInput::convertCordinateListToRoute(vector<vector<int>> customerCordinates)
+vector<int> CVRPInput::convertCordinateListToRoute(vector<vector<double>> customerCordinates)
 {
    vector<int> result;
  for(auto itr=customerCordinates.begin();itr!=customerCordinates.end();itr++)
@@ -60,25 +60,25 @@ vector<int> CVRPInput::convertCordinateListToRoute(vector<vector<int>> customerC
 
 }
 
-int CVRPInput::getDimension()
+double CVRPInput::getDimension()
 {
   return dimension;
 }
-int CVRPInput::getCapacity()
+double CVRPInput::getCapacity()
 {
   return capacity;
 }
-vector<int> CVRPInput::getDepotCord()
+vector<double> CVRPInput::getDepotCord()
 {
   return depotCord;
 }
 
-vector<vector<int>> CVRPInput::getCustomerCordinates()
+vector<vector<double>> CVRPInput::getCustomerCordinates()
 {
   return customerCordinates;
 }
 
-vector<int> CVRPInput::getDemandList()
+vector<double> CVRPInput::getDemandList()
 {
   return demandList;
 }

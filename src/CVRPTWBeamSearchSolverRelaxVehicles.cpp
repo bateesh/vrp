@@ -54,6 +54,10 @@ bool sortBeamNodes(NodeDetails a, NodeDetails b)
 {
     return a.begin_time < b.begin_time;
 }
+bool sortNodes(CVRPTWNode a, CVRPTWNode b)
+{
+    return a.getNodeBeginTime() < b.getNodeBeginTime();
+}
 struct NodeDetails beamSearch(vector<int> route, int beamWidth, CVRPTW tw,
                               double distanceTable[300][300]);
 
@@ -83,7 +87,7 @@ int main(int argc, char *argv[])
 
     clock_t t;
     t = clock();
-    cout<<"\n start to read file";
+
     CVRPTW cvrptw = readFileWithTimeWindows(argv[1]);
     printf("\n File read successfully");
     cvrptw.printCVRPInstance();
@@ -376,14 +380,14 @@ int main(int argc, char *argv[])
         total_voilations[i]=0;
         beam_stable[i]=0;
     }
-    int max_infeasible_itr = 60;
-    int max_feasible_itr = 40;
+    int max_infeasible_itr = 5;
+    int max_feasible_itr = 2;
     cout<<"\n total clusters are "<<result.size();
   //  getchar();
-    
+    vector<int> timeWindowsVoilated;
    for (int i = 0; i < result.size(); i++)
     {
-        beam_width = 100;
+        beam_width = 150;
         int cur_infeasible_itr = 0;
         int cur_feasible_itr = 0;
         cout<<"\n starting for cluster "<<i;
@@ -564,45 +568,54 @@ int main(int argc, char *argv[])
         beam_stable[i]=beam_width;
         if (current_state[i] == false)
         {
-            // cout<<"\n it is a infeasible solution";
-            // getchar();
-            // vector<int> res = bestSolution[i];
-            // vector<int> a;
-            // vector<int> b;
-            // int count = 0;
-            // cout<<"\n total voilation are "<<total_voilations[i];
-            
-            // for (auto itr = res.begin(); itr != res.end(); itr++)
-            // {
-            //     if (count < total_voilations[i])
-            //     {
-            //         b.push_back(*itr);
-            //         count++;
-            //     }
-            //     else
-            //     {
-            //         a.push_back(*itr);
-            //     }
-            // }
-            // printRoute(a);
-            // printRoute(b);
-            // vector<int> r = two_opt(a, distanceTable, cvrptw);
-            // for (auto itr = b.begin(); itr != b.end(); itr++)
-            // {
-            //     r.push_back(*itr);
-            // }
-            // bestSolution[i] = r;
+            cout<<"\n it is a infeasible solution";
+            vector<int> res = bestSolution[i];
+            vector<int> a;
+            vector<int> b;
+            int count = 0;
+            for (auto itr = res.begin(); itr != res.end(); itr++)
+            {
+                if (count < total_voilations[i])
+                {
+                    a.push_back(*itr);
+                    count++;
+                }
+                else
+                {
+                    b.push_back(*itr);
+                }
+            }
+            vector<int> r = two_opt(a, distanceTable, cvrptw);
+            for (auto itr = b.begin(); itr != b.end(); itr++)
+            {
+                r.push_back(*itr);
+            }
+            bestSolution[i] = r;
         }
         else
         { 
             cout<<"\nit is a complete solution";
-            //getchar();
             vector<int> r = two_opt(bestSolution[i], distanceTable, cvrptw);
-            cout<<"\n completed two opt";
             bestSolution[i] = r;
         }
     }
 
+    for(int i=0;i<bestSolution.size();i++)
+    {
+        if(total_voilations[i]!=0)
+        {
+            int voi=total_voilations[i];
+
+            bestSolution[i].pop_back();
+            while(voi!=0)
+            {
+                timeWindowsVoilated.push_back(bestSolution[i][bestSolution[i].size()-1]);
+                bestSolution[i].pop_back();
+                voi--;
+            }
+            bestSolution[i].push_back(0);
+        }
+    }
     double cost=0;
     int tot_voilations_combined=0;
     cout<<"*************************************************************************";
@@ -614,32 +627,97 @@ int main(int argc, char *argv[])
         cout<<" \n Cost of route "<<calculateRouteCost(bestSolution[i],distanceTable);
         cost+=calculateRouteCost(bestSolution[i],distanceTable);
         cout<<"\n capacity of route "<<getRouteCapacity(demand,bestSolution[i]);
-        if(total_voilations[i])
-        {
-        cout<<" \n number of voilations in route are "<<total_voilations;
-        tot_voilations_combined+=total_voilations[i];
-        }
         cout<<"\n Clsuter stabilized at "<<beam_stable[i];
-
     }
-    int max_beam=beam_stable[0];
-    for(int i=1;i<bestSolution.size();i++)
-    if(beam_stable[i]>max_beam)
-    max_beam=beam_stable[i];
-    int tot_veh_voilations=0;
-    for(int i=0;i<bestSolution.size();i++)
-    if(total_voilations[i]>0)
-    tot_veh_voilations++;
+    cout<<"\n Adding panelty vechiles...";
+    vector<CVRPTWNode> penaltyNodes;
+    for(int i=0;i<timeWindowsVoilated.size();i++)
+    {
+        penaltyNodes.push_back(cvrptw.getNodeList()[timeWindowsVoilated[i]]);
+    }
+    sort(penaltyNodes.begin(),penaltyNodes.end(),sortNodes);
+    int p_v=0;
+    int curr_capcity=0;
+    vector<vector<int>> pen_route;
+    int i_c=0;
+    int curr_node=0;
+    cout<<"\n fpwwling are penality nodes";
+    printRoute(timeWindowsVoilated);
+    while(penaltyNodes.empty()==false)
+    {
+         vector<int> t;
+         t.push_back(0);
+         float ti=0;
+         int prev=0;
+         curr_capcity=0;
+         cout<<"\n starting a new route";
+
+        for(auto itr=penaltyNodes.begin();itr!=penaltyNodes.end();itr++)
+         {
+             getchar();
+             if(penaltyNodes.empty()==true)
+             break;   
+             bool time=true;
+             bool cap=true;
+             curr_node=(*itr).getNodeId();
+             cout<<"\n anelty no "<<(*itr).getNodeId();
+             if(ti+distanceTable[prev][(*itr).getNodeId()]>(*itr).getNodeEndTime())
+             {
+                 cout<<"\n time failed";
+                 cout<<"\n current ti is "<<ti;
+                 cout<<"\n to goto new from "<<prev<<" tp "<<(*itr).getNodeId();
+                 cout<<" "<<distanceTable[prev][(*itr).getNodeId()];
+                 cout<<"\n total become"<<ti+distanceTable[prev][(*itr).getNodeId()];
+                 cout<<" \n node end time is "<<(*itr).getNodeEndTime();
+                 time=false;
+             }   
+             if(curr_capcity+penaltyNodes[curr_node].getNodeDemand()>capacity)
+             {                   
+                   cap=false;
+
+            }
+            if(time && cap)
+            {
+                cout<<"\n yes can be added"<<(*itr).getNodeId();
+             ti=ti+distanceTable[prev][(*itr).getNodeId()];
+             if(ti<(*itr).getNodeBeginTime())
+             {
+                 ti=(*itr).getNodeBeginTime();
+             }
+             ti+=(*itr).getNodeServiceTime();
+             curr_capcity=curr_capcity+penaltyNodes[curr_node].getNodeDemand();
+                
+                t.push_back((*itr).getNodeId());
+                prev=(*itr).getNodeId();
+                penaltyNodes.erase(itr);
+                itr--;
+ cout<<"\n removed from lsit";
+                cout<<"\n current list is ";
+                cout<<" \n size of "<<penaltyNodes.size();     
+             }
+         }
+         
+
+        t.push_back(0);
+        pen_route.push_back(t);
+    }
+
+cout<<"\n Printing voilated routes";
+
+for(int i=0;i<pen_route.size();i++)
+    {
+        cout<<endl;
+        cout<<"\n Route for vehicle "<<i;
+        printRoute(pen_route[i]);
+        cout<<" \n Cost of route "<<calculateRouteCost(pen_route[i],distanceTable);
+        cost+=calculateRouteCost(pen_route[i],distanceTable);
+    }
     
+
     cout<<"\n Result";
     cout<<"\n Total Cost : "<<cost;
     cout<<"\n Total Vechiles :"<<bestSolution.size();
-    cout<<"\n Total Voilations"<<tot_voilations_combined;
-    cout<<"\n Total Voilated vehicles"<<tot_veh_voilations;
-    cout<<"\n Maximum Beam Width time_takenCombined:"<<max_beam;
-    t = clock() - t;
-    double time_taken = ((double)t) / CLOCKS_PER_SEC; // in seconds
-    printf("\nTime Taken %f seconds to execute : ", time_taken);
+    cout<<"\n Total Vechiles Combined:"<<tot_voilations_combined;
 
 return 0;
     while (a < 2)
@@ -756,9 +834,9 @@ return 0;
     cout << " \n Beam width : " << beam_width;
     cout << "\n Vechicles used : " << bestSolution.size();
     t = clock() - t;
-   // double time_taken = ((double)t) / CLOCKS_PER_SEC; // in seconds
+    double time_taken = ((double)t) / CLOCKS_PER_SEC; // in seconds
 
-    //printf("\nTime Taken %f seconds to execute : ", time_taken);
+    printf("\nTime Taken %f seconds to execute : ", time_taken);
 }
 
 // implementation of k means

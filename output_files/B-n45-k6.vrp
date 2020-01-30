@@ -1,48 +1,210 @@
  
  Reading File:-input_files/B-n45-k6.vrp
- Now readinf file opened file
+
  Total customer a are 44
 
 Dimension : 45
 
 Capacity :100
 
+ Earlier route with cost129.595:-
+ 0 33 40 3 15 18 34 6 0
+ called:
+ 
+ pre.v COst of the tour is 129.595
+
+ i ma giving input to k-tsp now:- 0 33 40 3 15 18 34 6 
+ let us check0 49 64
+1 91 37
+2 93 37
+3 98 27
+4 89 31
+5 84 29
+6 83 29
+7 82 28
+
+ now TSP is done ...let us see output...
+ Now readinf file opened file
+ size of ret. data is
+...
+ 0
+.....
+ zn now i have data from the tsp
+ now see the output route
+ TSP Approx route generated successfully..
+ cost od this route is : 0
+ updated route with cost0:-
+
+ Earlier route with cost102.796:-
+ 0 35 44 7 20 0
+ called:
+ 
+ pre.v COst of the tour is 102.796
+
+ i ma giving input to k-tsp now:- 0 35 44 7 20 
+ let us check0 49 64
+1 91 45
+2 90 43
+3 86 36
+4 86 36
+
+ now TSP is done ...let us see output...
+ Now readinf file opened file
+ size of ret. data is
+...
+ 0
+.....
+ zn now i have data from the tsp
+ now see the output route
+ TSP Approx route generated successfully..
+ cost od this route is : 0
+ updated route with cost0:-
+
+ Earlier route with cost108.426:-
+ 0 35 44 7 20 25 26 0
+ called:
+ 
+ pre.v COst of the tour is 108.426
+
+ i ma giving input to k-tsp now:- 0 35 44 7 20 25 26 
+ let us check0 49 64
+1 91 45
+2 90 43
+3 86 36
+4 86 36
+5 66 41
+6 67 40
+
+ now TSP is done ...let us see output...
+ Now readinf file opened file
+ size of ret. data is
+...
+ 0
+.....
+ zn now i have data from the tsp
+ now see the output route
+ TSP Approx route generated successfully..
+ cost od this route is : 0
+ updated route with cost0:-
+
+ Earlier route with cost82.3802:-
+ 0 12 32 23 37 19 28 8 22 0
+ called:
+ 
+ pre.v COst of the tour is 82.3802
+
+ i ma giving input to k-tsp now:- 0 12 32 23 37 19 28 8 22 
+ let us check0 49 64
+1 76 68
+2 78 68
+3 86 74
+4 83 69
+5 83 66
+6 78 66
+7 76 65
+8 76 65
+
+ now TSP is done ...let us see output...
+ Now readinf file opened file
+ size of ret. data is
+...
+ 0
+.....
+ zn now i have data from the tsp
+ now see the output route
+ TSP Approx route generated successfully..
+ cost od this route is : 0
+ updated route with cost0:-
+
+ Earlier route with cost149.661:-
+ 0 14 17 24 2 36 10 11 0
+ called:
+ 
+ pre.v COst of the tour is 149.661
+
+ i ma giving input to k-tsp now:- 0 14 17 24 2 36 10 11 
+ let us check0 49 64
+1 0 44
+2 0 44
+3 0 48
+4 38 21
+5 42 25
+6 43 26
+7 45 28
+
+ now TSP is done ...let us see output...
+ Now readinf file opened file
+ size of ret. data is
+...
+ 0
+.....
+ zn now i have data from the tsp
+ now see the output route
+ TSP Approx route generated successfully..
+ cost od this route is : 0
+ updated route with cost0:-
+
+ Optimizing routes now:- 
+ Yes.Centroid movement done!!!! 
+ Yes.Centroid movement done!!!! 
+ Yes.Centroid movement done!!!!
  Now printing routes 
 
  Route 0 :  
-Capacity this route:- 96
+Capacity this route:- 98
  
-Cost of this route:- 137.902
+Cost of this route:- 140.243
+ 
+ Route is:-
+ 0 9 21 31 41 38 20 0
 
  Route 1 :  
 Capacity this route:- 98
  
 Cost of this route:- 159.088
+ 
+ Route is:-
+ 0 17 17 24 2 36 10 11 43 0
 
  Route 2 :  
-Capacity this route:- 95
+Capacity this route:- 97
  
-Cost of this route:- 129.595
+Cost of this route:- 131.164
+ 
+ Route is:-
+ 0 6 34 18 15 3 40 33 20 0
 
  Route 3 :  
 Capacity this route:- 98
  
 Cost of this route:- 111.732
+ 
+ Route is:-
+ 0 35 44 20 20 25 26 42 13 0
 
  Route 4 :  
 Capacity this route:- 97
  
 Cost of this route:- 88.9759
+ 
+ Route is:-
+ 0 39 12 32 23 37 19 28 22 22 27 0
 
  Route 5 :  
 Capacity this route:- 98
  
 Cost of this route:- 65.3644
+ 
+ Route is:-
+ 0 16 30 1 5 29 0
 
  Route 6 :  
-Capacity this route:- 10
+Capacity this route:- 36
  
-Cost of this route:- 40.7922
+Cost of this route:- 56.4691
+ 
+ Route is:-
+ 0 4 43 0
 
- Total opt cost of the route is: 733.449
+ Total opt cost of the route is: 753.036
  Total vechicles used: 7

@@ -12,38 +12,38 @@ Description :- Declaration of CVRPInput class.It represents the input to CVRP in
 using namespace std;
 
 class CVRPInput {
-  int dimension;
-  int capacity;
-  vector < int > depotCord;
-  vector < vector < int >> customerCordinates;
-  vector < int > demandList;
-  map<vector<int>, int> cordinateToCutomerMapping; 
-  map<int, vector<int>> customerToCordinateMapping; 
-  void populatemap  (vector<vector<int>> data); 
+  double dimension;
+  double capacity;
+  vector < double > depotCord;
+  vector < vector < double >> customerCordinates;
+  vector < double > demandList;
+  map<vector<double>, int> cordinateToCutomerMapping; 
+  map<int, vector<double>> customerToCordinateMapping; 
+  void populatemap  (vector<vector<double>> data); 
 
   public:
     //constructor
 
-  CVRPInput(vector < vector < int >> data);
+  CVRPInput(vector < vector < double >> data);
 
   //get the dimension
-  int getDimension();
+  double getDimension();
 
   //get the capacity
-  int getCapacity();
+  double getCapacity();
 
   //get the central depot cordinates
-  vector < int > getDepotCord();
+  vector < double > getDepotCord();
 
   //get the customer cordinates
-  vector < vector < int >> getCustomerCordinates();
+  vector < vector < double >> getCustomerCordinates();
 
   //get customer demand list
-  vector < int > getDemandList();
+  vector < double > getDemandList();
 
-  vector<vector<int>> convertRouteToCordinateList(vector<int> route);
+  vector<vector<double>> convertRouteToCordinateList(vector<int> route);
 
-  vector<int> convertCordinateListToRoute(vector<vector<int>> customerCordinates);
+  vector<int> convertCordinateListToRoute(vector<vector<double>> customerCordinates);
 
 };
 #endif

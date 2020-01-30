@@ -8,7 +8,9 @@ Description :- utility functions declaration e.g file read etc.
 #define _UTILITY_H_
 
 #include <bits/stdc++.h>
-#include <bits/stdc++.h>
+#include <curl/curl.h>
+#include <jsoncpp/json/json.h>
+
 #include "CVRPTW.h"
 using namespace std;
 
@@ -26,23 +28,30 @@ float extract_float(const string & );
 vector < float > extract_floats(const string & );
 
 // read CVRP data file and parse to a vector
-vector < vector < int > > readFile(const char * );
+vector < vector < double > > readFile(const char * );
 
-
+// read CVRP data file and parse to a vector of double
+vector < vector < double > > readFile_double(const char * );
 //read a file and return CVRPTW instace
 CVRPTW readFileWithTimeWindows(const char * path);
 
 //getDistanceTable to preprocess all distance between any two customers
 
-void getDistanceTable(vector < vector < int > > d,double distanceTable[300][300]);
+void getDistanceTable(vector < vector < double > > d,double distanceTable[300][300]);
+
+void getLiveDistanceTable(vector < vector < double > > d,double distanceTable[300][300]);
+void getLiveDistanceTableTSP(vector < vector < double > > d,
+double distanceTable[10][10]);
 //getDistance between two points (px,py) and (dx,dy)
 double getDistance(int px, int py, int dx, int dy);
 void getDistanceTableTW(CVRPTW cvrptw,double distanceTable[300][300]) ;
 
+double getLiveDistance(double px, double py, double dx, double dy);
+double getLiveDistance(vector<double> px,vector<double> dx);
 
 double getDistanceByCustomerNumber(int c1,int c2);
 
-int getRouteCapacity(vector < int> demand,vector<int> route);
+double getRouteCapacity(vector < double> demand,vector<int> route);
 double getRouteCost(vector<int> route);
 
 void printRoute(vector<int> cr);
