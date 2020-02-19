@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+html, body {
+    height:100%;
+} 
+
+
+
+
+body {
+        background-color: white;
+        background-image: url('adminbg.jpeg');
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        background-position: left top;
+        height: 100%;
+  text-align: center;
+  font-family: Arial, Helvetica;
+}
+
+.big {
+  font-size: 1.2em;
+}
+
+.small {
+  font-size: .7em;
+}
+
+.square {
+  width: .7em;
+  height: .7em;
+  margin: .5em;
+  display: inline-block;
+}
+
+/* Custom dropdown */
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 10px; /* demo only */
+}
+
+.custom-dropdown select {
+  background-color: #1abc9c;
+  color: #fff;
+  font-size: inherit;
+  padding: .5em;
+  padding-right: 2.5em;	
+  border: 0;
+  margin: 0;
+  border-radius: 3px;
+  text-indent: 0.01px;
+  text-overflow: '';
+  /*Hiding the select arrow for firefox*/
+  -moz-appearance: none;
+  /*Hiding the select arrow for chrome*/
+  -webkit-appearance:none;
+  /*Hiding the select arrow default implementation*/
+  appearance: none;
+}
+/*Hiding the select arrow for IE10*/
+.custom-dropdown select::-ms-expand {
+    display: none;
+}
+
+.custom-dropdown::before,
+.custom-dropdown::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.custom-dropdown::after { /*  Custom dropdown arrow */
+  content: "\25BC";
+  height: 1em;
+  font-size: .625em;
+  line-height: 1;
+  right: 1.2em;
+  top: 50%;
+  margin-top: -.5em;
+}
+
+.custom-dropdown::before { /*  Custom dropdown arrow cover */
+  width: 2em;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 0 3px 3px 0;
+  background-color: rgba(0,0,0,.2);
+}
+
+.custom-dropdown::after {
+  color: rgba(0,0,0,.6);
+}
+
+.custom-dropdown select[disabled] {
+  color: rgba(0,0,0,.25);
+}
+
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+</style>
+</head>
+<body >
+
+
+<h2> Welcome Admin!</h2>
+<form action="./showAllPending.php" id="showall" method="post">
+
+<span class="custom-dropdown big">
+
+<select id="mylist" name="carlist">
+
+</select>
+</span>
+  <input type="submit"  class="button" value="Click here to see Depot Details" >
+</form>
+
+
+<form action="./createDepot.php" id="createDepot" >
+  <input type="submit"  class="button" value="Click here to create new Depot">
+</form>
+<br>
+
+
+
+
+
+
+
+</body>
+<script type="text/javascript" language="javascript">
+
+ function TestOnTextChange()
+{
+console.log('called./');
+  var y = document.getElementById("depot").value;
+var names = 'Harry,John,Clark,Peter,Rohn,Alice';
+var nameArr = names.split(',');
+console.log(nameArr);
+console.log(''+y);
+var nameArr = y.split(',');
+
+
+
+for (index = 0; index < nameArr.length; index++) { 
+    console.log(nameArr[index]); 
+var val=nameArr[index];
+var x = document.getElementById("mylist");
+  var option = document.createElement("option");
+  option.text = val;
+  x.add(option);
+} 
+  
+}
+</script>
+
+
+
+</html>
+<?php
+
+$myArray = array();
+$i=0;
+$dir = "/home/nsnuser/Documents/Bateesh_MTP/vrp/website/";
+//echo "hello";
+// Open a directory, and read its contents
+if (is_dir($dir)){
+  if ($dh = opendir($dir)){
+    while (($file = readdir($dh)) !== false){
+     // echo "filename:" . $file . "<br>";
+//echo "write to " ;
+//echo $i;
+$mystr=substr($file,0,6);
+//echo "he it is ";
+//echo $mystr;
+if($mystr=="depot_")
+{
+
+$myArray[$i]= substr($file,0,7);
+}
+//echo $myArray[$i];
+
+
+
+
+
+
+
+
+
+
+
+
+//echo "hi";
+
+//echo $myArray[$i];
+//echo "hello";
+$i=$i+1;
+
+    }
+
+//echo $myArray;
+    closedir($dh);
+ foreach( $myArray as $value ) {
+           // echo "Value is $value <br />";
+         }
+$str=implode(",",$myArray);
+echo "<input type='hidden' onchange='TestOnTextChange()' id='depot' value='$str'/>";
+echo '<script type="text/javascript">',
+     'TestOnTextChange();',
+     '</script>'
+;		
+  }
+}
+//echo "hi";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+?>
+
+

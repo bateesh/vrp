@@ -1,0 +1,44 @@
+[
+    {
+        "name": "dsd",
+        "contact": "ds",
+        "email": "dsd",
+        "pwd": "dsd",
+        "role": "Customer"
+    },
+    {
+        "name": "dsds",
+        "contact": "dsd",
+        "email": "dsd",
+        "pwd": "dsds",
+        "role": "Admin"
+    },
+    {
+        "name": "dfdf",
+        "contact": "fdf",
+        "email": "fdf",
+        "pwd": "fdfd",
+        "role": "Admin"
+    },
+    {
+        "name": "dsds",
+        "contact": "dsd",
+        "email": "dsds",
+        "pwd": "ds",
+        "role": "Admin"
+    },
+    {
+        "name": null,
+        "contact": null,
+        "email": null,
+        "pwd": null,
+        "role": null
+    },
+    {
+        "name": "gf",
+        "contact": "gf",
+        "email": "gfgf",
+        "pwd": "gfg",
+        "role": "Admin"
+    }
+]

@@ -552,7 +552,7 @@ distanceTable[from][to]=plugins_temp[index]["travelDistance"].asDouble();
 //std::cout<<" " <<plugins[index].asString();
 }
 
-std::cout<<"\n Live Distance Matrix From BING maps processed successfully!!!!"<<endl;
+std::cout<<"\n Here Live Distance Matrix From BING maps processed successfully!!!!"<<endl;
 for(int i=0;i<2;i++)
 {
 cout<<endl;
@@ -585,7 +585,7 @@ cout<<endl;
 }
 
 void getLiveDistanceTableTSP(vector < vector < double > > d,
-double distanceTable[10][10])
+double distanceTable[300][300])
 {
   double dimension = d.size();
   auto p1 = d.begin();
@@ -719,7 +719,7 @@ cout<<endl;
         std::cout << "Couldn't GET from " << url << " - exiting" << std::endl;
    //     return 1;
     }
-
+cout<<"\n now return..";
     return;
 }
 //getliveDistance table to communicate with Bing maps and get live distance matrix

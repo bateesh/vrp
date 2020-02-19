@@ -10,6 +10,9 @@ Description :- Solving CVRP using clark and wright savings algorithms
 
 #include "CVRPInput.h"
 #include "TSPSolver.h"
+#include <jsoncpp/json/writer.h>
+#include <iostream>
+#include <fstream>
 struct SavingsNode
 {
 	int i;
@@ -30,12 +33,65 @@ bool comparater(SavingsNode i1, SavingsNode i2)
 	return (i1.savings > i2.savings);
 }
 
+void convertResultToJson(vector<vector<int>> routes,CVRPInput input)
+{
+    Json::Value event;   
+    Json::Value vec(Json::arrayValue);
+   // vec.append(Json::Value(1));
+    //vec.append(Json::Value(2));
+    //vec.append(Json::Value(3));
+	vector<vector<double>> cord=input.getAllCordinates();
+	vector<double> demand=input.getDemandList();
+    event["result"]["totalDrivers"] = to_string(routes.size());
+	for(int i=0;i<routes.size();i++)
+	{
+		double cap=0;
+		string driver="Driver_"+to_string(i+1);
+		
+		vector<int> currentRoute=routes[i];
 
+		for(int j=0;j<currentRoute.size();j++)
+		{
+			//vec.append(Json::Value(currentRoute[i]));
+			cap+=demand[currentRoute[j]];
+
+			Json::Value vec(Json::arrayValue);
+   
+			double a=cord[currentRoute[j]][0];
+			double b=cord[currentRoute[j]][1];
+			vec.append(Json::Value(a));
+			vec.append(Json::Value(b));
+			event["result"][driver][to_string(j+1)]=vec;
+		}
+		event["result"][driver]["capacity"]=cap;
+		event["result"][driver]["total"]=to_string(currentRoute.size());
+		
+		
+	}
+
+    //event["competitors"]["away"]["code"] = 89223;
+    //event["competitors"]["away"]["name"] = "Aston Villa";
+    //event["competitors"]["away"]["code"]=vec;
+
+    std::cout << event << std::endl;
+
+
+	std::ofstream file_id;
+    file_id.open("result.json");
+
+    //Json::Value value_obj;
+    //populate 'value_obj' with the objects, arrays etc.
+
+    //Json::StyledWriter styledWriter;
+    file_id << event;
+
+    file_id.close();
+}
 
 int main(int argc, char *argv[])
 {
 	//cout<<" \n Reading File:-"<<argv[1]<<endl;
-	vector<vector<double>> data = readFile("test.vrp");
+	vector<vector<double>> data = readFile("input.vrp");
 	
 	CVRPInput input = CVRPInput(data);
 	vector<CVRPVehicleOutput> output;
@@ -321,6 +377,7 @@ for(int i=1;i<dimension;i++)
 	}
 }
 	cout << "\n Now printing routes ";
+	vector<vector<int>> finalResult;
 	cout << endl;
 	double total = 0;
 	double optimiZedtotal = 0;
@@ -362,13 +419,14 @@ int countOfRoutes=0;
 
 		vector<vector<double>> tspInput=input.convertRouteToCordinateList(tempRoute);
 		TSPSolver tsp(tspInput,depotLocation);
+		 cout<<"\n now we have created instacen of TSP successuflly here";
 	
 		for(auto itr=tempRoute.begin();itr!=tempRoute.end();itr++)
 		capacityHandled=capacityHandled+demand[*itr];
 		
-	//	cout<<" Calling TSP now";
+		cout<<" Calling TSP now";
 	    vector<vector<double>> tspOutput=tsp.solveTSP();
-	//	cout<<" Called TSP now";
+		cout<<" Called TSP now";
 		vector<int> optimizedRoute=input.convertCordinateListToRoute(tspOutput);
 		optimizedRoute.push_back(0);
 		optimizedRoute.insert(optimizedRoute.begin(),0);
@@ -381,12 +439,17 @@ int countOfRoutes=0;
 		optimiZedtotal += calculateRouteCost(optimizedRoute, distanceTable);
 		calculateRouteCost	(optimizedRoute, distanceTable);
 	printRoute(optimizedRoute);
+	finalResult.push_back(optimizedRoute);
+
 	
 	}
+convertResultToJson(finalResult,input);
 
 	//printRouteCodes(dimension, routeNumber);
 	//cout << "\n Total cost of the route is " << total;
 	cout << "\n Total opt cost of the route is: " << optimiZedtotal;
 	cout<<"\n Total vechicles used: "<<countOfRoutes;
+	cout<<"\n size of cordinates are "<<customerCordinates.size();
+	cout<<"\n size of demand are "<<demand.size();
 
 }

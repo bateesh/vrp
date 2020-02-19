@@ -157,7 +157,12 @@ Showing Pending Requests
 	var addressStr1='';
             function loadMapScenario() {
 			console.log('1');
-		fetch("./Request.json").
+var z;
+z = '<?=$_POST['carlist']?>';
+console.log(' z is : '+z);
+	var str=''+'./'+z+'.json';
+console.log(' str is :'+str);
+		fetch(str).
 		then(function(resp){
 		return resp.json()}).
 		then(function(data){
@@ -201,23 +206,28 @@ var lat=json.resourceSets[0].resources[0].geocodePoints[0].coordinates[0];
 var long=json.resourceSets[0].resources[0].geocodePoints[0].coordinates[1];
        var loc = new Microsoft.Maps.Location(lat,long);
 
-var pushpin = new Microsoft.Maps.Pushpin(loc, { color: 'red' });
+//var pushpin; = new Microsoft.Maps.Pushpin(loc, { color: 'red' });
 
 var depot=data.locations[i].depot;
 
 if (i==0 || depot=="true")
 {
 addressStr=''+lat+','+long;
-addressStr1=''+lat+','+long+'<br>';
+addressStr1=addressStr1+''+i+1+"Address :"+addressline+','+"Locality :"+locality+','+"Postal :"+postal+','+"Country :"+country+','+"Demand :"+demandi+','+"Lat :"+lat+','+"Long :"+long+'<br>'+'<br>';
 demand=demand+''+demandi;
 console.log(' now here i is '+i);
+ pushpin = new Microsoft.Maps.Pushpin(loc, { color: 'blue' });
+
 }
 else 
 {
 addressStr=addressStr+','+lat+','+long;
-addressStr1=addressStr1+''+lat+','+long+'<br>';
+addressStr1=addressStr1+''+i+1+"Address :"+addressline+','+"Locality :"+locality+','+"Postal :"+postal+','+"Country :"+country+','+"Demand :"+demandi+','+"Lat :"+lat+','+"Long :"+long+'<br>'+'<br>';
+
 demand=demand+','+demandi;
 console.log(' now here i is non zero '+i);
+pushpin = new Microsoft.Maps.Pushpin(loc, { color: 'red' });
+
 }
 console.log('Now address string is :'+addressStr);
 console.log('Now demand string is :'+demand);
@@ -274,3 +284,8 @@ console.log('5');
     </body>
 
 </html>
+<?php
+foreach ($_POST as $key => $value) {
+    echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
+}
+?>

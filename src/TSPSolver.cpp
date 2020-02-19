@@ -24,7 +24,8 @@ TSPSolver::TSPSolver(vector<vector<double>> n,vector<double> d)
     }
 
     getLiveDistanceTableTSP(data, distanceTableTSP);
-cout<<"\n Location to index map processed succeffuly";
+    cout<<"\n Procesing done successfully";
+    cout<<"\n Location to index map processed succeffuly";
 }
 
 double TSPSolver::getDistance(int x,int y)
@@ -48,6 +49,7 @@ double TSPSolver::getDistance(int x,int y)
 
 vector<vector<double>> TSPSolver::solveTSP()
 {
+    cout<<"\n yes solving";
     int numCities = nodes.size();
 
     int i;
@@ -84,12 +86,13 @@ vector<vector<double>> TSPSolver::solveTSP()
     vector < int > tour;
 	
     /* Iterative hill climbing to always start with random tour and find best until local minima arrives*/
-	for (int k = 1; k <= 85; k++)
+    cout<<"\n stated hill climbing now";
+	for (int k = 1; k <= 5; k++)
 	
 	{
 
         tour.clear();
-      //  cout<<"\n running iteration number "<<k<<endl;
+        cout<<"\n running iteration number "<<k<<endl;
 	srand(time(NULL));
     //cout<<"1";
 	int kkk;
@@ -111,26 +114,53 @@ vector<vector<double>> TSPSolver::solveTSP()
 	}
 	
 	}
-    //cout<<"4";
-    //cout<<" \n new inut done \n";
+    cout<<"4";
+    cout<<" \n new inut done \n";
 	
 	/* if(k==1)
 	printTour(tour);*/
+    cout<<"\n current tour is ";printTour(tour);
 	int improvement = 0;
+    cout<<"\n cities rae :"<<numCities;
+    int yy;
+//    cin>>yy;
+    
 	for (i = 0; i < numCities; i++) {
 	
 	for (int k = (i + 1) % numCities; k != i; k = (k + 1) % numCities) {
 	if (k - i == 1 || i - k == 1 || k == i) {
 	continue;
 	}
-	
+	cout<<"\n done here also";
+    cout<<"\n now it will try to reaplace "<<i<<" ->"<<(i + 1) % numCities<<" and : "<<k<<"->"<<(k + 1) % numCities;
+    cout<<"\n with "<<i<<" ->"<<k<<" and : "<<(i + 1) % numCities<<"->"<<(k + 1) % numCities;
 	int oldEdgesCost = originalGraph[tour[i]][tour[(i + 1) % numCities]] + originalGraph[tour[k]][tour[(k + 1) % numCities]];
 	int newEdgesCost = originalGraph[tour[i]][tour[k]] + originalGraph[tour[(i + 1) % numCities]][tour[(k + 1) % numCities]];
-	
+
+cout<<"\n old : "<<oldEdgesCost<<" new :"<<newEdgesCost;
+//cin>>yy;
+if(oldEdgesCost<0 || newEdgesCost<0 ||originalGraph[tour[i]][tour[(i + 1) % numCities]]<0 || originalGraph[tour[k]][tour[(k + 1) % numCities]]<0 || originalGraph[tour[i]][tour[k]]<0 ||originalGraph[tour[(i + 1) % numCities]][tour[(k + 1) % numCities]]<0)
+continue;
 	if (newEdgesCost < oldEdgesCost) {
+        cout<<"\n yes improvement";
+        cout<<" cost are i,i+1\n"<<originalGraph[tour[i]][tour[(i + 1) % numCities]];
+        cout<<" cost are k,k+1\n"<<originalGraph[tour[k]][tour[(k + 1) % numCities]];
+        cout<<" cost are i,k\n"<<originalGraph[tour[i]][tour[k]];
+        cout<<" cost are i+1,k+1\n"<<originalGraph[tour[(i + 1) % numCities]][tour[(k + 1) % numCities]];
 	improvement = 1;
+    vector<int> tempTour=tour;
 	k > i ? rvereseArray(tour, i + 1, k) : rvereseArray(tour, k + 1, i);
-	
+    if(getCandidateTourLength(tour,originalGraph, numCities)<getCandidateTourLength(tempTour,originalGraph, numCities))
+    {
+
+    }
+    else
+    {
+        tour=tempTour;
+        improvement=0;
+    }
+    
+	cout<<"\n current tour is ";printTour(tour);
 	}
 	
 	}

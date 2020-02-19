@@ -16,6 +16,7 @@ class CVRPInput {
   double capacity;
   vector < double > depotCord;
   vector < vector < double >> customerCordinates;
+  vector < vector < double >> allCordinates;
   vector < double > demandList;
   map<vector<double>, int> cordinateToCutomerMapping; 
   map<int, vector<double>> customerToCordinateMapping; 
@@ -37,6 +38,7 @@ class CVRPInput {
 
   //get the customer cordinates
   vector < vector < double >> getCustomerCordinates();
+  vector < vector < double >> getAllCordinates();
 
   //get customer demand list
   vector < double > getDemandList();

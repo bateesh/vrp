@@ -18,9 +18,14 @@ CVRPInput::CVRPInput(vector<vector<double>> data)
   auto p2 = data.end() - 1;
 
   customerCordinates = vector<vector<double>>(p1, p2);
+  allCordinates = vector<vector<double>>(p1-1, p2);
   cout<<"\n Total customer a are "<<customerCordinates.size();
   cout<<endl;
   populatemap(data);
+}
+vector < vector < double >>  CVRPInput::getAllCordinates()
+{
+return allCordinates;
 }
 
 void CVRPInput::populatemap(vector<vector<double>> data)

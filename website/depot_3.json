@@ -1,0 +1,39 @@
+{
+    "total": 4,
+    "totalvehicles": 5,
+    "capacity": "30",
+    "locations": [
+        {
+            "country": "IN",
+            "postalCode": "60036",
+            "depot": "true",
+            "demand": "0",
+            "addressline": "1079 SST Nagr Rajpura road patiala",
+            "locality": "Velechary"
+        },
+        {
+            "country": "IN",
+            "postalCode": "60036",
+            "depot": "false",
+            "demand": "14",
+            "addressline": "1079 SST Nagr Rajpura road patiala",
+            "locality": "Velechary"
+        },
+        {
+            "country": "IN",
+            "postalCode": "147001",
+            "depot": "false",
+            "demand": "6",
+            "addressline": "Thapar University Patiala",
+            "locality": "Thapar university"
+        },
+        {
+            "country": "gf",
+            "postalCode": "gf",
+            "depot": "false",
+            "demand": "15",
+            "addressline": "1079 SST Nagr Rajpura road patiala",
+            "locality": "gf"
+        }
+    ]
+}

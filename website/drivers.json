@@ -1,0 +1,16 @@
+[
+    {
+        "country": "IN",
+        "postalCode": "60036",
+        "depot": "depot_3",
+        "addressline": "1079 SST Nagr Rajpura road patiala",
+        "locality": "Velechary"
+    },
+    {
+        "country": "re",
+        "postalCode": "re",
+        "depot": "depot_1",
+        "addressline": "re",
+        "locality": "re"
+    }
+]

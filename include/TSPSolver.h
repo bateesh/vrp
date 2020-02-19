@@ -4,7 +4,7 @@ class TSPSolver
 {
     vector<vector<double>> nodes;
     vector<double> depot;
-    double distanceTableTSP[10][10];
+    double distanceTableTSP[300][300];
     map<pair<double,double>,int> locationToIndexMap;
     
 public:

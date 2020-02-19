@@ -41,7 +41,7 @@ void getDistanceTable(vector < vector < double > > d,double distanceTable[300][3
 
 void getLiveDistanceTable(vector < vector < double > > d,double distanceTable[300][300]);
 void getLiveDistanceTableTSP(vector < vector < double > > d,
-double distanceTable[10][10]);
+double distanceTable[300][300]);
 //getDistance between two points (px,py) and (dx,dy)
 double getDistance(int px, int py, int dx, int dy);
 void getDistanceTableTW(CVRPTW cvrptw,double distanceTable[300][300]) ;
