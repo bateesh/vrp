@@ -40,5 +40,54 @@
         "email": "gfgf",
         "pwd": "gfg",
         "role": "Admin"
+    },
+    {
+        "name": "abc",
+        "contact": "9871501403",
+        "email": "bateesh@gmail.com",
+        "pwd": "password",
+        "role": "Customer"
+    },
+    {
+        "name": "bateeshnew",
+        "contact": "9871501403",
+        "email": "bateesh2@gmail.com",
+        "pwd": "test123",
+        "role": "Customer"
+    },
+    {
+        "name": "bateesh1234",
+        "contact": "9871501403",
+        "email": "bateesh12@gmail.com",
+        "pwd": "bateesh123",
+        "role": "Customer"
+    },
+    {
+        "name": "bateesh1234",
+        "contact": "9871501403",
+        "email": "bateesh12@gmail.com",
+        "pwd": "bateesh123",
+        "role": "Customer"
+    },
+    {
+        "name": "bateesh123456",
+        "contact": "1234567",
+        "email": "batee@gmail.com",
+        "pwd": "qwerty",
+        "role": "Admin"
+    },
+    {
+        "name": "a",
+        "contact": "9871501403",
+        "email": "bateesh@gmail.com",
+        "pwd": "test",
+        "role": "Admin"
+    },
+    {
+        "name": "bateesh",
+        "contact": "9871501403",
+        "email": "bateesh@gmail.com",
+        "pwd": "test",
+        "role": "Admin"
     }
 ]

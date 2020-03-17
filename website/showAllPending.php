@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -103,18 +108,26 @@ Showing Pending Requests
                 height:600px; 
 		overflow-y: scroll;
             } 
-#hiddiv{ 
-                float:left;  
-
-                width:75%; 
-                height:100px; 
-		
-            } 
+label { width: 200px; float: left; margin: 0 20px 0 0; }
+span { display: block; margin: 0 0 3px; font-size: 1.2em; font-weight: bold; }
+input { width: 200px; border: 1px solid #000; padding: 5px; }
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
              
 #buttondiv{ 
-                float:left;  
+                float:right;  
 
-                width:25%; 
+
                 height:100px; 
 
             } 
@@ -125,167 +138,212 @@ Showing Pending Requests
                 text-align:center; 
             } 
         </style>  
-        
+         <form class="modal-content animate" action="/BingeMapsnew.php" method="post">
+
+
+  <label for="depotid">
+    <span>Depot ID</span>
+    <input type="text" id="depotid" />
+  </label>
+  <label for="timeslots">
+    <span>Time Slots</span>
+    <input type="text" id="timeslots" />
+  </label>
+   
+  </form>
+<br>
+<br>
+<br>
+<br>
         <div class="wrapper">
 
         <div id='myMap'></div>
         
         <div id='printoutPanel'></div>
-	<div id='hiddiv'></div>
 	<div id='buttondiv'>
 
+<form  name="form1" method="post" action="BingeMapsnew.php">
 
- <form class="modal-content animate" action="/BingeMapsnew.php" method="post">
+  
+  
+    <input type="text" id="did" name="did" />
 
-      Name: <input type="text" id="myText" name="name"><br>
-      Capacity: <input type="text" id="myCapacity" name="capacity"><br>
-      DemandList: <input type="text" id="myDemand" name="demand"><br>        
-      <button type="submit">Login</button>
-      	
-
-  </form>
-
+    <input type="text" id="tms" name="tms"/>
+  </label>
+      <button type="submit" class="button">Allocate Pending Requests</button>
+</form>
 
 </div>
+
+
 
         
 	
          <script type='text/javascript'>
+
+
+
 		var mydata;
 		var addressStr='';
 		var demand='';
 	var addressStr1='';
             function loadMapScenario() {
 			console.log('1');
-var z;
-z = '<?=$_POST['carlist']?>';
-console.log(' z is : '+z);
-	var str=''+'./'+z+'.json';
-console.log(' str is :'+str);
-		fetch(str).
-		then(function(resp){
-		return resp.json()}).
-		then(function(data){
-		mydsata = data;
-		console.log(data);
-		var total=data.total;
-		var capacity=data.capacity;
-document.getElementById('myCapacity').value =
-                        capacity;
+var depot,timeslots;
+depot = '<?=$_POST['depot']?>';
+timeslots = '<?=$_POST['timeslots']?>';
+document.getElementById("depotid").value = depot;
 
-		console.log('total records: '+total);
+document.getElementById("timeslots").value = timeslots;
 
-		
-		for (i = 0; i < total; i++) {
-		  console.log('Sending request for record number'+i);
-		  console.log(data.locations[i].postalCode);	
-			var postal=data.locations[i].postalCode;
-			var country=data.locations[i].country;
-			var locality=data.locations[i].locality;
-			var addressline=data.locations[i].addressline;
-			var demandi=data.locations[i].demand;
-		  console.log('postal code is '+postal);
-console.log('addressline code is '+addressline);
-console.log('country code is '+country);
-console.log('locality code is '+locality);
-	
-	var url="http://dev.virtualearth.net/REST/v1/Locations/"+country+"/"+postal+"/"+locality+"/"+addressline+"?key=AmO_vP4NG4zymCmPclwTKC48ItEhs9Rxh1txZW_dzzCT7ttVaXQayptHOfe7n09A";
-	console.log('Sending get request on url'+url);
-			var xhr = new XMLHttpRequest();
-//			var url = "url?data=" + encodeURIComponent(JSON.stringify({"email": "hey@mail.com", "password": "101010"}));
-			xhr.open("GET", url, false);
-			xhr.setRequestHeader("Content-Type", "application/json");
-			xhr.onreadystatechange = function () {
-			if (xhr.readyState === 4 && xhr.status === 200) {
-		        var json = JSON.parse(xhr.responseText);
-			console.log('Received response for record numner'+i);
-		        console.log(json);
-			
-			console.log(''+json.resourceSets[0].resources[0].geocodePoints[0].coordinates);
-var lat=json.resourceSets[0].resources[0].geocodePoints[0].coordinates[0];
-var long=json.resourceSets[0].resources[0].geocodePoints[0].coordinates[1];
-       var loc = new Microsoft.Maps.Location(lat,long);
+document.getElementById("did").value = depot;
 
-//var pushpin; = new Microsoft.Maps.Pushpin(loc, { color: 'red' });
+document.getElementById("tms").value = timeslots;
 
-var depot=data.locations[i].depot;
 
-if (i==0 || depot=="true")
+
+console.log(' depotid is : '+depot);
+console.log(' timwlosts is :'+timeslots);
+
+
+
+
+
+
+var str_arr = timeslots.split ("-");  
+var str_start = str_arr[0].split(":");
+var sta = str_start[0];
+var stb = str_start[1];
+var str_start = str_arr[1].split(":");
+var eta = str_start[0];
+var etb = str_start[1];
+console.log(' depotid is : '+depot);
+console.log(' sta is :'+sta);
+console.log(' stb is : '+stb);
+console.log(' eta is :'+eta);
+console.log(' etb is : '+etb);
+var depotlat,depotlong;
+var h = new XMLHttpRequest();
+
+var url = 'getlatLongByDepotId.php?depot='+depot;
+h.open('GET', url, false);
+
+//Send the proper header information along with the request
+h.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+h.onreadystatechange = function() {//Call a function when the state changes.
+    if(h.readyState == 4 && h.status == 200) {
+
+  console.log(' see result : '+h.responseText);
+   var json = JSON.parse(h.responseText);
+
+ depotlat=json.lat;
+ depotlong=json.long;
+    }
+}
+h.send();
+
+
+
+var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
+    /* No need to set credentials if already passed in URL */
+    center: new Microsoft.Maps.Location(depotlat, depotlong),
+    zoom: 12
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var http = new XMLHttpRequest();
+var lat,long,address,locality,postal,locality,country,demand;
+var url = 'getPendingShipmentsByDepotId.php?depot='+depot+'&sta='+sta+'&stb='+stb+'&eta='+eta+'&etb='+etb;
+http.open('GET', url, false);
+
+//Send the proper header information along with the request
+http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+http.onreadystatechange = function() {//Call a function when the state changes.
+    if(http.readyState == 4 && http.status == 200) {
+
+  console.log(' see result : '+http.responseText);
+   var json = JSON.parse(http.responseText);
+
+ lat=json.lat;
+  long=json.long;
+  address=json.address;	
+ locality=json.locality;
+	 postal=json.postal;
+	 country=json.country;	
+ demand=json.demand;
+    }
+}
+http.send();
+console.log("\n now staring");
+ lat=lat.split(",");
+  long=long.split(",");
+  address=address.split(",");	
+ locality=locality.split(",");
+	 postal=postal.split(",");
+	 country=country.split(",");	
+ demand=demand.split(",");
+
+
+var n = lat.length;
+var pushpin,addressStr,addressStr1;
+ var loc1 = new Microsoft.Maps.Location(depotlat,depotlong);
+ pushpin = new Microsoft.Maps.Pushpin(loc1, { color: 'blue' });
+ map.entities.push(pushpin);
+for(i=0;i<n;i++){
+
+
+
+ var loc = new Microsoft.Maps.Location(lat[i],long[i]);
+
+if (i==0 )
 {
-addressStr=''+lat+','+long;
-addressStr1=addressStr1+''+i+1+"Address :"+addressline+','+"Locality :"+locality+','+"Postal :"+postal+','+"Country :"+country+','+"Demand :"+demandi+','+"Lat :"+lat+','+"Long :"+long+'<br>'+'<br>';
-demand=demand+''+demandi;
-console.log(' now here i is '+i);
- pushpin = new Microsoft.Maps.Pushpin(loc, { color: 'blue' });
+addressStr=''+lat[i]+','+long[i];
+addressStr1=''+(i+1)+"Address :"+address[i]+','+"Locality :"+locality[i]+','+"Postal :"+postal[i]+','+"Country :"+country[i]+','+"Demand :"+demand[i]+','+"Lat :"+lat[i]+','+"Long :"+long[i]+'<br>'+'<br>';
+
+ pushpin = new Microsoft.Maps.Pushpin(loc, { color: 'red' });
 
 }
 else 
 {
-addressStr=addressStr+','+lat+','+long;
-addressStr1=addressStr1+''+i+1+"Address :"+addressline+','+"Locality :"+locality+','+"Postal :"+postal+','+"Country :"+country+','+"Demand :"+demandi+','+"Lat :"+lat+','+"Long :"+long+'<br>'+'<br>';
+addressStr=addressStr+','+lat[i]+','+long[i];
+addressStr1=addressStr1+''+(i+1)+"Address :"+address[i]+','+"Locality :"+locality[i]+','+"Postal :"+postal[i]+','+"Country :"+country[i]+','+"Demand :"+demand[i]+','+"Lat :"+lat[i]+','+"Long :"+long[i]+'<br>'+'<br>';
 
-demand=demand+','+demandi;
-console.log(' now here i is non zero '+i);
 pushpin = new Microsoft.Maps.Pushpin(loc, { color: 'red' });
 
 }
-console.log('Now address string is :'+addressStr);
-console.log('Now demand string is :'+demand);
-
-
-  
-
-
-console.log('3');
+// pushpin = new Microsoft.Maps.Pushpin(loc, { color: 'blue' });
                 map.entities.push(pushpin);
 
 
-
-	document.getElementById('printoutPanel').innerHTML =
-                        addressStr1;
-document.getElementById('hiddiv').innerHTML =
-                        addressStr;
-document.getElementById('myText').value =
-                        addressStr;
-document.getElementById('myDemand').value =
-                        demand;
-
-
-		        }
-			};
-			xhr.send();
 }
 
-
-
-
-
-});
-console.log('Welcome address string is :'+addressStr);
-
-
-	
-
-                var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {});
-console.log('2');
-
-                
-console.log('4');
-	
-console.log('5');
-
-
-
-
-                
-            }
+document.getElementById('printoutPanel').innerHTML =addressStr1;
+			
+}
         </script>
         <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=AmO_vP4NG4zymCmPclwTKC48ItEhs9Rxh1txZW_dzzCT7ttVaXQayptHOfe7n09A&callback=loadMapScenario' async defer></script>
     </body>
 
 </html>
-<?php
-foreach ($_POST as $key => $value) {
-    echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
-}
-?>
+

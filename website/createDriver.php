@@ -229,8 +229,8 @@ var x = document.getElementById("depot");
 
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
   <div class="container">
-    <h1>Register</h1>
-    <p>Please fill in this form to create register your vehicle at Depot.</p>
+    <h1>Register Vehicle</h1>
+    <p>Please fill in this form to register your vehicle at Depot.</p>
     <hr>
 
     <label for="country"><b>Country</b></label>
@@ -259,9 +259,9 @@ var x = document.getElementById("depot");
 
 
     <hr>
-    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+    <p>By registering vehicle you agree to our <a href="#">Terms & Privacy</a>.</p>
 
-    <button type="submit" class="registerbtn">Register</button>
+    <button type="submit" class="registerbtn">Click to Register</button>
   </div>
   
 </form>

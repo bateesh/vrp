@@ -12,5 +12,12 @@
         "depot": "depot_1",
         "addressline": "re",
         "locality": "re"
+    },
+    {
+        "country": "IN",
+        "postalCode": "60036",
+        "depot": "depot_4",
+        "addressline": "kjhjkh",
+        "locality": "Velechary"
     }
 ]

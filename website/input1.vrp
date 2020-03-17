@@ -1,0 +1,10 @@
+DIMENSION : 1
+Capacity : 30
+Vehicles : 0
+Vehicle_Capacity_Section 
+NODE_COORD_SECTION 
+1  
+DEMAND_SECTION 
+1 0
+SHIPMENT_ID_SECTION 
+1 

@@ -162,14 +162,6 @@
             "depot": "false",
             "demand": "3",
             "addressline": "30 21, Telugu Brahmin St, Ram Nagar, Velachery, Chennai, Tamil Nadu 600042"
-        },
-        {
-            "country": "IN",
-            "postalCode": "147001",
-            "depot": "false",
-            "demand": "14",
-            "addressline": "1093 SST Nagar rajpura Road Patiala",
-            "locality": "SST Nagar"
         }
     ]
 }

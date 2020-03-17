@@ -11,7 +11,37 @@ CVRPInput::CVRPInput(vector<vector<double>> data)
 
   dimension = data[0][0];
   capacity = data[0][1];
+  vehicles=data[0][2];
+  vechilesCapacity.clear();
+  vehicleID.clear();
+  shipmentID.clear();
+  int j=0;
+  for(int i=0;i<vehicles;i++)
+  {
+    cout<<"\n n ow vapacity pushimjg "<<data[0][3+i+j]<<" "<<data[0][4+i+j];
+    
+  vechilesCapacity.push_back(data[0][4+i+j]);
+  vehicleID.push_back(data[0][3+i+j]);
+  j++;
+      cout<<"\n current size is "<<vechilesCapacity.size();
+
+  }
+
+  cout<<"\n see here";
+int i=0;
+  for (auto itr = getVechilesCapacity().begin(); itr != getVechilesCapacity().end(); itr++)
+	{
+		double data = *itr;
+		cout<<"\n datais  : "<<data;
+    cout<<" \n is cap : "<<vechilesCapacity[i];
+    cout<<" \n is cap : "<<vehicleID[i++];
+		//cout << " " << data;
+		cout<<endl;
+	}
+
   demandList = data[dimension + 1];
+  shipmentID= data[dimension + 2];
+
   depotCord = data[1];
 
   auto p1 = data.begin() + 2;
@@ -27,6 +57,26 @@ vector < vector < double >>  CVRPInput::getAllCordinates()
 {
 return allCordinates;
 }
+
+vector <double>  CVRPInput::getVechilesCapacity()
+{
+return vechilesCapacity;
+}
+
+double   CVRPInput:: getVehicles()
+{
+  return vehicles;
+}
+
+vector<double>  CVRPInput::getVechicleID()
+{
+  return vehicleID;
+}
+  vector<double> CVRPInput::getShipmentID()
+  {
+    return shipmentID;
+  }
+
 
 void CVRPInput::populatemap(vector<vector<double>> data)
 {

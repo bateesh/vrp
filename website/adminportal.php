@@ -120,20 +120,48 @@ body {
 <body >
 
 
-<h2> Welcome Admin!</h2>
+<h2> <?php
+                        session_start();
+
+                        echo "Welcome Admin!!!!! : ".$_SESSION['uname'];  
+
+  
+                    ?> </h2>
 <form action="./showAllPending.php" id="showall" method="post">
 
 <span class="custom-dropdown big">
 
-<select id="mylist" name="carlist">
+        <label for="depot"><b>Select Depot to View pending parcels</b></label>
+
+	<select name="depot" id="depot" onchange="populateTimeWindows()"><b></b>
+<?php
+include "dbconfig.php";
+
+
+
+$loop = mysqli_query($con,"select id from wedeliver.depot")
+   or die (mysqli_error());
+
+while ($row = mysqli_fetch_array($loop))
+{
+echo '<option   value="'.$row[0].'">'.$row[0].'</option>';
+
+}
+echo "</select>";
+?>
+
+<select name="timeslots" id="timeslots"   padding-left="50px"><b></b>
+  <option value="Select Time Slots">Select time slots</option>
 
 </select>
+
+
 </span>
-  <input type="submit"  class="button" value="Click here to see Depot Details" >
+  <input type="submit"  class="button" value="View Pending parcels for Depot" >
 </form>
 
 
-<form action="./createDepot.php" id="createDepot" >
+<form action="./createDepot.php" id="createDepot" method="post">
   <input type="submit"  class="button" value="Click here to create new Depot">
 </form>
 <br>
@@ -146,6 +174,53 @@ body {
 
 </body>
 <script type="text/javascript" language="javascript">
+function populateTimeWindows()
+{
+var select = document.getElementById("timeslots");
+var length = select.options.length;
+for (i = length-1; i > 0; i--) {
+  select.options[i] = null;
+}
+
+
+var x=document.getElementById('depot').value;
+var http = new XMLHttpRequest();
+var url = 'getTimeSlotsforDepot.php?depotid='+x;
+var params = 'orem=ipsum&name=binny';
+http.open('GET', url, false);
+
+//Send the proper header information along with the request
+http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+http.onreadystatechange = function() {//Call a function when the state changes.
+    if(http.readyState == 4 && http.status == 200) {
+      //  alert(http.responseText);
+   var json = JSON.parse(http.responseText);
+
+   var tot=json.totalwindows;
+   var ret=json.result;
+    var depottime = ret.split(',');
+
+for (i = 1; i <=tot; i++) {
+	var xx = depottime[i-1];
+
+
+var x = document.getElementById("timeslots");
+  var option = document.createElement("option");
+  option.text = xx;
+  x.add(option);
+  
+}
+
+    }
+}
+http.send(params);
+ 
+
+
+
+}
+	       		
 
  function TestOnTextChange()
 {
@@ -174,77 +249,5 @@ var x = document.getElementById("mylist");
 
 
 </html>
-<?php
-
-$myArray = array();
-$i=0;
-$dir = "/home/nsnuser/Documents/Bateesh_MTP/vrp/website/";
-//echo "hello";
-// Open a directory, and read its contents
-if (is_dir($dir)){
-  if ($dh = opendir($dir)){
-    while (($file = readdir($dh)) !== false){
-     // echo "filename:" . $file . "<br>";
-//echo "write to " ;
-//echo $i;
-$mystr=substr($file,0,6);
-//echo "he it is ";
-//echo $mystr;
-if($mystr=="depot_")
-{
-
-$myArray[$i]= substr($file,0,7);
-}
-//echo $myArray[$i];
-
-
-
-
-
-
-
-
-
-
-
-
-//echo "hi";
-
-//echo $myArray[$i];
-//echo "hello";
-$i=$i+1;
-
-    }
-
-//echo $myArray;
-    closedir($dh);
- foreach( $myArray as $value ) {
-           // echo "Value is $value <br />";
-         }
-$str=implode(",",$myArray);
-echo "<input type='hidden' onchange='TestOnTextChange()' id='depot' value='$str'/>";
-echo '<script type="text/javascript">',
-     'TestOnTextChange();',
-     '</script>'
-;		
-  }
-}
-//echo "hi";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-?>
 
 

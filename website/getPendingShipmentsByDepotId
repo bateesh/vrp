@@ -1,0 +1,36 @@
+<?php
+include "dbconfig.php";
+
+$depot = mysqli_real_escape_string($con,$_GET['depot']);
+$sta = mysqli_real_escape_string($con,$_GET['sta']);
+$stb = mysqli_real_escape_string($con,$_GET['stab']);
+$eta = mysqli_real_escape_string($con,$_GET['eta']);
+$etb = mysqli_real_escape_string($con,$_GET['etb']);
+
+
+if ($postal != "" ){
+$loop = mysqli_query($con,"select address,postal,locality,country,demand,lat,lon from wedeliver.shipment where depotid=depot and starthour>=sta and startmin>=stb and endhour<=eta and endmin<=etb and status='created'");
+
+while ($row = mysqli_fetch_array($loop))
+{
+
+$lat=$lat.",".$row[5];
+$long=$long.",".$row[6];
+$str0=$row[0];
+$str1=$row[1];
+$str2=$row[2];
+$str3=$row[3];
+$str4=$row[4];
+$str='<br>'.$str0.",".$str1.",".$str2.",".$str3.",".$str4.",".$lat.",".$long;
+
+}
+
+
+$ret['responseCode'] = 1;
+$ret['lat'] = $lat;
+$ret['long'] = $long;
+$ret['str'] = $str;
+
+echo json_encode($ret);
+}
+?>

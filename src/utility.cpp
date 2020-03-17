@@ -117,6 +117,29 @@ vector < vector < double > > readFile(const char * path) {
   getline(file, line);
   // extract capacity
   constraint.push_back(extract_double(line));
+
+  getline(file, line);
+  // extract capacity
+  cout<<"\n current luine is"<<line;
+  constraint.push_back(extract_double(line));
+    file.ignore(256, '\n');
+
+
+double vehicleCount=constraint[2];
+cout<<"\n here coutn is "<<vehicleCount;
+for(int i=0;i<vehicleCount;i++)
+{
+    getline(file, line);
+
+    vector < double > p = extract_doubles(line);
+  // extract capacity
+  cout<<"\n size of p is "<<p.size();
+  cout<<"\n now here i will purh"<<p[1]<<" "<<p[2];
+  constraint.push_back(p[1]);
+  constraint.push_back(p[2]);
+
+}
+
   data.push_back(constraint);
 
   // ignore the node section start line
@@ -144,6 +167,16 @@ vector < vector < double > > readFile(const char * path) {
     demand.push_back(extract_doubles(line)[1]);
   }
   data.push_back(demand);
+
+  file.ignore(256, '\n');
+
+  vector < double > shipmentID;
+  // read the customer demand to the 1D array
+  for (int j = 0; j < constraint[0]; ++j) {
+    getline(file, line);
+    shipmentID.push_back(extract_doubles(line)[1]);
+  }
+  data.push_back(shipmentID);
 
   return data;
 }
@@ -279,6 +312,7 @@ void printRoute(vector<int> cr)
 {
 
 	cout << endl;
+  cout<<" \n now printing with size : "<<cr.size();
 	for (auto j = cr.begin(); j != cr.end(); j++)
 	{
 		cout << " " << *j;

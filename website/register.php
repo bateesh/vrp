@@ -1,93 +1,50 @@
-<?php
-// Include config file
-
- 
-// Define variables and initialize with empty values
-$username = $password = $confirm_password = "";
-$username_err = $password_err = $confirm_password_err = "";
- echo "hello username is :";
-echo $_POST["name"];
-echo $_POST["phone"];
-echo "use is :";
-echo $_POST["users"];
-echo $_POST["email"];
-echo $_POST["psw"];
-// Processing form data when form is submitted
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-
-
-$myFile = "users.json";
-   $arr_data = array(); // create empty array
-
-  try
-  {
-	   //Get form data
-	   $formdata = array(
-	      'name'=> $_POST['name'],
-	      'contact'=> $_POST['phone'],
-	      'email'=>$_POST['email'],
-	      'pwd'=> $_POST['psw'],
-	      'role'=> $_POST['users']
-	   );
+<script type='text/javascript'>
 
 
 
-if(filesize($myFile)) {
-echo "File is empty";
-	   //Get data from existing json file
-	   $jsondata = file_get_contents($myFile);
+function  populateLatLong(){
+console.log("working on it.....");
+var country = document.getElementById("country").value;
+var add = document.getElementById("add").value;
+var locality = document.getElementById("locality").value;
+var postalCode = document.getElementById("postalCode").value;
+console.log(" Senging Geolocation request to Bing Maps ");
+var url="http://dev.virtualearth.net/REST/v1/Locations/"+country+"/"+postalCode+"/"+locality+"/"+add+"?key=AmO_vP4NG4zymCmPclwTKC48ItEhs9Rxh1txZW_dzzCT7ttVaXQayptHOfe7n09A";
+console.log("Sending on URL "+url);
+var xhr = new XMLHttpRequest();
+//			var url = "url?data=" + encodeURIComponent(JSON.stringify({"email": "hey@mail.com", "password": "101010"}));
+			xhr.open("GET", url, false);
+			xhr.setRequestHeader("Content-Type", "application/json");
+			xhr.onreadystatechange = function () {
+			if (xhr.readyState === 4 && xhr.status === 200) {
+		        var json = JSON.parse(xhr.responseText);
+			console.log('Received response for record numner');
+		        console.log(json);
+			console.log("now populate lat long");
+			var latElement = document.getElementById("lat");
+			var longElement = document.getElementById("long");
+			var lat=json.resourceSets[0].resources[0].geocodePoints[0].coordinates[0];
+			var long=json.resourceSets[0].resources[0].geocodePoints[0].coordinates[1];
+			latElement.value=lat;
+			longElement.value=long;
+			
+			return  true;						
+			}
+			if (xhr.readyState === 4 && xhr.status === 400) {
+		        
+			alert("Unable to connect to Bing maps for lat,long.Please try after sometime");
+			return false;
+		        
+			}
+			};
+			xhr.send();
 
-	   // converts json data into array
-	   $arr_data = json_decode($jsondata, true);
 
-	   // Push user data to array
-	   array_push($arr_data,$formdata);
-	   $jsondata = json_encode($arr_data, JSON_PRETTY_PRINT);
-//write json data into data.json file
-	   if(file_put_contents($myFile, $jsondata)) {
-	        echo 'Data successfully saved';
-	    }
-	   else 
-	        echo "error in storing data";
-
-
+		
 
 }
-else
-{
+</script>
 
-echo "File is not empty";
-
-	   // Push user data to array
-	   array_push($arr_data,$formdata);
-	   $jsondata = json_encode($arr_data, JSON_PRETTY_PRINT);
-//write json data into data.json file
-	   if(file_put_contents($myFile, $jsondata)) {
-	        echo 'Data successfully saved';
-	    }
-	   else 
-	        echo "error in storing data";
-	  
-	   
-
-
-}
-echo "<script>
-alert('Registeration succesfull');
-window.location.href='adminlogin.php';
-</script>";
-
-	   
-   }
-   catch (Exception $e) {
-            echo 'Caught exception: ',  $e->getMessage(), "\n";
-   }
-}
-
-
-
-?>
- 
 
 <!DOCTYPE html>
 <html>
@@ -160,7 +117,7 @@ a {
 </head>
 <body>
 
-<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+<form action="./storeUsers.php" method="post" onsubmit="return populateLatLong()">
   <div class="container">
     <h1>Register</h1>
     <p>Please fill in this form to create an account.</p>
@@ -177,6 +134,24 @@ a {
   <option value="Admin">Admin</option>
   <option value="Customer">Customer</option>
   <option value="Driver">Driver</option>
+</select>
+<br>
+<br>
+
+    <label for="country"><b>Country</b></label>
+    <input type="text" placeholder="Enter Country" name="country" id="country" required>
+
+    <label for="postalCode"><b>PostalCode</b></label>
+    <input type="text" placeholder="Enter PostalCode" name="postalCode" id="postalCode" required>
+
+    <label for="locality"><b>Locality</b></label>
+    <input type="text" placeholder="Enter Locality" name="locality" id="locality" required>
+
+
+
+    <label for="add"><b>AddressLine</b></label>
+    <input type="text" placeholder="Enter Address Line" name="add" id="add" required>
+
 
 
 </select>
@@ -197,6 +172,10 @@ a {
     <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
 
     <button type="submit" class="registerbtn">Register</button>
+    <input type="text" name="lat" id="lat">
+
+    <input type="text" name="long" id="long">
+
   </div>
   
 </form>

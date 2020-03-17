@@ -10,24 +10,62 @@
 <script type = "text/javascript" language = "javascript">
  jQuery(document).ready(function() {
     jQuery("#login").click(function() {
-        var country_value = $('#users').val();
-       var country_name = $('#users :selected').text(); 
-console.log(' tex is '+country_name);
-if(country_name=="Admin"){
-console.log('111111111111111111111111111111111111');
-            window.location.href = "adminportal.php";
-}
-else if(country_name=="Customer"){
-console.log('22222222222222222');
-            window.location.href = "createParcel.php";}
-
-else{
-console.log('333333333333');
-            window.location.href = "createDriver.php";}
 
 
+        var username = $("#uname").val().trim();
+        var role = $("#users :selected").text().trim();
+	var password = $("#psw").val().trim();
+console.log(' Login parameters are : '+username+' '+role+' '+password);
+
+ if( username != "" && password != "" && role!=""){
+console.log('ready to send');
+            $.ajax({
+                url:'checklogin.php',
+                type:'post',
+                dataType: 'json',
+                data:{username:username,password:password,role:role},
+        
+
+                success:function(response){
+                    var msg = "";
+                    if(response.responseCode == 1){
+                        window.location = response.redirecturl;
+                    }
+		else if(response.responseCode==0){
+                //var content = $("#notificationContainer");
+                //content.html('');
+                //var notification = $('<div></div>');
+                //notification.addClass('notification');
+                //notification.html(response.error);
+                //content.fadeOut(400, function(){ $(this).append(notification); });
+                //content.fadeIn(400).delay(15000).fadeOut(3000);
+alert(""+response.error);
+            }
+                }
+            });
+        }
     });
- });
+});
+
+
+        //var country_value = $('#users').val();
+       //var country_name = $('#users :selected').text(); 
+//console.log(' tex is '+country_name);
+//if(country_name=="Admin"){
+//console.log('111111111111111111111111111111111111');
+//            window.location.href = "adminportal.php";
+//}
+//else if(country_name=="Customer"){
+//console.log('22222222222222222');
+  //          window.location.href = "createParcel.php";}
+
+//else{
+//console.log('333333333333');
+  //          window.location.href = "createDriver.php";}
+
+
+    //});
+ //});
 </script>
 
 
@@ -286,10 +324,10 @@ span.psw {
 
     <div class="container">
       <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
+      <input type="text" placeholder="Enter Username" name="uname" id="uname" required>
 
       <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+      <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
         
       <button type="reset" id="login">Login</button>
       <label>

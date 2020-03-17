@@ -14,10 +14,14 @@ using namespace std;
 class CVRPInput {
   double dimension;
   double capacity;
+  int vehicles;
+  vector<double> vechilesCapacity;
   vector < double > depotCord;
   vector < vector < double >> customerCordinates;
   vector < vector < double >> allCordinates;
   vector < double > demandList;
+  vector<double> vehicleID;
+  vector<double> shipmentID;
   map<vector<double>, int> cordinateToCutomerMapping; 
   map<int, vector<double>> customerToCordinateMapping; 
   void populatemap  (vector<vector<double>> data); 
@@ -29,6 +33,10 @@ class CVRPInput {
 
   //get the dimension
   double getDimension();
+
+  double getVehicles();
+
+  vector < double >  getVechilesCapacity();
 
   //get the capacity
   double getCapacity();
@@ -46,6 +54,8 @@ class CVRPInput {
   vector<vector<double>> convertRouteToCordinateList(vector<int> route);
 
   vector<int> convertCordinateListToRoute(vector<vector<double>> customerCordinates);
+  vector<double> getVechicleID();
+  vector<double> getShipmentID();
 
 };
 #endif

@@ -1,10 +1,3 @@
-<?php
-
-			session_start();	
-
-  
-                    ?> 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,18 +27,7 @@ input[type=text], input[type=password],input[type=select] {
   border: none;
   background: #f1f1f1;
 }
-.button {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
+
 input[type=text]:focus, input[type=password]:focus {
   background-color: #ddd;
   outline: none;
@@ -83,11 +65,26 @@ a {
   background-color: #f1f1f1;
   text-align: center;
 }
+.logoutLblPos{
+
+   position:fixed;
+   right:10px;
+   top:5px;
+}
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
 </style>
 
-
-
-</style>
 
 <script type='text/javascript'>
 
@@ -126,9 +123,7 @@ for (i = 1; i <=twc; i++) {
 
 
 function  populateLatLong(){
-
 console.log("working on it.....");
-
 var country = document.getElementById("country").value;
 var add = document.getElementById("add").value;
 var locality = document.getElementById("locality").value;
@@ -136,7 +131,6 @@ var postalCode = document.getElementById("postalCode").value;
 console.log(" Senging Geolocation request to Bing Maps ");
 var url="http://dev.virtualearth.net/REST/v1/Locations/"+country+"/"+postalCode+"/"+locality+"/"+add+"?key=AmO_vP4NG4zymCmPclwTKC48ItEhs9Rxh1txZW_dzzCT7ttVaXQayptHOfe7n09A";
 console.log("Sending on URL "+url);
-
 var xhr = new XMLHttpRequest();
 //			var url = "url?data=" + encodeURIComponent(JSON.stringify({"email": "hey@mail.com", "password": "101010"}));
 			xhr.open("GET", url, false);
@@ -177,7 +171,7 @@ var xhr = new XMLHttpRequest();
 <form align="right" name="form1" method="post" action="log_out.php">
 
   
-  <input class="button" name="submit2" type="submit"  value="Log out">
+  <input class="button" name="submit2" type="submit"  value="log out">
   
 
   </label>
@@ -188,7 +182,7 @@ var xhr = new XMLHttpRequest();
   <div class="container">
          <h2> <?php
 
-		
+			session_start();	
                         echo "Welcome Admin!!!!! : ".$_SESSION['uname'];  
   
                     ?> </h2>
@@ -260,4 +254,9 @@ var xhr = new XMLHttpRequest();
 
 </body>
 </html>
+<?php
+			session_start();	
+			$abc=$_SESSION['uname'];
+                        echo "<script>(alert($abc))</script>";  
+?>
 

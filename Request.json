@@ -1,0 +1,18 @@
+{ 
+   "total":"2",
+   "Locations":[ 
+      { 
+         "country":"IN",
+         "postalCode":"600036",
+         "Locatility":"IIT Madras",
+         "Addressline":"527 Pampa hostel"
+      },
+      { 
+         "country":"IN",
+         "postalCode":"600042",
+         "Locatility":"Velechary",
+         "Addressline":"Phenix Marketcity Chennai"
+      }
+]
+}
+  

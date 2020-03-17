@@ -196,7 +196,15 @@ var x = document.getElementById("depotID");
 
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
   <div class="container">
-    <h1>Register</h1>
+<h2> <?php
+                        session_start();
+
+                        echo "Welcome User!!!!! : ".$_SESSION['uname'];  
+
+  
+                    ?> </h2>
+
+    <h1>Register Demand</h1>
     <p>Please fill in this form to create register your demand request at the  Depot.</p>
     <hr>
 
@@ -234,9 +242,9 @@ var x = document.getElementById("depotID");
 </select>
 
     <hr>
-    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+    <p>By creating a Demand Request you agree to our <a href="#">Terms & Privacy</a>.</p>
 
-    <button type="submit" class="registerbtn">Register</button>
+    <button type="submit" class="registerbtn">Click to Create</button>
   </div>
   
 </form>
